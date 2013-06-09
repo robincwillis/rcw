@@ -1,0 +1,49 @@
+div#twitter {
+	width: 240px;
+	/*padding: 1em 0 0 0;*/
+}
+
+div#twitter h2 {
+	margin: 0;
+	
+	font-size: 1.1em;
+	color: #000;
+
+}
+
+p#preloader {
+	margin: 0;
+	padding: 1em 1em 1em 3em;
+	background: transparent url("../lib/loader.gif") 1em center no-repeat;
+	/* generate your own loader gif: http://www.ajaxload.info */
+}
+
+ul#twitter_update_list {
+	margin: 0;
+	padding:0;
+	list-style-type: none;
+}
+
+ul#twitter_update_list li {
+	margin: 0;
+	padding: 0 0 .5em 0;
+	/*border-bottom: 1px solid #000;*/
+}
+
+ul#twitter_update_list li span {
+/*	display: block;*/
+}
+
+ul#twitter_update_list li.firstTweet {
+}
+
+ul#twitter_update_list li.lastTweet {
+	border-bottom: none;
+}
+
+a#profileLink {
+	display: block;
+	padding: 0.3em 0em;
+	color: #000;
+	
+}

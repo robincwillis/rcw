@@ -1,0 +1,72 @@
+body{
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px; /*normal size*/
+  line-height: 1;
+  text-align: center;
+  -webkit-font-smoothing: antialiased; 
+}
+
+
+a{
+  color:#000000;
+  font-style:normal;
+  text-decoration:none;
+}
+
+.date{
+	font-style:italic;
+}
+
+.feed a:hover{
+	text-decoration:underline;
+}
+
+#twitter a{
+  color:#404040;
+  text-decoration: none;
+}
+
+#twitter a:hover{
+   text-decoration:underline;
+}
+
+.highlight{
+   background:#E9E9E9;
+   padding-left:5px; 
+   margin-left:-5px;
+   z-index:2;
+}
+
+h1,h2,h3{
+  font-weight:normal;
+}
+
+h1{
+  font-size:28px;
+  text-transform:uppercase;
+}
+h2{
+  font-size:18px;
+}
+
+h3{
+	font-size:15px;
+	margin:0 0 10px 0;
+}
+
+p{
+  line-height:1.5em;
+}
+
+#header h2{
+  font-size:24px;
+  text-transform:none;
+}
+
+ul{
+  line-height:1.5em;
+  list-style-type:none;
+  margin: 0;
+  padding:0;
+}
