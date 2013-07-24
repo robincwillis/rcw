@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    	<meta charset="utf-8" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Robin Willis</title>
+		
+		<link rel="shortcut icon" href="favicon.png" />        
+
+        <meta name="description" content="Robin Willis is an artist and designer and software developer in San Francisco" />
+        <META name="keywords" content="robin, willis, robin willis">
+		<meta name="author" content="Robin Willis" />
+        
+        <link rel="stylesheet" type="text/css" href="top/css/layout.css" />
+        <link rel="stylesheet" type="text/css" href="top/css/typography.css" />
+        <link rel="stylesheet" type="text/css" href="top/css/jquery.twitter.css" media="all" />     
+       	<link rel="stylesheet" type="text/css" href="top/css/jquery.tumblr.css" media="all" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="top/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?16"></script>
+        <script type="text/javascript" src="top/js/jquery.twitter.js"></script>
+        <script type="text/javascript" src="top/js/date.js"></script>
+        <script type="text/javascript" src="top/js/jquery.tumblr.js"></script>
+        <script type="text/javascript" src="top/js/jquery.easing.js"></script>
+        <script type="text/javascript" src="top/js/jquery.slideshow.fullscreen.js"></script>
+        
+        
+        
+        <script type="text/javascript">    
+            <!--//--><![CDATA[//><!--
+            $(document).ready( function() {
+            
+    
+            
+			var toBottom = parseInt($('#flash').css('bottom'));
+                             
+            $("#twitter").getTwitter({
+                  userName: "robincwillis",
+                  numTweets: 1,
+                  loaderText: "Loading...",
+                  slideIn: true,
+                  showHeading: false,
+                  headingText: "@robincwillis",
+                  showProfileLink: false
+            });
+                
+                gallery = new Array();
+                
+                gallery.push({'width':800,'height':817,'src':'top/splash/01.jpg'}); 
+                gallery.push({'width':800,'height':1600,'src':'top/splash/02.jpg'}); 
+                gallery.push({'width':800,'height':536,'src':'top/splash/03.jpg'}); 
+                gallery.push({'width':1328,'height':380,'src':'top/splash/04.jpg'}); 
+                gallery.push({'width':800,'height':1236,'src':'top/splash/05.jpg'}); 
+                gallery.push({'width':800,'height':800,'src':'top/splash/06.jpg'}); 
+                gallery.push({'width':1330,'height':380,'src':'top/splash/07.jpg'}); 
+                gallery.push({'width':800,'height':728,'src':'top/splash/08.jpg'}); 
+                gallery.push({'width':800,'height':800,'src':'top/splash/09.jpg'}); 
+                gallery.push({'width':800,'height':793,'src':'top/splash/10.jpg'}); 
+                gallery.push({'width':2647,'height':380,'src':'top/splash/11.jpg'}); 
+                gallery.push({'width':800,'height':933,'src':'top/splash/12.jpg'}); 
+                gallery.push({'width':800,'height':600,'src':'top/splash/13.jpg'}); 
+                gallery.push({'width':800,'height':800,'src':'top/splash/14.jpg'}); 
+                gallery.push({'width':1592,'height':380,'src':'top/splash/15.jpg'});                 
+                gallery.push({'width':800,'height':1319,'src':'top/splash/16.jpg'}); 
+                
+                
+                gallery.sort(function() {return 0.5 - Math.random()})
+                
+                $('#splash').fs_slideshow({'imgs_in':gallery}); 
+                
+                $('.page_link').hover(
+                  function(){
+                    $(this).find('h1').addClass('highlight');
+                  },
+                  function(){
+                    $(this).find('h1').removeClass('highlight');                    
+                  }
+                )
+                
+                $('.page_link').click(function(){
+					_gaq.push(['_trackEvent', 'Internal Link', 'Click', $(this).find('h1').text()]);
+				});
+                
+                $('.list_link').hover(
+                  function(){
+                    $(this).addClass('highlight');
+                  },
+                  function(){
+                    $(this).removeClass('highlight');                    
+                  }
+                )
+                
+                 $('.list_link').click(function(){
+					_gaq.push(['_trackEvent', 'External Link', 'Click', $(this).text()]);
+				});
+				
+				
+				$('.plugin_link').click(function(){
+					_gaq.push(['_trackEvent', 'Plugin', 'Click', $(this).text()]);
+				});
+				
+                
+                });
+                
+       var _gaq = _gaq || [];
+       _gaq.push(['_setAccount', 'UA-4803873-2']);
+       _gaq.push(['_setDomainName', '.robincwillis.com']);
+       _gaq.push(['_trackPageview','/']);
+ 
+      (function() {
+         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();     
+
+
+
+            //--><!]]>
+
+    </script>
+    
+    </head>
+    <body>
+        <div id="container">
+
+            <div id="splash">
+            </div>
+            <div id="contents">
+
+               
+                <div class="column left margin">
+                	 <a class="page_link" href="http://portfolio.robincwillis.com" target="_blank">
+                    <h1>Portfolio</h1>
+                    <p>
+                        Showcase of my personal, academic and professional work ranging from painting and drawing to graphic design, interactive design and architecture.
+                    </p>
+                    </a>
+                </div>
+
+                <div class="column left margin">
+                	<a class="page_link" href="http://code.robincwillis.com" target="_blank">
+                    <h1>Code</h1>
+                    <p>
+                      Various programming projects both completed and in progress. Here you can not only view projects but download applications, browse source code and contribute to future releases.
+                    </p>
+                    </a>
+                </div>
+              
+            
+            <div class="column left">
+                <h1>Find Me On</h1>
+                <ul>
+                <li>
+                  <a class="list_link" href="http://twitter.com/robincwillis" target="_blank">Twitter</a>
+                </li>
+                <li>
+                   <a class="list_link" href="https://plus.google.com/101160065704574151853/" target="_blank">Google +</a>
+                </li>
+                <li>
+                   <a class="list_link" href="http://www.facebook.com/robincwillis" target="_blank">Facebook</a>
+                </li>
+                <li>
+                  <a class="list_link" href="http://www.linkedin.com/in/robincwillis" target="_blank">Linked In</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+       
+        <div style="clear:both">
+        </div>
+        
+        <div id="bio">
+            <div class="feed left margin">
+  
+                 <h2>News</h2>
+                 
+                <div id="tumblrFeed"></div>
+            </div>
+           
+            <div class="column left">
+               <h2>Robin Willis</h2>
+             <div id="photo">
+                    <img alt="profile" src="top/img/profile.jpg" />
+                  </div>
+                     
+                      <p>I am a critical and creative workaholic who left Los Angeles for New York City to study art and design at The Cooper Union school of Art, and then Cambridge to study architecture at MIT. Now I live and work at <a href="http://sunglass.io" target="_blank">Sunglass</a> in San Francisco. The rest is a long story.</p>
+                   <div id="twitter"></div>
+            </div>
+           
+        </div>
+        <div style="clear:both"></div>
+        
+        <div id="footer">
+            <div class="left">
+                &copy; 2012 Robin Willis 
+            </div>
+            <div class="right" style="margin-right:-30px">
+                 <span>
+         <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.robincwillis.com&amp;send=false&amp;layout=button_count&amp;width=70&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>  </span>
+         <span >      
+         <a href="https://twitter.com/share"  class="twitter-share-button" data-url="http://www.robincwillis.com" data-count="horizontal" data-via="robincwillis">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+         </span>
+            
+         <!-- customized for a specific address -->
+           <div class="g-plusone" data-size="medium" href="http://www.robincwillis.com" ></div>
+         <!-- include the JS file -->
+         <script src="https://apis.google.com/js/plusone.js"></script>
+            </div>
+        </div>
+        </div>        
+    </body>
+</html>
