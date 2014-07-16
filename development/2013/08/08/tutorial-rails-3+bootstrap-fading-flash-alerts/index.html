@@ -114,7 +114,7 @@
 <div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">product</span> <span class="nb">name</span><span class="ss">:string</span>
 </code></pre></div>
 <p>And generate a migration for the <code class="inline-code">acts_as_taggable_on</code></p>
-<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="n">acts_as_taggable_on</span><span class="ss">:migration</span>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="ss">acts_as_taggable_on</span><span class="p">:</span><span class="n">migration</span>
 </code></pre></div>
 <p>migrate the database</p>
 <div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rake</span> <span class="ss">db</span><span class="p">:</span><span class="n">migrate</span>
@@ -141,7 +141,7 @@
 <a name="line-3"></a>  <span class="k">top</span><span class="o">:</span><span class="m">20px</span><span class="p">;</span>
 <a name="line-4"></a>  <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
 <a name="line-5"></a>  <span class="k">z-index</span><span class="o">:</span><span class="m">10000</span><span class="p">;</span>
-<a name="line-6"></a>  <span class="k">width</span><span class="o">:</span><span class="m">100</span><span class="o">%</span><span class="p">;</span>
+<a name="line-6"></a>  <span class="k">width</span><span class="o">:</span><span class="m">100%</span><span class="p">;</span>
 <a name="line-7"></a><span class="p">}</span>
 </code></pre></div>
 <p>and also lets add a style for our alert to make sure it doesn’t stretch across the whole page</p>

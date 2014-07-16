@@ -137,7 +137,7 @@
 <div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">product</span> <span class="nb">name</span><span class="ss">:string</span>
 </code></pre></div>
 <p>And generate a migration for the <code class="inline-code">acts_as_taggable_on</code></p>
-<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="n">acts_as_taggable_on</span><span class="ss">:migration</span>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="ss">acts_as_taggable_on</span><span class="p">:</span><span class="n">migration</span>
 </code></pre></div>
 <p>migrate the database</p>
 <div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rake</span> <span class="ss">db</span><span class="p">:</span><span class="n">migrate</span>
@@ -167,7 +167,7 @@
 <div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="n">validates</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">presence</span><span class="p">:</span> <span class="kp">true</span>
 </code></pre></div>
 <p>Ok time to move onto the controller. Since we want people to get hints on existing tags using Bootstraps Typeahead, we need to offer our view a list of all the existing tags in the system. open <code class="inline-code">app/controllers/products_controller.rb</code> and in your new and edit actions add this variable.</p>
-<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="vi">@autocomplete_items</span> <span class="o">=</span> <span class="ss">ActsAsTaggableOn</span><span class="p">:</span><span class="ss">:Tag</span><span class="o">.</span><span class="n">all</span>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="vi">@autocomplete_items</span> <span class="o">=</span> <span class="no">ActsAsTaggableOn</span><span class="o">::</span><span class="no">Tag</span><span class="o">.</span><span class="n">all</span>
 </code></pre></div>
 <p>Now its time for the magic, we are going to add the form and javascript that makes it all work. Open up <code class="inline-code">app/views/products/_form.html.erb</code></p>
 
