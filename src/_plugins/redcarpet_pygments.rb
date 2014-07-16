@@ -5,8 +5,8 @@ module Jekyll
     class Markdown < Converter
       safe true
 
-      pygments_prefix "\n"
-      pygments_suffix "\n"
+      highlighter_prefix "\n"
+      highlighter_suffix "\n"
 
       def setup
         return if @setup
@@ -69,7 +69,7 @@ module Jekyll
 
             def codespan(code)
               "<code class=\"inline-code\">#{code}</code>" # Inline code custom class
-            end 
+            end
           end
         rescue LoadError
           STDERR.puts 'You are missing a library required for Markdown. Please run:'
