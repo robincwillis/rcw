@@ -1,6 +1,6 @@
 name: RCW
 markdown: redcarpet-pygments
-pygments: true
+highlighter: pygments
 source: ./src
 destination: ./development
 paginate: 10
