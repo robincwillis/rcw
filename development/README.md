@@ -1,5 +1,8 @@
 Tagline
 
+What It Do
+Prepare For Titanfall
+
 Front-end Development
 ----------------------------
 Web development is a constantly shifting territory. I am dedicated to writing beautiful code that performs with clarity and simplicity, while keeping abreast of the direction of development by following trends and emerging technologies.
