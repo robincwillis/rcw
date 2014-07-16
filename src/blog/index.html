@@ -1,0 +1,17 @@
+---
+layout: default
+title: Blog
+---
+<div class="container-fluid">
+	<div class="row-fluid">
+		{% include sidebar.html %}
+			<div class="span9 offset1">
+				{% for post in site.posts %}
+					<div class="row-fluid">
+						{% include excerpt.html %}
+						{% include meta.html %}
+					</div>
+				{% endfor %}
+		</div>
+	</div>
+</div>

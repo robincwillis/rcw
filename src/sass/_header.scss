@@ -1,0 +1,130 @@
+  /* header */
+
+  .navbar-fixed-top { top: 0; padding-top:50px;}
+
+
+    .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+      color:#000;
+      background-color: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      border:none;
+      background-image:none;
+      margin-bottom: 0px;
+  }
+
+    .navbar{
+
+      //@include transition(padding-top, .75s, ease-in-out);
+      //@include transition(background-color, .75s, ease-in-out);
+
+      @include vendorize(transition, (padding-top .75s ease-in-out, background-color  .75s ease-in-out) );
+
+      background-color:#fff;
+      background-color:rgba(255,255,255,0.9);
+
+
+     .brand {
+        font-family: "montserratbold", 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+        color:#000;
+        text-shadow: none;
+        font-size: 16px;
+        margin-left:5px;
+      }
+
+      .btn-navbar {
+        background-color: transparent;
+        background-image: none;
+        border:none;
+        box-shadow: none;
+
+         .icon-bar {
+            box-shadow: none;
+            background-color: #000;
+          }
+      }
+
+      .nav>li>a {
+          color: #000;
+          font-family: 'montserratregular', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+          font-size:12px;
+          text-shadow: none;
+      }
+
+      .nav>li>a:hover {
+        background-color: rgba(0,0,0,0.1);
+        border-radius: 3px;
+      }
+
+      hr{
+        margin: 0 25px;
+        border: 0;
+        border-top: 1px solid #000;
+        border-bottom: none;
+      }
+
+  }
+
+
+.navbar-inverse{
+
+  background-color:transparent;
+
+  .brand{
+    color:#fff;
+    font-family: "montserratbold", 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    text-shadow: none;
+    font-size: 16px;
+    margin-left:5px;
+  }
+
+  .btn-navbar {
+    background-color: transparent;
+    background-image: none;
+    border:none;
+    box-shadow: none;
+  }
+  .btn-navbar:hover {
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .btn-navbar .icon-bar {
+    box-shadow: none;
+    background-color: #fff;
+  }
+
+  .nav>li>a {
+    font-family: 'montserratregular', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    color: #fff;
+    font-size:12px;
+  }
+
+  .nav>li>a:hover {
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 3px;
+    text-shadow: none;
+  }
+
+  hr{
+    border-top: 1px solid #fff;
+  }
+
+}
+
+
+
+/* header */
+
+.navbar-collapse{
+  padding-top:0;
+  top:0;
+  .collapse{
+    margin-top:4px;
+  }
+
+  hr{
+    display: none;
+  }
+
+}

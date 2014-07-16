@@ -1,0 +1,55 @@
+---
+layout: default
+title: Home
+---
+{% include splash.html %}
+<!-- tag line -->
+<div class="grey-block-md center">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<h1>What it do?</h1>
+			<h1 class="serif">Standby For Titanfall</h1>
+		</div>
+	</div>
+</div>
+<!-- Summary -->
+{% include summary.html %}
+<!-- slideshow -->
+{% include slideshow.html %}
+<!-- blog list -->
+<div class="white-block-md center">
+<div class="container-fluid">
+	<div class="row-fluid">
+		<h2>Recent Posts</h2>
+	</div>
+	<div class="row-fluid">
+		<hr class="hr-100">
+	</div>
+	<div class="row-fluid">
+	<ul class="unstyled post-summary span8 offset2">
+		{% for post in site.posts limit:3 %}
+		<li>
+			<h1 class="serif"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+			<p>{{ post.description }}</p>
+			<a href="{{ post.url }}">Read More</a>
+		</li>
+		{% endfor %}
+	</ul>
+	</div>
+<a href="http://blog.robincwillis.com" class="btn btn-large">View Blog</a>
+</div>
+</div>
+<!-- project thumbs -->
+{% include project_thumbs.html %}
+<!-- get in touch -->
+<div class="white-block-md center">
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span6 offset3 get-in-touch">
+			<h2>Get In Touch</h2>
+			<p>If you have an enquiry regarding an exciting new project, or would like to discuss any future projects you may have in mind, feel free to drop me a mail. Equally, if you are just passing by and simply want to say hello.</p>
+			<a href="mailto:hello@robincwillis.com" class="btn btn-large">Send an Email</a>
+		</div>
+	</div>
+</div>
+</div>

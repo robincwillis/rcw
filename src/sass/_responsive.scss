@@ -1,0 +1,55 @@
+   /* responsive */
+
+@media (max-width: 979px){
+      .navbar-fixed-top{
+        position:fixed;
+      }
+      .navbar hr{
+        margin:0 15px;
+      }
+}
+
+ @media (max-width: 767px){
+
+  body{
+    padding:0;
+  }
+
+  .slideshow{
+    margin:0;
+  }
+
+  .slideshow-controls{
+    display: none;
+  }
+
+  .row-fluid .thumbnails{
+    margin:0;
+  }
+
+  .slideshow .slideshow-content .slideshow-img .info img{
+    margin-top:0;
+  }
+
+  .slideshow .slideshow-content .slideshow-img .info h1{
+    font-size:24px;
+    line-height: 24px;
+  }
+
+  .slideshow .slideshow-content .slideshow-img .info a.btn{
+    display: none;
+  }
+
+ }
+
+@media (max-width: 640px){
+
+  .splash h1{
+    font-size: 46px;
+  }
+
+  .splash h2{
+    padding: 0 20px;
+  }
+
+}

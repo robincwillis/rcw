@@ -1,0 +1,83 @@
+@import '../assets/fonts/bitstreamvera/stylesheet.css';
+@import '../assets/fonts/montserrat/stylesheet.css';
+@import '../assets/fonts/crimson/stylesheet.css';
+
+$home_url : 			"http://s3.amazonaws.com/robincwillis/";
+$code_url : 			"http://s3.amazonaws.com/robincwillis-code/";
+$blog_url : 			"http://s3.amazonaws.com/robincwillis-blog/";
+$portfolio_url : 	"http://s3.amazonaws.com/robincwillis-portfolio/";
+$demo_url : 			"http://s3.amazonaws.com/robincwillis-blog/demo/";
+$banner_url : 		"http://s3.amazonaws.com/robincwillis-code/img/";
+$img_url : 				"http://s3.amazonaws.com/robincwillis/img/";
+
+$black : #000;
+$light-grey : #f9f9f9;
+$grey : #ccc;
+$gutter : 25px;
+$max-width : 1200px;
+
+$gutter-2 : 150px;
+
+html, body{
+	height:100%;
+}
+
+body{
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*{
+	@include box-sizing;
+}
+
+a, textarea, input, button { outline: none; }
+
+.container-fluid{
+	max-width:$max-width;
+	margin:0 auto;
+}
+
+
+@media (max-width:$max-width + $gutter * 2){
+	.container-fluid{
+		margin-left:$gutter;
+		margin-right:$gutter;
+	}
+}
+
+::selection {
+
+}
+::-moz-selection {
+}
+
+.full-width{
+	margin-left:-100%;
+    margin-right:-100%;
+}
+
+
+.clear{
+	clear:both;
+}
+
+.centered{
+   display: table;
+   width: 100%;
+   height:100%;
+}
+.content{
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 54.1%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}

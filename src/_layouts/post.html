@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		{% include sidebar.html %}
+		<div class="span9 offset1">
+			<div class="span9">
+				<h2>{{ page.title }}</h2>
+				<div class="post">
+				{{ content }}
+				</div>
+			</div>
+				{% include meta.html %}
+		</div>
+
+	</div>
+</div>

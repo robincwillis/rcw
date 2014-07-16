@@ -1,0 +1,7 @@
+name: RCW
+markdown: redcarpet-pygments
+pygments: true
+source: ./src
+destination: ./development
+paginate: 10
+permalink: pretty
