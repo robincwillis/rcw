@@ -121,7 +121,7 @@
 		<div class="row-fluid">
 			<div class="span8 offset2">
 				<h1 class="serif">Custom Mapper</h1>
-				<p>Google Maps Trace makes it easy to align custom image overlay geometry with an underlying Google Map and retrieve the bounds for that overlay. I had a couple of projects that wanted to use the navigation and geographical features of Google Maps but with total custom geometry and styles for features such as land, roads, buildings etc. Luckily this is easily accomplished using image overlays with svg/png fallback. Unfortonuly there aren't any simple tools out there to align the overlay's geometry with Google Map's. That's where this comes in.</p>
+				<p>Often times projects demanded the same degree of customization and behavior from Google Maps in terms of Appearance. This can all be accomplished through Google Maps API, but rather than build these custom maps over and over again this is an attempt at packaging that functionality into a couple of classes which provide an easy interface for custom styles for the map, custom Marker images including hover and selected states, dynamic html content in Markers, custom infoboxes for each marker. All of the map and marker data, styles and content are loaded from json object to generate the custom map.</p>
 				<div class="center">
 				<a href="" target="_blank" class="btn btn-large center">Project Page</a>
 			</div>
@@ -138,7 +138,7 @@
 		<div class="row-fluid">
 			<div class="span8 offset2">
 				<h1 class="serif">Google Maps Trace</h1>
-				<p>Often times projects demanded the same degree of customization and behavior from Google Maps in terms of Appearance. This can all be accomplished through Google Maps API, but rather than build these custom maps over and over again this is an attempt at packaging that functionality into a couple of classes which provide an easy interface for custom styles for the map, custom Marker images including hover and selected states, dynamic html content in Markers, custom infoboxes for each marker. All of the map and marker data, styles and content are loaded from json object to generate the custom map.</p>
+				<p>Google Maps Trace makes it easy to align custom image overlay geometry with an underlying Google Map and retrieve the bounds for that overlay. I had a couple of projects that wanted to use the navigation and geographical features of Google Maps but with total custom geometry and styles for features such as land, roads, buildings etc. Luckily this is easily accomplished using image overlays with svg/png fallback. Unfortonuly there aren't any simple tools out there to align the overlay's geometry with Google Map's. That's where this comes in.</p>
 				<div class="center">
 				<a href="" target="_blank" class="btn btn-large center">Project Page</a>
 			</div>
@@ -327,6 +327,6 @@
                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                })();
-    </script>
+        </script>
     </body>
 </html>

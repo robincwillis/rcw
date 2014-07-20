@@ -68,4 +68,4 @@ $(window).resize(function(){
 ~~~~~
 
 
-The Result: [View Demo](/demo/splash/)
+The Result: [View Demo]({{site.data.s3.demo}}splash/)

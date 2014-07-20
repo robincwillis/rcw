@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Mobile Touch Events"
-tags: jekyll
+tags: mobile javascript touch events
 published: false
+description: coming soon
 ---
 
 

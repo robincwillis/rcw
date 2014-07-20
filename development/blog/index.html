@@ -86,6 +86,39 @@
 				
 					<div class="row-fluid">
 						<div class="span9 post">
+  <h2><a href="/2014/03/08/social-icons/">Social Icons</a></h2>
+  
+    <p>
+    <p>Social icons are pretty much a ubiquitous component on any site or even post. This is how I like to do them. I use anchors with overlapping elements with alternate states on the same svg sprite and then transition the opacity property between them. This is a neat trick for getting a css3 transitions working for image backgrounds.</p>
+
+<p>You don&#39;t have to use svg, you could use a png with 2x fallback for retina, but come on lets all get down with vector everything and kiss support for IE8 goodbye. Another way would be to package these into a font-face and then just transition the color. I haven&#39;t gotten around to that yet. Click Read More to checkout the code and demo.</p>
+
+
+    </p>
+    <p><h4><a href="/2014/03/08/social-icons/">Read more...</a></h4></p>
+    
+</div>
+						<div class="span3 meta">
+	
+		<p class="date">8 March 2014</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/tag/social">social</a></li>
+	  
+	  <li><a href="/tag/icons">icons</a></li>
+	  
+	  <li><a href="/tag/css3">css3</a></li>
+	  
+	
+	</ul>
+</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span9 post">
   <h2><a href="/2014/02/23/mario-clouds/">Super Mario Clouds</a></h2>
   
     <p><p><img src="http://s3.amazonaws.com/robincwillis-blog/img/arcangel-super-mario-clouds.gif" alt="Mario Clouds"></p>
@@ -246,7 +279,7 @@ click Read More to see the code.</p>
 
 
     </p>
-    <p><h3><a href="/2014/02/14/helix-loader/">Read more...</a></h3></p>
+    <p><h4><a href="/2014/02/14/helix-loader/">Read more...</a></h4></p>
     
 </div>
 						<div class="span3 meta">
@@ -300,59 +333,83 @@ click Read More to see the code.</p>
 				
 					<div class="row-fluid">
 						<div class="span9 post">
-  <h2><a href="/2014/01/20/helvetica-neue-font-stack/">Helvetica Neue Font Stack</a></h2>
+  <h2><a href="/2014/01/25/google-maps-trace/">Google Maps Trace</a></h2>
   
-    <p><p>I can never remember all of these, so just putting it here for convenience.</p>
-<div class="highlight"><pre><code class="css"><a name="line-1"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueBlack&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Black&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Black&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial Black&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:800</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:normal</span><span class="o">;</span>
-<a name="line-2"></a>
-<a name="line-3"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueHeavy&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Heavy&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Heavy&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial Black&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:700</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:normal</span><span class="o">;</span>
-<a name="line-4"></a>
-<a name="line-5"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueBold&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Bold&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Bold&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:600</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:normal</span><span class="o">;</span>
-<a name="line-6"></a>
-<a name="line-7"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueMedium&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Medium&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Medium&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:500</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:normal</span><span class="o">;</span>
-<a name="line-8"></a>
-<a name="line-9"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueRoman&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Roman&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Roman&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:400</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:normal</span><span class="o">;</span>
-<a name="line-10"></a>
-<a name="line-11"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueLight&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Light&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Light&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:300</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:normal</span><span class="o">;</span>
-<a name="line-12"></a>
-<a name="line-13"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueThin&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Thin&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Thin&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:200</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:normal</span><span class="o">;</span>
-<a name="line-14"></a>
-<a name="line-15"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueUltraLight&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Ultra-Light&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Ultra Light&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:100</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:normal</span><span class="o">;</span>
-<a name="line-16"></a>
-<a name="line-17"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueBlackExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Black-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Black Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueBlack&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Black&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Black&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial Black&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:800</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:expanded</span><span class="o">;</span>
-<a name="line-18"></a>
-<a name="line-19"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueHeavyExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Heavy-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Heavy Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueHeavy&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Heavy&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Heavy&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial Black&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:700</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:expanded</span><span class="o">;</span>
-<a name="line-20"></a>
-<a name="line-21"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueBoldExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Bold-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Bold Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueBold&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Bold&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Bold&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:600</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:expanded</span><span class="o">;</span>
-<a name="line-22"></a>
-<a name="line-23"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueMediumExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Medium-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Medium Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueMedium&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Medium&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Medium&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:500</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:expanded</span><span class="o">;</span>
-<a name="line-24"></a>
-<a name="line-25"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueRomanExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Roman-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Roman Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueRoman&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Roman&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Roman&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:400</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:expanded</span><span class="o">;</span>
-<a name="line-26"></a>
-<a name="line-27"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueLightExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Light-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Light Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueLight&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Light&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Light&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:300</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:expanded</span><span class="o">;</span>
-<a name="line-28"></a>
-<a name="line-29"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueThinExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Thin-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Thin Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueThin&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Thin&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Thin&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:200</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:expanded</span><span class="o">;</span>
-<a name="line-30"></a>
-<a name="line-31"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueUltraLightExtended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Ultra-Light-Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Ultra Light Extended&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueUltraLight&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Ultra-Light&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Ultra Light&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:100</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:expanded</span><span class="o">;</span>
-<a name="line-32"></a>
-<a name="line-33"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueBlackCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Black-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Black Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueBlack&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Black&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Black&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosCnBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:800</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:condensed</span><span class="o">;</span>
-<a name="line-34"></a>
-<a name="line-35"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueHeavyCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Heavy-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Heavy Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueHeavy&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Heavy&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Heavy&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosCnBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:700</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:condensed</span><span class="o">;</span>
-<a name="line-36"></a>
-<a name="line-37"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueBoldCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Bold-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Bold Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueBold&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Bold&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Bold&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosCnBold&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:600</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:condensed</span><span class="o">;</span>
-<a name="line-38"></a>
-<a name="line-39"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueMediumCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Medium-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Medium Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueMedium&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Medium&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Medium&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosCnRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:500</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:condensed</span><span class="o">;</span>
-<a name="line-40"></a>
-<a name="line-41"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueRomanCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Roman-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Roman Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueRoman&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Roman&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Roman&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosCnRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:400</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:condensed</span><span class="o">;</span>
-<a name="line-42"></a>
-<a name="line-43"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueLightCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Light-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Light Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueLight&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Light&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Light&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosCnRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Helvetica&quot;</span><span class="o">,</span> <span class="s2">&quot;Tahoma&quot;</span><span class="o">,</span> <span class="s2">&quot;Geneva&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:300</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:condensed</span><span class="o">;</span>
-<a name="line-44"></a>
-<a name="line-45"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueThinCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Thin-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Thin Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueThin&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Thin&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Thin&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosCnRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:200</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:condensed</span><span class="o">;</span>
-<a name="line-46"></a>
-<a name="line-47"></a><span class="nt">font-family</span><span class="o">:</span> <span class="s2">&quot;HelveticaNeueUltraLightCondensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Ultra-Light-Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Ultra Light Condensed&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeueUltraLight&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue-Ultra-Light&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue Ultra Light&quot;</span><span class="o">,</span> <span class="s2">&quot;HelveticaNeue&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="s1">&#39;TeXGyreHerosCnRegular&#39;</span><span class="o">,</span> <span class="s2">&quot;Arial Narrow&quot;</span><span class="o">,</span> <span class="s2">&quot;Arial&quot;</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span> <span class="nt">font-weight</span><span class="nd">:100</span><span class="o">;</span> <span class="nt">font-stretch</span><span class="nd">:condensed</span><span class="o">;</span>
-</code></pre></div></p>
+    <p><p><img src="http://s3.amazonaws.com/robincwillis-blog/img/google-maps-trace.jpg" alt="Google Maps Trace"></p>
+
+<p>I recently started a new project aimed at making it easier to align image overlays onto Google Maps.</p>
+
+<p>Google Maps Trace makes it easy to align custom image overlay geometry with an underlying Google Map and retrieve the bounds for that overlay. I had a couple of projects that wanted to use the navigation and geographical features of Google Maps but with total custom geometry and styles for features such as land, roads, buildings etc. Luckily this is easily accomplished using image overlays with svg/png fallback. Unfortonuly there aren&#39;t any simple tools out there to align the overlay&#39;s geometry with Google Map&#39;s. That&#39;s where this comes in.</p>
+
+<p><a href="http://robincwillis.github.io/GoogleMapsTrace">View Project</a> or
+Fork it on <a href="https://github.com/robincwillis/GoogleMapsTrace">Github</a></p>
+</p>
 
   
+</div>
+						<div class="span3 meta">
+	
+		<p class="date">25 January 2014</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/tag/google">google</a></li>
+	  
+	  <li><a href="/tag/maps">maps</a></li>
+	  
+	  <li><a href="/tag/javascript">javascript</a></li>
+	  
+	
+	</ul>
+</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span9 post">
+  <h2><a href="/2014/01/24/custom-mapper/">Custom Mapper</a></h2>
+  
+    <p><p><img src="http://s3.amazonaws.com/robincwillis-blog/img/custom-mapper-ui.png" alt="Custom Mapper"></p>
+
+<p>Often times projects demanded the same degree of customization and behavior from Google Maps in terms of Appearance. This can all be accomplished through Google Maps API, but rather than build these custom maps over and over again this is an attempt at packaging that functionality into a couple of classes which provide an easy interface for custom styles for the map, custom Marker images including hover and selected states, dynamic html content in Markers, custom infoboxes for each marker. All of the map and marker data, styles and content are loaded from json object to generate the custom map.</p>
+
+<p><a href="http://robincwillis.github.io/CustomMapper">View Project</a> or
+Fork it on <a href="https://github.com/robincwillis/CustomMapper">Github</a></p>
+</p>
+
+  
+</div>
+						<div class="span3 meta">
+	
+		<p class="date">24 January 2014</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/tag/google">google</a></li>
+	  
+	  <li><a href="/tag/maps">maps</a></li>
+	  
+	  <li><a href="/tag/javascript">javascript</a></li>
+	  
+	
+	</ul>
+</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span9 post">
+  <h2><a href="/2014/01/20/helvetica-neue-font-stack/">Helvetica Neue Font Stack</a></h2>
+  
+    <p>
+    <p>I can never remember all of these, so just putting it here for convenience. Click read more to see the lengthy font stack</p>
+
+
+    </p>
+    <p><h4><a href="/2014/01/20/helvetica-neue-font-stack/">Read more...</a></h4></p>
+    
 </div>
 						<div class="span3 meta">
 	
@@ -365,6 +422,8 @@ click Read More to see the code.</p>
 	  <li><a href="/tag/helvetica">helvetica</a></li>
 	  
 	  <li><a href="/tag/css3">css3</a></li>
+	  
+	  <li><a href="/tag/fonts">fonts</a></li>
 	  
 	
 	</ul>
@@ -653,7 +712,7 @@ click Read More to see the code.</p>
 
 
     </p>
-    <p><h3><a href="/2014/01/16/css3-preloader/">Read more...</a></h3></p>
+    <p><h4><a href="/2014/01/16/css3-preloader/">Read more...</a></h4></p>
     
 </div>
 						<div class="span3 meta">
@@ -723,7 +782,7 @@ click Read More to see the code.</p>
 <a name="line-8"></a>    <span class="nx">setSplashHeight</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.splash&#39;</span><span class="p">));</span>
 <a name="line-9"></a><span class="p">}).</span><span class="nx">resize</span><span class="p">();</span>
 </code></pre></div>
-<p>The Result: <a href="/demo/splash/">View Demo</a></p>
+<p>The Result: <a href="http://robincwillis-blog.s3-website-us-east-1.amazonaws.com/demo/splash/">View Demo</a></p>
 </p>
 
   
@@ -741,6 +800,86 @@ click Read More to see the code.</p>
 	  <li><a href="/tag/javascript">javascript</a></li>
 	  
 	  <li><a href="/tag/jquery">jquery</a></li>
+	  
+	
+	</ul>
+</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span9 post">
+  <h2><a href="/2014/01/03/robocons/">Robocons</a></h2>
+  
+    <p><p><img src="http://s3.amazonaws.com/robincwillis-blog/img/robocon-banner.jpg" alt="Custom Mapper"></p>
+
+<p>Every designer has there own curated / authored and tweaked collection of go to icons for various UI elements, I decided to collect and release my own.</p>
+
+<p>Robocons is constantly evolving set of icons (80 and counting) that I develop in response to common User Interface needs that appear during development. Icon&#39;s range from basic navigational elements, media controls to quirky characters and include different weights in some cases. It is completely free, open source and comes in SVG TTF WOFF and EOT.</p>
+
+<p>Fork it on <a href="https://github.com/robincwillis/Robocons">Github</a></p>
+</p>
+
+  
+</div>
+						<div class="span3 meta">
+	
+		<p class="date">3 January 2014</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/tag/icons">icons</a></li>
+	  
+	  <li><a href="/tag/UI/UX">UI/UX</a></li>
+	  
+	  <li><a href="/tag/svg">svg</a></li>
+	  
+	  <li><a href="/tag/free">free</a></li>
+	  
+	
+	</ul>
+</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span9 post">
+  <h2><a href="/2013/10/05/jekyll-themes/">Jekyll Themes</a></h2>
+  
+    <p><p>In case you wanted to know this blog is powered by <img src="http://jekyllrb.com/" alt="Jekyll">, the nerdiest blogging platform (or generator rather). I have become a huge fan for its super simple approach both in content management and design. While playing around I developed two themes. Both are available on Github.</p>
+
+<h2>Caviar</h2>
+
+<p><img src="http://s3.amazonaws.com/robincwillis-blog/img/caviar.png" alt="Custom Mapper"></p>
+
+<p>Fork it on <a href="https://github.com/robincwillis/Caviar">Github</a></p>
+
+<p>and</p>
+
+<h2>Pyramid</h2>
+
+<p><img src="http://s3.amazonaws.com/robincwillis-blog/img/pyramid.png" alt="Custom Mapper"></p>
+
+<p>Fork it on <a href="https://github.com/robincwillis/Pyramid">Github</a></p>
+</p>
+
+  
+</div>
+						<div class="span3 meta">
+	
+		<p class="date">5 October 2013</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/tag/jekyll">jekyll</a></li>
+	  
+	  <li><a href="/tag/theme">theme</a></li>
+	  
+	  <li><a href="/tag/css">css</a></li>
+	  
+	  <li><a href="/tag/responsive">responsive</a></li>
 	  
 	
 	</ul>
@@ -875,7 +1014,7 @@ click Read More to see the code.</p>
 
 
     </p>
-    <p><h3><a href="/2013/08/08/tutorial-rails-3+bootstrap-fading-flash-alerts/">Read more...</a></h3></p>
+    <p><h4><a href="/2013/08/08/tutorial-rails-3+bootstrap-fading-flash-alerts/">Read more...</a></h4></p>
     
 </div>
 						<div class="span3 meta">
@@ -938,7 +1077,7 @@ click Read More to see the code.</p>
 
 
     </p>
-    <p><h3><a href="/2013/07/25/tutorial-rails-3-tags-with-tag-manager/">Read more...</a></h3></p>
+    <p><h4><a href="/2013/07/25/tutorial-rails-3-tags-with-tag-manager/">Read more...</a></h4></p>
     
 </div>
 						<div class="span3 meta">
@@ -968,7 +1107,7 @@ click Read More to see the code.</p>
   
     <p><h4>a Japanese to English Slang Dictionary</h4>
 
-<p>I just launched Haruka, my first Ruby on Rails app!</p>
+<p>I just launched <a href="https://haruka.io">Haruka.io</a>, my first Ruby on Rails app!</p>
 
 <p>Japanese Slang is constantly mutating and growing and speeds which make conventional dictionaries maintained by specific authorities burdensome or impossible to keep up with. Words are constantly being shortened, combined and invented. Haruka aims the be the simple and definitive Japanese to English slang dictionary by opening its doors to anyone willing to contribute.</p>
 
@@ -985,7 +1124,7 @@ click Read More to see the code.</p>
 <li>Environment Variables allow you to easily customize and deploy to your own server.</li>
 </ol>
 
-<h3>Its open source! go fork it on github!</h3>
+<h3>Its open source! go fork it on <a href="https://github.com/robincwillis/Haruka">Github</a>!</h3>
 </p>
 
   
@@ -1127,6 +1266,6 @@ click Read More to see the code.</p>
                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                })();
-    </script>
+        </script>
     </body>
 </html>

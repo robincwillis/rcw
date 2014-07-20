@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "Helvetica Neue Font Stack"
-tags: helvetica css3
+tags: helvetica css3 fonts
 published: true
 ---
 
-I can never remember all of these, so just putting it here for convenience.
+I can never remember all of these, so just putting it here for convenience. Click read more to see the lengthy font stack
+
+<!--more-->
 
 ~~~~~css
 

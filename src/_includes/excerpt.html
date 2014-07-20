@@ -4,7 +4,7 @@
     <p>
     {{ post.content | split:'<!--more-->' | first }}
     </p>
-    <p><h3><a href="{{ post.url }}">Read more...</a></h3></p>
+    <p><h4><a href="{{ post.url }}">Read more...</a></h4></p>
     {% else %}
     <p>{{ post.content }}</p>
 
