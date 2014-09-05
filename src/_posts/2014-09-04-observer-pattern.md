@@ -3,7 +3,7 @@ layout: post
 title: "The Observer Pattern"
 tags: javascript design pattern observer publish subscribe
 published: true
-description: asdf
+description: A drop dead simple example for getting started with and understanding the Observer pattern in JavaScript
 ---
 
 I recently worked on a project that was well suited for the <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#observerpatternjavascript" target="_blank">Observer</a> design pattern in JavaScript. Similar to the <a href="http://davidwalsh.name/pubsub-javascript" target="_blank">Publish/Subscribe</a> pattern, the basic concept behind this pattern is a single object that broadcasts notifications to a collection of other objects which <i>observe</i> it. This allows objects to communicate across easily while clarifying the relationships between them, especially given the event driven nature of JavaScript applications.
