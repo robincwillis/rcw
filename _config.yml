@@ -3,5 +3,27 @@ markdown: redcarpet-pygments
 highlighter: pygments
 source: ./src
 destination: ./development
-paginate: 10
 permalink: pretty
+url: "http://robincwillis.com"
+paginate: 5
+paginate_path: "blog/page:num"
+description: "Robin Willis is an artist, designer and web developer"
+image: "http://s3.amazonaws.com/robincwillis/img/splash/03.jpg"
+keywords: -robin
+ -willis
+ -robin willis
+ -robincwillis
+ -rcw
+ -code
+ -art
+ -design
+ -architecture
+ -3d
+ -development
+ -engineering
+ -software
+ -javascript
+ -html5
+ -css
+ -ruby
+ -rails
