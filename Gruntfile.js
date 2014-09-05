@@ -59,15 +59,17 @@ module.exports = function(grunt) {
 
 		jekyll: {
 			server : {
+				options : {
 				src : 'src',
 				dest: 'development',
-				server : true,
+				serve : true,
 				server_port : 8000,
 				auto : true
+				}
 			},
 			dev: {
 				src: 'src',
-				dest: 'development'
+				dest: 'development',
 			},
 			prod: {
 				src: 'src',

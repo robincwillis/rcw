@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CSS3 Preloader"
-tags: css3 html
+tags: css3 html animation
 published: true
 ---
 
