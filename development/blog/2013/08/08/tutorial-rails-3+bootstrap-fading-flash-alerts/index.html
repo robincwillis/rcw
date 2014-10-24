@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie ie9 ie8 ie7"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie ie9 ie8"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie ie9"> <![endif]-->
+<!--[if IE 9 ]>         <html class="ie ie9"> <![endif]-->
+<!--[if IE 10]>         <html class="no-js ie ie10"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js"> <!--<![endif]-->
+<!-- [if !IE]><!-->     <html><!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>RCW Rails 3 & Bootstrap Fading Flash Alerts</title>
+        <!-- META -->
+        
+        <meta name="description" content="Robin Willis is an artist, designer and web developer" />
+        
+        
+        <meta name="keywords" content="tutorial,rails,bootstrap" />
+        
+        <meta name="author" content="Robin Willis" />
+        <!-- OG -->
+        <meta property="og:title" content="RCW | Rails 3 & Bootstrap Fading Flash Alerts" />
+        
+        <meta property="og:description" content="Robin Willis is an artist, designer and web developer" />
+        
+        
+        <meta property="og:image" content="http://s3.amazonaws.com/robincwillis/img/splash/03.jpg" />
+        
+
+        <!-- ICON -->
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+        <link rel="icon" href="/favicon.png" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <!-- IOS -->
+        <meta name="apple-mobile-web-app-title" content="Robin Willis">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+        <!-- vendor CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/vendor/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap-responsive.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+        <script type="text/javascript" src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    </head>
+    <body class="Rails 3 & Bootstrap Fading Flash Alerts">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+          	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<div class="row-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a href="/" class="brand">RCW</a>
+				<div class="nav-collapse collapse pull-right">
+					<ul class="nav">
+						<li><a href="/blog" title="Blog">BLOG</a></li>
+						<li><a href="http://portfolio.robincwillis.com" title="Work">WORK</a></li>
+						<li><a href="/projects" title="Code">CODE</a></li>
+					</ul>
+				</div>
+				</div>
+				<div class="row-fluid">
+						<hr>
+				</div>
+
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+
+</div>
+          <div class="container-fluid container-blog">
+	<div class="row-fluid">
+		<!--<div class="span2">
+   <ul class="unstyled sidebar">
+    <li><h4><a href="/">Posts</a></h4></li>
+    <li><h4><a href="/projects">Projects</a></h4></li>
+    <li><img src="/assets/img/profile.png"></li>
+    <li>
+      <h4>Robin Willis</h4>
+      <p class="small">is a critical and creative workaholic who left Los Angeles for New York City to study art and design at The Cooper Union school of Art, and then Cambridge to study architecture at MIT. I'm back in New York. The rest is a long story.</p>
+    </li>
+  </ul>
+</div>
+-->
+			<div class="span8">
+				<h2>Rails 3 & Bootstrap Fading Flash Alerts</h2>
+				<div class="post">
+				<p>I wanted to publish a tutorial on how to easily make temporary flash alerts that fade away using Rails 3 flash notices and Bootstrap’s alert class. This technique has some nifty features like passing a key to boostraps alert class, so that a flash indicating success is green, warning is yellow and error is red etc. and be reusable in all your controllers.</p>
+
+<p><img src="http://s3.amazonaws.com/robincwillis-blog/img/fading-flash.jpg" alt="Fading Flash Alerts" title="Fading Flash Alerts"></p>
+
+<!--more-->
+
+<p>Sweet, lets do it. First lets create our application</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="kp">new</span> <span class="n">alert_example</span>
+</code></pre></div>
+<p>Next lets add the boostrap gem to our Gemfile, in our GemFile add.</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="n">gem</span> <span class="s1">&#39;bootstrap-sass&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3.1.2&#39;</span>
+</code></pre></div>
+<p>and run</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">bundle</span> <span class="n">install</span>
+</code></pre></div>
+<p>Add Bootstrap javascript to the asset pipeline. by adding this line to <code class="inline-code">alert_example/app/assets/javascripts/application.js</code></p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="sr">//</span><span class="o">=</span> <span class="nb">require</span> <span class="n">bootstrap</span>
+</code></pre></div>
+<p>above the line</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="sr">//</span><span class="o">=</span> <span class="n">require_tree</span> <span class="o">.</span>
+</code></pre></div>
+<p>a few more things we need to do to setup our project remove the default <code class="inline-code">index.html</code> page.</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rm</span> <span class="sr">/tag_example/</span><span class="kp">public</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</code></pre></div>
+<p>Next lets create a model to apply our tagging system to</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">product</span> <span class="nb">name</span><span class="ss">:string</span>
+</code></pre></div>
+<p>And generate a migration for the <code class="inline-code">acts_as_taggable_on</code></p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="ss">acts_as_taggable_on</span><span class="p">:</span><span class="n">migration</span>
+</code></pre></div>
+<p>migrate the database</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rake</span> <span class="ss">db</span><span class="p">:</span><span class="n">migrate</span>
+</code></pre></div>
+<p>The scaffold command makes some css files that we don’t need because we are using Bootstrap, so lets remove it.</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rm</span> <span class="n">alert_example</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">products</span><span class="o">.</span><span class="n">css</span><span class="o">.</span><span class="n">scss</span>
+<a name="line-2"></a><span class="o">&gt;</span> <span class="n">rm</span> <span class="n">alert_example</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">scaffolds</span><span class="o">.</span><span class="n">css</span><span class="o">.</span><span class="n">scss</span>
+</code></pre></div>
+<p>and direct the application to our products. in <code class="inline-code">routes.rb</code> add the line</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="n">root</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s1">&#39;products#index&#39;</span>
+</code></pre></div>
+<p>now lets fire up the server</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">s</span>
+</code></pre></div>
+<p>and add tell our app to start using bootstrap and our own custom styles.</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">touch</span> <span class="n">alert_example</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">custom</span><span class="o">.</span><span class="n">css</span><span class="o">.</span><span class="n">scss</span>
+</code></pre></div>
+<p>and add this line to custom.css.scss</p>
+<div class="highlight"><pre><code class="css"><a name="line-1"></a><span class="k">@import</span> <span class="s2">&quot;bootstrap&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>and while were here lets define our custom styles for the alerts it can be really annoying how alerts appear and push the rest of your content down and then the content jumps back up after it fades away and is removed, so we will make an absolutely positioned container for our alerts to make sure it doesn’t interfere with the rest of our content.</p>
+<div class="highlight"><pre><code class="css"><a name="line-1"></a><span class="nf">#notice</span><span class="p">{</span>
+<a name="line-2"></a>  <span class="k">left</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+<a name="line-3"></a>  <span class="k">top</span><span class="o">:</span><span class="m">20px</span><span class="p">;</span>
+<a name="line-4"></a>  <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+<a name="line-5"></a>  <span class="k">z-index</span><span class="o">:</span><span class="m">10000</span><span class="p">;</span>
+<a name="line-6"></a>  <span class="k">width</span><span class="o">:</span><span class="m">100%</span><span class="p">;</span>
+<a name="line-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>and also lets add a style for our alert to make sure it doesn’t stretch across the whole page</p>
+<div class="highlight"><pre><code class="css"><a name="line-1"></a><span class="nc">.alert-temp</span><span class="p">{</span>
+<a name="line-2"></a>  <span class="k">margin-left</span><span class="o">:</span><span class="m">20px</span><span class="p">;</span>
+<a name="line-3"></a>  <span class="k">margin-right</span><span class="o">:</span><span class="m">20px</span><span class="p">;</span>
+<a name="line-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>next lets add some tags that for each flash notice that gets created we generate a boostrap alert for it and pass it the notices value (its message) and a custom key to define which bootstrap alert class to use. in app/views/layouts/application.html.erb</p>
+<div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;notice&quot;</span><span class="o">&gt;</span>
+<a name="line-2"></a>  <span class="o">&lt;%</span> <span class="nx">flash</span><span class="p">.</span><span class="nx">each</span> <span class="k">do</span> <span class="o">|</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="o">|</span> <span class="o">%&gt;</span>
+<a name="line-3"></a>       <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;alert-temp alert fade in alert-&lt;%= key %&gt;&quot;</span><span class="o">&gt;&lt;%=</span> <span class="nx">value</span> <span class="o">%&gt;&lt;</span><span class="err">/div&gt;</span>
+<a name="line-4"></a>  <span class="o">&lt;%</span> <span class="nx">end</span> <span class="o">%&gt;</span>
+<a name="line-5"></a><span class="o">&lt;</span><span class="err">/div&gt;</span>
+</code></pre></div>
+<p>notice we are using the classes ‘fade’ and ‘in’ these are packaged with boostrap to handle fading elements in and out. it will start out visible with both classes.</p>
+
+<p>We can do the same thing for error messages in our forms if we like. in <code class="inline-code">alert_example/app/views/products/_form.html.erb</code></p>
+<div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="o">&lt;%</span> <span class="k">if</span> <span class="err">@</span><span class="nx">product</span><span class="p">.</span><span class="nx">errors</span><span class="p">.</span><span class="nx">any</span><span class="o">?</span> <span class="o">%&gt;</span>
+<a name="line-2"></a><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&quot;notice&quot;</span><span class="o">&gt;</span>
+<a name="line-3"></a>  <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;alert alert-temp fade in alert-error&quot;</span><span class="o">&gt;</span>
+<a name="line-4"></a>    <span class="o">&lt;%=</span> <span class="nx">pluralize</span><span class="p">(</span><span class="err">@</span><span class="nx">product</span><span class="p">.</span><span class="nx">errors</span><span class="p">.</span><span class="nx">count</span><span class="p">,</span> <span class="s2">&quot;error&quot;</span><span class="p">)</span> <span class="o">%&gt;</span>
+<a name="line-5"></a>    <span class="nx">prohibited</span> <span class="k">this</span> <span class="nx">product</span> <span class="nx">from</span> <span class="nx">being</span> <span class="nx">saved</span><span class="o">:</span>
+<a name="line-6"></a>  <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<a name="line-7"></a>    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+<a name="line-8"></a> <span class="o">&lt;</span><span class="nx">ul</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;unstyled&quot;</span><span class="o">&gt;</span>
+<a name="line-9"></a>      <span class="o">&lt;%</span> <span class="err">@</span><span class="nx">product</span><span class="p">.</span><span class="nx">errors</span><span class="p">.</span><span class="nx">full_messages</span><span class="p">.</span><span class="nx">each</span> <span class="k">do</span> <span class="o">|</span><span class="nx">msg</span><span class="o">|</span> <span class="o">%&gt;</span>
+<a name="line-10"></a>        <span class="o">&lt;</span><span class="nx">li</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;alert alert-error&quot;</span><span class="o">&gt;&lt;%=</span> <span class="nx">msg</span> <span class="o">%&gt;&lt;</span><span class="err">/li&gt;</span>
+<a name="line-11"></a>      <span class="o">&lt;%</span> <span class="nx">end</span> <span class="o">%&gt;</span>
+<a name="line-12"></a>  <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+<a name="line-13"></a>
+<a name="line-14"></a><span class="o">&lt;%</span> <span class="nx">end</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<p>now lets make a little javascript to handle our fading. create the <code class="inline-code">temp-alert.js</code> file</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">touch</span> <span class="n">alert_example</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">temp</span><span class="o">-</span><span class="n">alert</span><span class="o">.</span><span class="n">js</span>
+</code></pre></div>
+<p>open it and in <code class="inline-code">temp-alert.js</code> add this code.</p>
+<div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<a name="line-2"></a>
+<a name="line-3"></a>  <span class="kd">function</span> <span class="nx">fadeAlert</span><span class="p">(){</span>
+<a name="line-4"></a>    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.alert-temp&#39;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s1">&#39;in&#39;</span><span class="p">);</span>
+<a name="line-5"></a>  <span class="p">}</span>
+<a name="line-6"></a>
+<a name="line-7"></a>  <span class="kd">function</span> <span class="nx">removeAlert</span><span class="p">(){</span>
+<a name="line-8"></a>    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.alert-temp&#39;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+<a name="line-9"></a>  <span class="p">}</span>
+<a name="line-10"></a>
+<a name="line-11"></a>  <span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">fadeAlert</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+<a name="line-12"></a>  <span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">removeAlert</span><span class="p">,</span><span class="mi">3000</span><span class="p">);</span>
+<a name="line-13"></a>
+<a name="line-14"></a><span class="p">});</span>
+</code></pre></div>
+<p>So we have two functions, the first will fade the alert by removing the in class, and the second will actually remove the element from the page once it is done fading. They are called on set timeout so you can tweak how long you want the alert to be visible before fading it out. now lets rig our controller to send some awesome flash notices. In <code class="inline-code">alert_example/app/controllers/application_controller.rb</code> For example for our create method we can do</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="k">if</span> <span class="vi">@product</span><span class="o">.</span><span class="n">save</span>
+<a name="line-2"></a>  <span class="nb">format</span><span class="o">.</span><span class="n">html</span> <span class="p">{</span>
+<a name="line-3"></a>    <span class="n">flash</span><span class="o">[</span><span class="ss">:success</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="vi">@product</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> was successfully created.&quot;</span>
+<a name="line-4"></a>    <span class="n">redirect_to</span> <span class="vi">@product</span>
+<a name="line-5"></a>  <span class="p">}</span>
+<a name="line-6"></a><span class="k">else</span>
+<a name="line-7"></a>  <span class="nb">format</span><span class="o">.</span><span class="n">html</span> <span class="p">{</span>
+<a name="line-8"></a>    <span class="n">render</span> <span class="ss">action</span><span class="p">:</span> <span class="s2">&quot;new&quot;</span>
+<a name="line-9"></a>  <span class="p">}</span>
+<a name="line-10"></a><span class="k">end</span>
+</code></pre></div>
+<p>Note, we don’t need to add the flash on error here because we already did it in our form. Thats it, enjoy!</p>
+
+				</div>
+			</div>
+			<div class="span3 offset1 meta">
+				
+
+	
+		<p class="date">8 August 2013</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	
+	  <li><a href="/blog/tag/tutorial">tutorial</a></li>
+	  
+	  <li><a href="/blog/tag/rails">rails</a></li>
+	  
+	  <li><a href="/blog/tag/bootstrap">bootstrap</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/08/08/tutorial-rails-3+bootstrap-fading-flash-alerts/index.html&text=Rails%203%20&amp;%20Bootstrap%20Fading%20Flash%20Alerts&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/08/08/tutorial-rails-3+bootstrap-fading-flash-alerts/index.html&text=Rails%203%20&amp;%20Bootstrap%20Fading%20Flash%20Alerts&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+			</div>
+
+	</div>
+	<div class="row-fluid">
+		<div class="span8">
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'robincwillis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+	</div>
+</div>
+          <footer>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="center">
+
+  <ul class="inline nav">
+    <li class="social">
+      <a href="https://twitter.com/robincillis" class="" target="_blank">
+        <div class="social-inner twitter"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://facebook.com/robincillis" class="" target="_blank">
+        <div class="social-inner facebook"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://linkedin.com/in/robincwillis" class="" target="_blank">
+        <div class="social-inner linkedin"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://github.com/robincwillis" class="" target="_blank">
+        <div class="social-inner github"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="http://instagram.com/robincwillis" class="" target="_blank">
+        <div class="social-inner instagram"></div>
+      </a>
+    </li>
+  </ul>
+
+    </div>
+  </div>
+</div>
+</footer>
+        <script type="text/javascript" src="/js/vendor/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript">
+             var _gaq = _gaq || [];
+             _gaq.push(['_setAccount', 'UA-4803873-2']);
+             _gaq.push(['_setDomainName', '.robincwillis.com']);
+             _gaq.push(['_trackPageview','/']);
+
+            (function() {
+               var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+               ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+               })();
+        </script>
+    </body>
+</html>

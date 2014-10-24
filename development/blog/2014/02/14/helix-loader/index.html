@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie ie9 ie8 ie7"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie ie9 ie8"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie ie9"> <![endif]-->
+<!--[if IE 9 ]>         <html class="ie ie9"> <![endif]-->
+<!--[if IE 10]>         <html class="no-js ie ie10"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js"> <!--<![endif]-->
+<!-- [if !IE]><!-->     <html><!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>RCW Helix Loader</title>
+        <!-- META -->
+        
+        <meta name="description" content="A CSS3 Helix Animation preloader" />
+        
+        
+        <meta name="keywords" content="css3,html" />
+        
+        <meta name="author" content="Robin Willis" />
+        <!-- OG -->
+        <meta property="og:title" content="RCW | Helix Loader" />
+        
+        <meta property="og:description" content="A CSS3 Helix Animation preloader" />
+        
+        
+        <meta property="og:image" content="http://s3.amazonaws.com/robincwillis/img/splash/03.jpg" />
+        
+
+        <!-- ICON -->
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+        <link rel="icon" href="/favicon.png" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <!-- IOS -->
+        <meta name="apple-mobile-web-app-title" content="Robin Willis">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+        <!-- vendor CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/vendor/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap-responsive.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+        <script type="text/javascript" src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    </head>
+    <body class="Helix Loader">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+          	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<div class="row-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a href="/" class="brand">RCW</a>
+				<div class="nav-collapse collapse pull-right">
+					<ul class="nav">
+						<li><a href="/blog" title="Blog">BLOG</a></li>
+						<li><a href="http://portfolio.robincwillis.com" title="Work">WORK</a></li>
+						<li><a href="/projects" title="Code">CODE</a></li>
+					</ul>
+				</div>
+				</div>
+				<div class="row-fluid">
+						<hr>
+				</div>
+
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+
+</div>
+          <div class="container-fluid container-blog">
+	<div class="row-fluid">
+		<!--<div class="span2">
+   <ul class="unstyled sidebar">
+    <li><h4><a href="/">Posts</a></h4></li>
+    <li><h4><a href="/projects">Projects</a></h4></li>
+    <li><img src="/assets/img/profile.png"></li>
+    <li>
+      <h4>Robin Willis</h4>
+      <p class="small">is a critical and creative workaholic who left Los Angeles for New York City to study art and design at The Cooper Union school of Art, and then Cambridge to study architecture at MIT. I'm back in New York. The rest is a long story.</p>
+    </li>
+  </ul>
+</div>
+-->
+			<div class="span8">
+				<h2>Helix Loader</h2>
+				<div class="post">
+				<p>Another Preloader (note only built for webkit right now)</p>
+
+<style type="text/css">
+
+    .helix-preloader{
+        margin:100px 0;
+        position: relative;
+        top:50%;
+        left:50%;
+        height:0px;
+        width:0px;
+    }
+
+    #helix1{
+        position: absolute;
+        top:0;
+        left:0;
+        height:10px;
+        width:100px;
+        margin-left:-50px;
+        -webkit-animation: helix-spin 1.5s  infinite linear;
+        -moz-animation: helix-spin 1.5s  infinite linear;
+        -o-animation: helix-spin 1.5s  infinite linear;
+    }
+
+    #helix2{
+        position: absolute;
+        top:-10px;
+        left:0;
+        height:10px;
+        width:100px;
+        margin-left:-50px;
+        -webkit-animation: helix-spin 1.5s  infinite linear;
+        -moz-animation: helix-spin 1.5s  infinite linear;
+        -o-animation: helix-spin 1.5s  infinite linear;
+        -webkit-animation-delay: 0.1s;
+    }
+    #helix3{
+        position: absolute;
+        top:-20px;
+        left:0;
+        height:10px;
+        width:100px;
+        margin-left:-50px;
+        -webkit-animation: helix-spin 1.5s  infinite linear;
+        -moz-animation: helix-spin 1.5s  infinite linear;
+        -o-animation: helix-spin 1.5s  infinite linear;
+        -webkit-animation-delay: 0.2s;
+    }
+
+    #helix4{
+        position: absolute;
+        top:-30px;
+        left:0;
+        height:10px;
+        width:100px;
+        margin-left:-50px;
+        -webkit-animation: helix-spin 1.5s  infinite linear;
+        -moz-animation: helix-spin 1.5s  infinite linear;
+        -o-animation: helix-spin 1.5s  infinite linear;
+        -webkit-animation-delay: 0.3s;
+    }
+
+    .helix .dotA{
+        height:10px;
+        width:10px;
+        background-color: black;
+        border-radius: 50%;
+        float:left;
+        -webkit-animation: helix-spinB 1.5s  infinite linear;
+        -moz-animation: helix-spinB 1.5s  infinite linear;
+        -o-animation: helix-spinB 1.5s  infinite linear;
+    }
+
+    .helix .dotB{
+        float:right;
+        height:10px;
+        width:10px;
+        background-color: black;
+        border-radius: 50%;
+        -webkit-animation: helix-spinB 1.5s  infinite linear;
+        -moz-animation: helix-spinB 1.5s  infinite linear;
+        -o-animation: helix-spinB 1.5s  infinite linear;
+    }
+
+    @-webkit-keyframes helix-spin {
+        0%   { -webkit-transform:  rotateY(0deg); }
+        50%  { -webkit-transform:  rotateY(179deg); }
+        100% { -webkit-transform:  rotateY(360deg); }
+    }
+
+
+    @-webkit-keyframes helix-spinB {
+        0%   { -webkit-transform: scale(0.5) rotateX(-179deg); }
+        50%  { -webkit-transform: scale(1.5) rotateX(-360deg); }
+        100% { -webkit-transform: scale(0.5) rotateX(0deg); }
+    }
+
+
+</style>
+
+<div class="helix-preloader">
+    <div id="helix1" class="helix">
+        <div class="dotA"></div>
+        <div class="dotB"></div>
+    </div>
+    <div id="helix2" class="helix">
+        <div class="dotA"></div>
+        <div class="dotB"></div>
+    </div>
+    <div id="helix3" class="helix">
+        <div class="dotA"></div>
+        <div class="dotB"></div>
+    </div>
+    <div id="helix4" class="helix">
+        <div class="dotA"></div>
+        <div class="dotB"></div>
+    </div>
+</div>
+
+<p><br><br><br>
+click Read More to see the code.</p>
+
+<!--more-->
+
+<p>The HTML</p>
+<div class="highlight"><pre><code class="html"><a name="line-1"></a><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;helix-preloader&quot;</span><span class="nt">&gt;</span>
+<a name="line-2"></a>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;helix1&quot;</span> <span class="na">class=</span><span class="s">&quot;helix&quot;</span><span class="nt">&gt;</span>
+<a name="line-3"></a>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dotA&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<a name="line-4"></a>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dotB&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<a name="line-5"></a>    <span class="nt">&lt;/div&gt;</span>
+<a name="line-6"></a>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;helix2&quot;</span> <span class="na">class=</span><span class="s">&quot;helix&quot;</span><span class="nt">&gt;</span>
+<a name="line-7"></a>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dotA&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<a name="line-8"></a>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dotB&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<a name="line-9"></a>    <span class="nt">&lt;/div&gt;</span>
+<a name="line-10"></a>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;helix3&quot;</span> <span class="na">class=</span><span class="s">&quot;helix&quot;</span><span class="nt">&gt;</span>
+<a name="line-11"></a>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dotA&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<a name="line-12"></a>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dotB&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<a name="line-13"></a>    <span class="nt">&lt;/div&gt;</span>
+<a name="line-14"></a>    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;helix4&quot;</span> <span class="na">class=</span><span class="s">&quot;helix&quot;</span><span class="nt">&gt;</span>
+<a name="line-15"></a>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dotA&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<a name="line-16"></a>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dotB&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<a name="line-17"></a>    <span class="nt">&lt;/div&gt;</span>
+<a name="line-18"></a><span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<p>The CSS</p>
+<div class="highlight"><pre><code class="css"><a name="line-1"></a>    <span class="nc">.helix-preloader</span><span class="p">{</span>
+<a name="line-2"></a>        <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+<a name="line-3"></a>        <span class="k">top</span><span class="o">:</span><span class="m">50%</span><span class="p">;</span>
+<a name="line-4"></a>        <span class="k">left</span><span class="o">:</span><span class="m">50%</span><span class="p">;</span>
+<a name="line-5"></a>        <span class="k">height</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
+<a name="line-6"></a>        <span class="k">width</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
+<a name="line-7"></a>    <span class="p">}</span>
+<a name="line-8"></a>
+<a name="line-9"></a>    <span class="nf">#helix1</span><span class="p">{</span>
+<a name="line-10"></a>        <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+<a name="line-11"></a>        <span class="k">top</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+<a name="line-12"></a>        <span class="k">left</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+<a name="line-13"></a>        <span class="k">height</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-14"></a>        <span class="k">width</span><span class="o">:</span><span class="m">100px</span><span class="p">;</span>
+<a name="line-15"></a>        <span class="k">margin-left</span><span class="o">:-</span><span class="m">50px</span><span class="p">;</span>
+<a name="line-16"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-17"></a>        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-18"></a>        <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-19"></a>    <span class="p">}</span>
+<a name="line-20"></a>
+<a name="line-21"></a>    <span class="nf">#helix2</span><span class="p">{</span>
+<a name="line-22"></a>        <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+<a name="line-23"></a>        <span class="k">top</span><span class="o">:-</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-24"></a>        <span class="k">left</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+<a name="line-25"></a>        <span class="k">height</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-26"></a>        <span class="k">width</span><span class="o">:</span><span class="m">100px</span><span class="p">;</span>
+<a name="line-27"></a>        <span class="k">margin-left</span><span class="o">:-</span><span class="m">50px</span><span class="p">;</span>
+<a name="line-28"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-29"></a>        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-30"></a>        <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-31"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">-</span><span class="n">delay</span><span class="o">:</span> <span class="m">0.1s</span><span class="p">;</span>
+<a name="line-32"></a>    <span class="p">}</span>
+<a name="line-33"></a>    <span class="nf">#helix3</span><span class="p">{</span>
+<a name="line-34"></a>        <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+<a name="line-35"></a>        <span class="k">top</span><span class="o">:-</span><span class="m">20px</span><span class="p">;</span>
+<a name="line-36"></a>        <span class="k">left</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+<a name="line-37"></a>        <span class="k">height</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-38"></a>        <span class="k">width</span><span class="o">:</span><span class="m">100px</span><span class="p">;</span>
+<a name="line-39"></a>        <span class="k">margin-left</span><span class="o">:-</span><span class="m">50px</span><span class="p">;</span>
+<a name="line-40"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-41"></a>        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-42"></a>        <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-43"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">-</span><span class="n">delay</span><span class="o">:</span> <span class="m">0.2s</span><span class="p">;</span>
+<a name="line-44"></a>    <span class="p">}</span>
+<a name="line-45"></a>
+<a name="line-46"></a>    <span class="nf">#helix4</span><span class="p">{</span>
+<a name="line-47"></a>        <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+<a name="line-48"></a>        <span class="k">top</span><span class="o">:-</span><span class="m">30px</span><span class="p">;</span>
+<a name="line-49"></a>        <span class="k">left</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+<a name="line-50"></a>        <span class="k">height</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-51"></a>        <span class="k">width</span><span class="o">:</span><span class="m">100px</span><span class="p">;</span>
+<a name="line-52"></a>        <span class="k">margin-left</span><span class="o">:-</span><span class="m">50px</span><span class="p">;</span>
+<a name="line-53"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-54"></a>        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-55"></a>        <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spin</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-56"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">-</span><span class="n">delay</span><span class="o">:</span> <span class="m">0.3s</span><span class="p">;</span>
+<a name="line-57"></a>    <span class="p">}</span>
+<a name="line-58"></a>
+<a name="line-59"></a>    <span class="nc">.helix</span> <span class="nc">.dotA</span><span class="p">{</span>
+<a name="line-60"></a>        <span class="k">height</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-61"></a>        <span class="k">width</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-62"></a>        <span class="k">background-color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+<a name="line-63"></a>        <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+<a name="line-64"></a>        <span class="k">float</span><span class="o">:</span><span class="k">left</span><span class="p">;</span>
+<a name="line-65"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spinB</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-66"></a>        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spinB</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-67"></a>        <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spinB</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-68"></a>    <span class="p">}</span>
+<a name="line-69"></a>
+<a name="line-70"></a>    <span class="nc">.helix</span> <span class="nc">.dotB</span><span class="p">{</span>
+<a name="line-71"></a>        <span class="k">float</span><span class="o">:</span><span class="k">right</span><span class="p">;</span>
+<a name="line-72"></a>        <span class="k">height</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-73"></a>        <span class="k">width</span><span class="o">:</span><span class="m">10px</span><span class="p">;</span>
+<a name="line-74"></a>        <span class="k">background-color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+<a name="line-75"></a>        <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+<a name="line-76"></a>        <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spinB</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-77"></a>        <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spinB</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-78"></a>        <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="n">animation</span><span class="o">:</span> <span class="n">helix</span><span class="o">-</span><span class="n">spinB</span> <span class="m">1.5s</span>  <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+<a name="line-79"></a>    <span class="p">}</span>
+<a name="line-80"></a>
+<a name="line-81"></a>    <span class="k">@-webkit-keyframes</span> <span class="nt">helix-spin</span> <span class="p">{</span>
+<a name="line-82"></a>        <span class="nt">0</span><span class="o">%</span>   <span class="p">{</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span>  <span class="n">rotateY</span><span class="p">(</span><span class="m">0</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+<a name="line-83"></a>        <span class="nt">50</span><span class="o">%</span>  <span class="p">{</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span>  <span class="n">rotateY</span><span class="p">(</span><span class="m">179</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+<a name="line-84"></a>        <span class="nt">100</span><span class="o">%</span> <span class="p">{</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span>  <span class="n">rotateY</span><span class="p">(</span><span class="m">360</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+<a name="line-85"></a>    <span class="p">}</span>
+<a name="line-86"></a>
+<a name="line-87"></a>
+<a name="line-88"></a>    <span class="k">@-webkit-keyframes</span> <span class="nt">helix-spinB</span> <span class="p">{</span>
+<a name="line-89"></a>        <span class="nt">0</span><span class="o">%</span>   <span class="p">{</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">-179</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+<a name="line-90"></a>        <span class="nt">50</span><span class="o">%</span>  <span class="p">{</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">-360</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+<a name="line-91"></a>        <span class="nt">100</span><span class="o">%</span> <span class="p">{</span> <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">0</span><span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">0</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+<a name="line-92"></a>    <span class="p">}</span>
+</code></pre></div>
+				</div>
+			</div>
+			<div class="span3 offset1 meta">
+				
+
+	
+		<p class="date">14 February 2014</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	
+	  <li><a href="/blog/tag/css3">css3</a></li>
+	  
+	  <li><a href="/blog/tag/html">html</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2014/02/14/helix-loader/index.html&text=Helix%20Loader&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2014/02/14/helix-loader/index.html&text=Helix%20Loader&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+			</div>
+
+	</div>
+	<div class="row-fluid">
+		<div class="span8">
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'robincwillis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+	</div>
+</div>
+          <footer>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="center">
+
+  <ul class="inline nav">
+    <li class="social">
+      <a href="https://twitter.com/robincillis" class="" target="_blank">
+        <div class="social-inner twitter"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://facebook.com/robincillis" class="" target="_blank">
+        <div class="social-inner facebook"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://linkedin.com/in/robincwillis" class="" target="_blank">
+        <div class="social-inner linkedin"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://github.com/robincwillis" class="" target="_blank">
+        <div class="social-inner github"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="http://instagram.com/robincwillis" class="" target="_blank">
+        <div class="social-inner instagram"></div>
+      </a>
+    </li>
+  </ul>
+
+    </div>
+  </div>
+</div>
+</footer>
+        <script type="text/javascript" src="/js/vendor/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript">
+             var _gaq = _gaq || [];
+             _gaq.push(['_setAccount', 'UA-4803873-2']);
+             _gaq.push(['_setDomainName', '.robincwillis.com']);
+             _gaq.push(['_trackPageview','/']);
+
+            (function() {
+               var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+               ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+               })();
+        </script>
+    </body>
+</html>

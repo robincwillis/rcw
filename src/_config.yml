@@ -3,8 +3,10 @@ markdown: redcarpet-pygments
 highlighter: pygments
 url: "http://localhost:4000"
 paginate: 5
-paginate_path: "blog/page:num"
-permalink: pretty
+paginate_path: "/blog/page:num"
+tag_dir: "/blog/tag"
+#permalink: pretty
+permalink: /blog/:year/:month/:day/:title/index.html
 description: "Robin Willis is an artist, designer and web developer"
 image: "http://s3.amazonaws.com/robincwillis/img/splash/03.jpg"
 keywords:

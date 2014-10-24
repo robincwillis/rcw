@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie ie9 ie8 ie7"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie ie9 ie8"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie ie9"> <![endif]-->
+<!--[if IE 9 ]>         <html class="ie ie9"> <![endif]-->
+<!--[if IE 10]>         <html class="no-js ie ie10"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js"> <!--<![endif]-->
+<!-- [if !IE]><!-->     <html><!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>RCW Rails 3 Tags With Tag Manager</title>
+        <!-- META -->
+        
+        <meta name="description" content="Robin Willis is an artist, designer and web developer" />
+        
+        
+        <meta name="keywords" content="tutorial,rails,bootstrap,javascript" />
+        
+        <meta name="author" content="Robin Willis" />
+        <!-- OG -->
+        <meta property="og:title" content="RCW | Rails 3 Tags With Tag Manager" />
+        
+        <meta property="og:description" content="Robin Willis is an artist, designer and web developer" />
+        
+        
+        <meta property="og:image" content="http://s3.amazonaws.com/robincwillis/img/splash/03.jpg" />
+        
+
+        <!-- ICON -->
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+        <link rel="icon" href="/favicon.png" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <!-- IOS -->
+        <meta name="apple-mobile-web-app-title" content="Robin Willis">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+        <!-- vendor CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/vendor/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/vendor/bootstrap-responsive.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+        <script type="text/javascript" src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    </head>
+    <body class="Rails 3 Tags With Tag Manager">
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+          	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<div class="row-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a href="/" class="brand">RCW</a>
+				<div class="nav-collapse collapse pull-right">
+					<ul class="nav">
+						<li><a href="/blog" title="Blog">BLOG</a></li>
+						<li><a href="http://portfolio.robincwillis.com" title="Work">WORK</a></li>
+						<li><a href="/projects" title="Code">CODE</a></li>
+					</ul>
+				</div>
+				</div>
+				<div class="row-fluid">
+						<hr>
+				</div>
+
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+
+</div>
+          <div class="container-fluid container-blog">
+	<div class="row-fluid">
+		<!--<div class="span2">
+   <ul class="unstyled sidebar">
+    <li><h4><a href="/">Posts</a></h4></li>
+    <li><h4><a href="/projects">Projects</a></h4></li>
+    <li><img src="/assets/img/profile.png"></li>
+    <li>
+      <h4>Robin Willis</h4>
+      <p class="small">is a critical and creative workaholic who left Los Angeles for New York City to study art and design at The Cooper Union school of Art, and then Cambridge to study architecture at MIT. I'm back in New York. The rest is a long story.</p>
+    </li>
+  </ul>
+</div>
+-->
+			<div class="span8">
+				<h2>Rails 3 Tags With Tag Manager</h2>
+				<div class="post">
+				<h4>Rails 3 + Bootstrap Typeahead + bootstrap-tagmanager + acts-as-taggable-on = Baller Tags</h4>
+
+<p>I was looking for a simple and easy tagging solution to work with Twitter Bootstrap’ Typeahead functionality. I haven’t seen any examples of this on the internet so I thought I would share my solution which both works great and is pretty simple to setup. So in less than 5 minutes we will create a tagging system that looks like this.</p>
+
+<p><img src="http://s3.amazonaws.com/robincwillis-blog/img/baller-tags.png" alt="Baller Tags" title="Baller Tags"></p>
+
+<!--more-->
+
+<p>The gems used to accomplish this are</p>
+
+<p><a target="_blank" href="https://github.com/thomas-mcdonald/bootstrap-sass">bootstrap-sass</a></p>
+
+<p><a target="_blank" href="https://github.com/mbleigh/acts-as-taggable-on">acts-as-taggable-on</a></p>
+
+<p>and Tag Manager, a really awesome jQuery plugin</p>
+
+<p><a target="_blank" href="https://github.com/max-favilli/tagmanager">tagmanager</a></p>
+
+<p>Ok lets get started, First lets create our application</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="kp">new</span> <span class="n">tag_example</span>
+</code></pre></div>
+<p>Next lets add the gems we need to our Gemfile</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="n">gem</span> <span class="s1">&#39;bootstrap-sass&#39;</span><span class="p">,</span> <span class="s1">&#39;2.3.1.2&#39;</span>
+<a name="line-2"></a><span class="n">gem</span> <span class="s1">&#39;acts-as-taggable-on&#39;</span>
+</code></pre></div>
+<p>and run</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span><span class="n">bundle</span> <span class="n">install</span>
+</code></pre></div>
+<p>Also download the Tag Manager plugin from <a target="_blank" href="https://github.com/max-favilli/tagmanager">https://github.com/max-favilli/tagmanager</a> put <code class="inline-code">bootstrap-tagmanager.js</code> in <code class="inline-code">tag_example/vendor/assets/javascripts</code> and <code class="inline-code">bootstrap-tagmanager.css</code> in <code class="inline-code">tag_example/vendor/assets/stylesheets</code> Last we need to add the javascripts for Bootstrap and Tag Manager to the asset pipeline. add these lines to <code class="inline-code">app/assets/javascripts/application.js</code></p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="sr">//</span><span class="o">=</span> <span class="nb">require</span> <span class="n">bootstrap</span>
+<a name="line-2"></a><span class="sr">//</span><span class="o">=</span> <span class="nb">require</span> <span class="n">bootstrap</span><span class="o">-</span><span class="n">tagmanager</span>
+</code></pre></div>
+<p>above the line</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="sr">//</span><span class="o">=</span> <span class="n">require_tree</span> <span class="o">.</span>
+</code></pre></div>
+<p>and in <code class="inline-code">app/assets/stylesheets/application.css</code> add this line</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">*=</span> <span class="nb">require</span> <span class="n">bootstrap</span><span class="o">-</span><span class="n">tagmanager</span>
+</code></pre></div>
+<p>above the line</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">*=</span> <span class="n">require_self</span>
+</code></pre></div>
+<p>a few more things we need to do to setup our project remove the default <code class="inline-code">index.html</code> page</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rm</span> <span class="sr">/tag_example/</span><span class="kp">public</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</code></pre></div>
+<p>and direct the application to our products. in <code class="inline-code">routes.rb</code> add the line</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="n">root</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s1">&#39;products#index&#39;</span>
+</code></pre></div>
+<p>Next lets create a model to apply our tagging system to</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="n">scaffold</span> <span class="n">product</span> <span class="nb">name</span><span class="ss">:string</span>
+</code></pre></div>
+<p>And generate a migration for the <code class="inline-code">acts_as_taggable_on</code></p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">g</span> <span class="ss">acts_as_taggable_on</span><span class="p">:</span><span class="n">migration</span>
+</code></pre></div>
+<p>migrate the database</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rake</span> <span class="ss">db</span><span class="p">:</span><span class="n">migrate</span>
+</code></pre></div>
+<p>The scaffold command makes some css files that we don’t need because we are using Bootstrap, so lets remove it.</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rm</span> <span class="n">tag_example</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">products</span><span class="o">.</span><span class="n">css</span><span class="o">.</span><span class="n">scss</span>
+<a name="line-2"></a><span class="o">&gt;</span> <span class="n">rm</span> <span class="n">tag_example</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">scaffolds</span><span class="o">.</span><span class="n">css</span><span class="o">.</span><span class="n">scss</span>
+</code></pre></div>
+<p>and add tell our app to start using bootstrap</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">touch</span> <span class="n">tag_example</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">assets</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">custom</span><span class="o">.</span><span class="n">css</span><span class="o">.</span><span class="n">scss</span>
+</code></pre></div>
+<p>and add this line to <code class="inline-code">custom.css.scss</code></p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="vi">@import</span> <span class="s2">&quot;bootstrap&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>and start the server</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&gt;</span> <span class="n">rails</span> <span class="n">s</span>
+</code></pre></div>
+<p>Now we should have everything we need setup to implement our tagging system. First lets make our products taggable in <code class="inline-code">product.rb</code> add</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="n">acts_as_taggable_on</span> <span class="ss">:tags</span>
+</code></pre></div>
+<p>We also need to create an accessible attribute to get and set our tags for our product.</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="n">attr_accessible</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:tag_list</span>
+</code></pre></div>
+<p>The <code class="inline-code">acts-as-taggable-on</code> gem takes care of all this stuff for us, so I am not really going to go into detail about it. If you want to learn about this gem there is a great railscast on it.</p>
+
+<p>lets also require a name to be present</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="n">validates</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">presence</span><span class="p">:</span> <span class="kp">true</span>
+</code></pre></div>
+<p>Ok time to move onto the controller. Since we want people to get hints on existing tags using Bootstraps Typeahead, we need to offer our view a list of all the existing tags in the system. open <code class="inline-code">app/controllers/products_controller.rb</code> and in your new and edit actions add this variable.</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="vi">@autocomplete_items</span> <span class="o">=</span> <span class="no">ActsAsTaggableOn</span><span class="o">::</span><span class="no">Tag</span><span class="o">.</span><span class="n">all</span>
+</code></pre></div>
+<p>Now its time for the magic, we are going to add the form and javascript that makes it all work. Open up <code class="inline-code">app/views/products/_form.html.erb</code></p>
+
+<p>We need to add a field to our form for users to add tags to products. In our form helper add the field.</p>
+<div class="highlight"><pre><code class="ruby"><a name="line-1"></a><span class="o">&lt;</span><span class="sx">%= f.label :tags %&gt;</span>
+<a name="line-2"></a><span class="sx">&lt;%=</span> <span class="n">f</span><span class="o">.</span><span class="n">hidden_field</span> <span class="ss">:tag_list</span><span class="p">,</span> <span class="ss">autocomplete</span><span class="p">:</span> <span class="s2">&quot;off&quot;</span> <span class="sx">%&gt;</span>
+<a name="line-3"></a><span class="sx">&lt;%= text_field_tag &#39;tag_input&#39;, nil, class: &quot;tm-input&quot; %&gt;</span>
+</code></pre></div>
+<p>Now let me explain what this is doing because it’s not clear yet. First we are adding a hidden form which is bound to our :tag_list attribute and will store our tags for creation and editing. Then we have a user blank input field that will work with our Typeahead functions.</p>
+
+<p>Next we need to create two javascript objects, one that holds all the tags that exist for our typeahead and another that holds the existing tags for that term to represent. After the form add</p>
+<div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="o">&lt;%=</span> <span class="nx">javascript_tag</span> <span class="s2">&quot;var items = #{ @product.tag_list.to_json };&quot;</span> <span class="o">%&gt;</span>
+<a name="line-2"></a><span class="o">&lt;%=</span> <span class="nx">javascript_tag</span> <span class="s2">&quot;var autocomplete_items = #{ @autocomplete_items.to_json };&quot;</span> <span class="o">%&gt;</span>
+</code></pre></div>
+<p>Lastly we will add our Javascript to enable Tag Manager on our form. There are many options on where to include this, but just to get it working quickly you can add this too the end of _form.erb.html</p>
+<div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.tm-input&quot;</span><span class="p">).</span><span class="nx">tagsManager</span><span class="p">(</span>
+<a name="line-2"></a>    <span class="p">{</span>
+<a name="line-3"></a>      <span class="nx">prefilled</span><span class="o">:</span> <span class="nx">items</span><span class="p">,</span>
+<a name="line-4"></a>      <span class="nx">typeahead</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="line-5"></a>      <span class="nx">hiddenTagListName</span><span class="o">:</span> <span class="s1">&#39;tag_list&#39;</span><span class="p">,</span>
+<a name="line-6"></a>      <span class="nx">hiddenTagListId</span><span class="o">:</span> <span class="s1">&#39;product_tag_list&#39;</span><span class="p">,</span>
+<a name="line-7"></a>      <span class="nx">typeaheadSource</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+<a name="line-8"></a>        <span class="kd">var</span> <span class="nx">tags</span> <span class="o">=</span> <span class="p">[];</span>
+<a name="line-9"></a>         <span class="nx">$</span><span class="p">(</span><span class="nx">autocomplete_items</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="nx">tag</span><span class="p">){</span>
+<a name="line-10"></a>          <span class="nx">tags</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">tag</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<a name="line-11"></a>         <span class="p">});</span>
+<a name="line-12"></a>         <span class="k">return</span> <span class="nx">tags</span><span class="p">;</span>
+<a name="line-13"></a>      <span class="p">}</span>
+<a name="line-14"></a>    <span class="p">});</span>
+</code></pre></div>
+<p>So what we are doing is attaching the Tag Manager plugin to our text field, setting its pre-filled items to the existing tags for a particular product. We set typeahead to true to enable bootstraps typeahead functionality. We set our hidden field to store the tags set by the plugin. Lastly we set the source to a a function which takes our tags from json key value pairs and dumps them into an array which is the format typeahead expects. T</p>
+
+<p>hats it, were done!</p>
+
+<p>If you have any questions feel free to message me on Twitter <a target="_blank" href="https://twitter.com/robincwillis">@robincwillis</a></p>
+
+<p>note: In a real application you will want to take things further like preventing duplicates from being created or fetched etc.</p>
+
+				</div>
+			</div>
+			<div class="span3 offset1 meta">
+				
+
+	
+		<p class="date">25 July 2013</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	
+	  <li><a href="/blog/tag/tutorial">tutorial</a></li>
+	  
+	  <li><a href="/blog/tag/rails">rails</a></li>
+	  
+	  <li><a href="/blog/tag/bootstrap">bootstrap</a></li>
+	  
+	  <li><a href="/blog/tag/javascript">javascript</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/07/25/tutorial-rails-3-tags-with-tag-manager/index.html&text=Rails%203%20Tags%20With%20Tag%20Manager&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/07/25/tutorial-rails-3-tags-with-tag-manager/index.html&text=Rails%203%20Tags%20With%20Tag%20Manager&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+			</div>
+
+	</div>
+	<div class="row-fluid">
+		<div class="span8">
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'robincwillis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+	</div>
+</div>
+          <footer>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="center">
+
+  <ul class="inline nav">
+    <li class="social">
+      <a href="https://twitter.com/robincillis" class="" target="_blank">
+        <div class="social-inner twitter"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://facebook.com/robincillis" class="" target="_blank">
+        <div class="social-inner facebook"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://linkedin.com/in/robincwillis" class="" target="_blank">
+        <div class="social-inner linkedin"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="https://github.com/robincwillis" class="" target="_blank">
+        <div class="social-inner github"></div>
+      </a>
+    </li>
+    <li class="social">
+      <a href="http://instagram.com/robincwillis" class="" target="_blank">
+        <div class="social-inner instagram"></div>
+      </a>
+    </li>
+  </ul>
+
+    </div>
+  </div>
+</div>
+</footer>
+        <script type="text/javascript" src="/js/vendor/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript">
+             var _gaq = _gaq || [];
+             _gaq.push(['_setAccount', 'UA-4803873-2']);
+             _gaq.push(['_setDomainName', '.robincwillis.com']);
+             _gaq.push(['_trackPageview','/']);
+
+            (function() {
+               var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+               ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+               })();
+        </script>
+    </body>
+</html>
