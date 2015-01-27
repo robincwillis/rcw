@@ -21,7 +21,7 @@ title: Blog
 	<div class="row-fluid">
 		<div class=" span6 offset3 pagination">
 		  {% if paginator.previous_page %}
-		 	<h3 class="serif">
+		 	<h3 class="serif pull-left">
 		    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
 		  </h3>
 		  {% else %}
@@ -29,8 +29,8 @@ title: Blog
 		  {% endif %}
 			<!--<span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>-->
 		  {% if paginator.next_page %}
-		  <h3 class="serif">
-		    <a class="pull-right" href="{{ paginator.next_page_path }}" class="next">Next</a>
+		  <h3 class="serif pull-right">
+		    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
 		  </h3>
 		  {% else %}
 			<!--<span class="next ">Next</span> -->
