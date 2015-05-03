@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>RCW Blog</title>
+        <title>Robin Willis Blog</title>
         <!-- META -->
         
         <meta name="description" content="Robin Willis is an artist, designer and web developer" />
@@ -96,63 +96,168 @@
 					<div class="row-fluid">
 						<div class="span8 post">
 						
-  <h2><a href="/blog/2013/08/06/sketch-wire/index.html">Sketch Wire</a></h2>
-  
-    <p><p>I recently published an old project that’s a lot of fun.</p>
-
-<h3><a href="http://robincwillis.github.io/SketchWire/" title="Project Page">Sketch Wire</a></h3>
-
-<p>or fork it on <a href="https://github.com/robincwillis/SketchWire">github</a>.</p>
-</p>
-
-  
-
-						</div>
-						<div class="span3 offset1 meta">
-							
-
-	
-		<p class="date">6 August 2013</p>
-	
-
-	<ul class="tags unstyled">
-	  
-	  
-	  <li><a href="/blog/tag/3d">3d</a></li>
-	  
-	
-	</ul>
-	<ul class="list-share">
-
-		<li class="share-item">
-<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/08/06/sketch-wire/index.html&text=Sketch%20Wire&via=robincwillis"></a>
-
-<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/08/06/sketch-wire/index.html&text=Sketch%20Wire&via=robincwillis"></a>
-
-		</li>
-
-	</ul>
-
-
-
-						</div>
-					</div>
-				
-					<div class="row-fluid">
-						<div class="span8 post">
-						
-  <h2><a href="/blog/2013/07/25/tutorial-rails-3-tags-with-tag-manager/index.html">Rails 3 Tags With Tag Manager</a></h2>
+  <h2><a href="/blog/2014/01/16/css3-preloader/index.html">CSS3 Preloader</a></h2>
   
     <p>
-    <h4>Rails 3 + Bootstrap Typeahead + bootstrap-tagmanager + acts-as-taggable-on = Baller Tags</h4>
+    <p>Here it is</p>
 
-<p>I was looking for a simple and easy tagging solution to work with Twitter Bootstrap’ Typeahead functionality. I haven’t seen any examples of this on the internet so I thought I would share my solution which both works great and is pretty simple to setup. So in less than 5 minutes we will create a tagging system that looks like this.</p>
+<style type="text/css">
 
-<p><img src="http://s3.amazonaws.com/robincwillis-blog/img/baller-tags.png" alt="Baller Tags" title="Baller Tags"></p>
+    .stuff-to-preload{
+        width: 100%;
+        height:100px;
+    }
+
+    .preloader{
+        position: relative;
+        width:0px;
+        height:0px;
+        top:50%;
+        left:50%;
+        -webkit-animation: spin 1s  infinite ease-in-out;
+        -moz-animation: spin 1s  infinite ease-in-out;
+        -o-animation: spin 1s  infinite ease-in-out;
+    }
+
+    .preloader .ball{
+        position: absolute;
+        width:20px;
+        height:20px;
+        top:50%;
+        left:50%;
+        margin-top:-10px;
+        margin-left: -10px;
+        border-radius: 50%;
+        background-color: black;
+    }
+
+    .preloader .ball-a{
+        -webkit-animation: hTop 1s  infinite ease-in-out;
+        -moz-animation: hTop 1s  infinite ease-in-out;
+        -o-animation: hTop 1s  infinite ease-in-out;
+    }
+
+    .preloader .ball-b{
+        -webkit-animation: vTop 1s  infinite ease-in-out;
+        -moz-animation: vTop 1s  infinite ease-in-out;
+        -o-animation: vTop 1s  infinite ease-in-out;
+    }
+
+    .preloader .ball-c{
+        -webkit-animation: hBot 1s  infinite ease-in-out;
+        -moz-animation: hBot 1s  infinite ease-in-out;
+        -o-animation: hBot 1s  infinite ease-in-out;
+    }
+
+    .preloader .ball-d{
+        -webkit-animation: vBot 1s  infinite ease-in-out;
+        -moz-animation: vBot 1s  infinite ease-in-out;
+        -o-animation: vBot 1s  infinite ease-in-out;
+    }
+
+    @-webkit-keyframes hTop {
+        0%   { -webkit-transform:  translate(0px, 0px); }
+        50%  { -webkit-transform:  translate(20px, 20px); }
+        100% { -webkit-transform:  translate(0px, 0px); }
+    }
+
+    @-webkit-keyframes vTop {
+        0%   { -webkit-transform:  translate(0px, 0px); }
+        50%  { -webkit-transform:  translate(-20px, 20px); }
+        100% { -webkit-transform:  translate(0px, 0px); }
+    }
+
+    @-webkit-keyframes hBot {
+        0%   { -webkit-transform:  translate(0px, 0px); }
+        50%  { -webkit-transform:  translate(20px, -20px); }
+        100% { -webkit-transform:  translate(0px, 0px); }
+    }
+
+    @-webkit-keyframes vBot {
+        0%   { -webkit-transform:  translate(0px, 0px); }
+        50%  { -webkit-transform:  translate(-20px, -20px); }
+        100% { -webkit-transform:  translate(0px, 0px); }
+    }
+
+    @-moz-keyframes hTop {
+        0%   { -moz-transform:  translate(0px, 0px); }
+        50%  { -moz-transform:  translate(20px, 20px); }
+        100% { -moz-transform:  translate(0px, 0px); }
+    }
+
+    @-moz-keyframes vTop {
+        0%   { -moz-transform:  translate(0px, 0px); }
+        50%  { -moz-transform:  translate(-20px, 20px); }
+        100% { -moz-transform:  translate(0px, 0px); }
+    }
+
+    @-moz-keyframes hBot {
+        0%   { -moz-transform:  translate(0px, 0px); }
+        50%  { -moz-transform:  translate(20px, -20px); }
+        100% { -moz-transform:  translate(0px, 0px); }
+    }
+
+    @-moz-keyframes vBot {
+        0%   { -moz-transform:  translate(0px, 0px); }
+        50%  { -moz-transform:  translate(-20px, -20px); }
+        100% { -moz-transform:  translate(0px, 0px); }
+    }
+
+    @-o-keyframes hTop {
+        0%   { -o-transform:  translate(0px, 0px); }
+        50%  { -o-transform:  translate(20px, 20px); }
+        100% { -o-transform:  translate(0px, 0px); }
+    }
+
+    @-o-keyframes vTop {
+        0%   { -o-transform:  translate(0px, 0px); }
+        50%  { -o-transform:  translate(-20px, 20px); }
+        100% { -o-transform:  translate(0px, 0px); }
+    }
+
+    @-o-keyframes hBot {
+        0%   { -o-transform:  translate(0px, 0px); }
+        50%  { -o-transform:  translate(20px, -20px); }
+        100% { -o-transform:  translate(0px, 0px); }
+    }
+
+    @-o-keyframes vBot {
+        0%   { -o-transform:  translate(0px, 0px); }
+        50%  { -o-transform:  translate(-20px, -20px); }
+        100% { -o-transform:  translate(0px, 0px); }
+    }
+
+    @-webkit-keyframes spin {
+        from { -webkit-transform: rotate(0deg);}
+        to {-webkit-transform: rotate(178deg);}
+    }
+
+     @-moz-keyframes spin {
+        from { -moz-transform:  rotate(0deg);}
+        to { -moz-transform:  rotate(89deg);}
+     }
+
+     @-o-keyframes spin {
+        from { -o-transform:  rotate(0deg);}
+        to { -o-transform:  rotate(89deg);}
+     }
+
+</style>
+
+<div class="stuff-to-preload">
+    <div class="preloader">
+        <div class="ball ball-a"></div>
+        <div class="ball ball-b"></div>
+        <div class="ball ball-c"></div>
+        <div class="ball ball-d"></div>
+    </div>
+</div>
+
+<p>Click Read More to see the code</p>
 
 
     </p>
-    <p><h4><a href="/blog/2013/07/25/tutorial-rails-3-tags-with-tag-manager/index.html">Read more...</a></h4></p>
+    <p><h4><a href="/blog/2014/01/16/css3-preloader/index.html">Read more...</a></h4></p>
     
 
 						</div>
@@ -160,188 +265,341 @@
 							
 
 	
-		<p class="date">25 July 2013</p>
+		<p class="date">16 January 2014</p>
 	
 
 	<ul class="tags unstyled">
 	  
 	  
-	  <li><a href="/blog/tag/tutorial">tutorial</a></li>
+	  <li><a href="/blog/tag/css3">css3</a></li>
 	  
-	  <li><a href="/blog/tag/rails">rails</a></li>
+	  <li><a href="/blog/tag/html">html</a></li>
 	  
-	  <li><a href="/blog/tag/bootstrap">bootstrap</a></li>
+	  <li><a href="/blog/tag/animation">animation</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2014/01/16/css3-preloader/index.html&text=CSS3%20Preloader&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2014/01/16/css3-preloader/index.html&text=CSS3%20Preloader&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+						</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span8 post">
+						
+  <h2><a href="/blog/2014/01/15/full-window-images/index.html">Full Window Images With CSS and jQuery</a></h2>
+  
+    <p><p>Often for the landing page of a site we want to make a big impression and hit the user with a big image that takes up the full width of there browser. Here is a solution for doing so accomadating any image dimensions, and window sizes.</p>
+
+<p>The HTML</p>
+<div class="highlight"><pre><code class="html"><a name="line-1"></a><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;splash&quot;</span><span class="nt">&gt;</span>
+<a name="line-2"></a><span class="nt">&lt;h1&gt;</span>Hello Splash<span class="nt">&lt;/h1&gt;</span>
+<a name="line-3"></a><span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+<p>The CSS</p>
+<div class="highlight"><pre><code class="css"><a name="line-1"></a><span class="nc">.splash</span><span class="p">{</span>
+<a name="line-2"></a>    <span class="k">background-image</span><span class="o">:</span><span class="sx">url(splash.jpg)</span><span class="p">;</span>
+<a name="line-3"></a>    <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
+<a name="line-4"></a>    <span class="k">background-position</span><span class="o">:</span> <span class="k">center</span> <span class="k">center</span><span class="p">;</span>
+<a name="line-5"></a>    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+<a name="line-6"></a>    <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+<a name="line-7"></a>    <span class="o">-</span><span class="n">o</span><span class="o">-</span><span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+<a name="line-8"></a>    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="n">cover</span><span class="p">;</span>
+<a name="line-9"></a>    <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<a name="line-10"></a>    <span class="k">overflow</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<a name="line-11"></a><span class="p">}</span>
+<a name="line-12"></a>
+<a name="line-13"></a><span class="nc">.splash</span> <span class="nt">h1</span><span class="p">{</span>
+<a name="line-14"></a>    <span class="k">font-family</span><span class="o">:</span> <span class="n">helvetica</span><span class="p">;</span>
+<a name="line-15"></a>    <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+<a name="line-16"></a>    <span class="k">color</span><span class="o">:</span><span class="m">#fff</span><span class="p">;</span>
+<a name="line-17"></a>    <span class="k">font-size</span><span class="o">:</span> <span class="m">72px</span><span class="p">;</span>
+<a name="line-18"></a>    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<a name="line-19"></a>    <span class="k">margin-top</span><span class="o">:-</span><span class="m">36px</span><span class="p">;</span>
+<a name="line-20"></a>    <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<a name="line-21"></a>    <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<a name="line-22"></a>    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+<a name="line-23"></a>    <span class="k">height</span><span class="o">:</span><span class="m">72px</span><span class="p">;</span>
+<a name="line-24"></a>    <span class="k">line-height</span><span class="o">:</span> <span class="m">72px</span><span class="p">;</span>
+<a name="line-25"></a>    <span class="k">top</span><span class="o">:</span><span class="m">50%</span><span class="p">;</span>
+<a name="line-26"></a><span class="p">}</span>
+</code></pre></div>
+<p>The Javascript</p>
+<div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="kd">function</span> <span class="nx">setSplashHeight</span><span class="p">(</span><span class="nx">$el</span><span class="p">){</span>
+<a name="line-2"></a>    <span class="nx">$el</span><span class="p">.</span><span class="nx">css</span><span class="p">({</span>
+<a name="line-3"></a>        <span class="nx">height</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">height</span><span class="p">()</span>
+<a name="line-4"></a>    <span class="p">});</span>
+<a name="line-5"></a><span class="p">}</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">resize</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<a name="line-8"></a>    <span class="nx">setSplashHeight</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.splash&#39;</span><span class="p">));</span>
+<a name="line-9"></a><span class="p">}).</span><span class="nx">resize</span><span class="p">();</span>
+</code></pre></div>
+<p>The Result: <a href="http://robincwillis-blog.s3-website-us-east-1.amazonaws.com/demo/splash/">View Demo</a></p>
+</p>
+
+  
+
+						</div>
+						<div class="span3 offset1 meta">
+							
+
+	
+		<p class="date">15 January 2014</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/css">css</a></li>
 	  
 	  <li><a href="/blog/tag/javascript">javascript</a></li>
-	  
-	
-	</ul>
-	<ul class="list-share">
-
-		<li class="share-item">
-<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/07/25/tutorial-rails-3-tags-with-tag-manager/index.html&text=Rails%203%20Tags%20With%20Tag%20Manager&via=robincwillis"></a>
-
-<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/07/25/tutorial-rails-3-tags-with-tag-manager/index.html&text=Rails%203%20Tags%20With%20Tag%20Manager&via=robincwillis"></a>
-
-		</li>
-
-	</ul>
-
-
-
-						</div>
-					</div>
-				
-					<div class="row-fluid">
-						<div class="span8 post">
-						
-  <h2><a href="/blog/2013/07/24/haruka.io/index.html">Haruka.io</a></h2>
-  
-    <p><h4>a Japanese to English Slang Dictionary</h4>
-
-<p>I just launched <a href="https://haruka.io">Haruka.io</a>, my first Ruby on Rails app!</p>
-
-<p>Japanese Slang is constantly mutating and growing and speeds which make conventional dictionaries maintained by specific authorities burdensome or impossible to keep up with. Words are constantly being shortened, combined and invented. Haruka aims the be the simple and definitive Japanese to English slang dictionary by opening its doors to anyone willing to contribute.</p>
-
-<h3>What makes Haruka Awesome?</h3>
-
-<ol>
-<li>A fully searchable database of terms including Kanji, Kana, definitions, literal translations and additional descriptions.</li>
-<li>Keep track of terms you authored and add other terms to your personal list of favorites.</li>
-<li>Vote terms up and down to give a sense of accuracy.</li>
-<li>Flag irrelevant content.</li>
-<li>Ability to add pictures, comments and phrases to terms.</li>
-<li>Create associations between related terms.</li>
-<li>Simple, beautiful responsive design adapts across all browsers, mobile devices and tablets.</li>
-<li>Environment Variables allow you to easily customize and deploy to your own server.</li>
-</ol>
-
-<h3>Its open source! go fork it on <a href="https://github.com/robincwillis/Haruka">Github</a>!</h3>
-</p>
-
-  
-
-						</div>
-						<div class="span3 offset1 meta">
-							
-
-	
-		<p class="date">24 July 2013</p>
-	
-
-	<ul class="tags unstyled">
-	  
-	  
-	  <li><a href="/blog/tag/rails">rails</a></li>
-	  
-	  <li><a href="/blog/tag/japanese">japanese</a></li>
-	  
-	  <li><a href="/blog/tag/dictionary">dictionary</a></li>
-	  
-	
-	</ul>
-	<ul class="list-share">
-
-		<li class="share-item">
-<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/07/24/haruka.io/index.html&text=Haruka.io&via=robincwillis"></a>
-
-<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/07/24/haruka.io/index.html&text=Haruka.io&via=robincwillis"></a>
-
-		</li>
-
-	</ul>
-
-
-
-						</div>
-					</div>
-				
-					<div class="row-fluid">
-						<div class="span8 post">
-						
-  <h2><a href="/blog/2012/09/21/i-moved-to-san-francisco/index.html">I moved to San Francisco!</a></h2>
-  
-    <p><p><img src="http://s3.amazonaws.com/robincwillis-blog/img/sf.jpg" alt="SF" title="SF"></p>
-</p>
-
-  
-
-						</div>
-						<div class="span3 offset1 meta">
-							
-
-	
-		<p class="date">21 September 2012</p>
-	
-
-	<ul class="tags unstyled">
-	  
-	  
-	  <li><a href="/blog/tag/personal">personal</a></li>
-	  
-	
-	</ul>
-	<ul class="list-share">
-
-		<li class="share-item">
-<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2012/09/21/i-moved-to-san-francisco/index.html&text=I%20moved%20to%20San%20Francisco!&via=robincwillis"></a>
-
-<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2012/09/21/i-moved-to-san-francisco/index.html&text=I%20moved%20to%20San%20Francisco!&via=robincwillis"></a>
-
-		</li>
-
-	</ul>
-
-
-
-						</div>
-					</div>
-				
-					<div class="row-fluid">
-						<div class="span8 post">
-						
-  <h2><a href="/blog/2012/04/11/do-you-like-jquery-plugins/index.html">Do You Like jQuery Plugins?</a></h2>
-  
-    <p><p>I just published 3 lightweight JQuery plugins. Check out</p>
-
-<h3><a href="http://robincwillis.github.io/CharCycle/">CharCycle</a></h3>
-
-<p>jQuery plugin to cycle through characters on an event. This effect is inspired by the classic actionscript effect on <a href="http://yugop.com">yugop.com</a>.</p>
-
-<h3><a href="http://robincwillis.github.io/AutoScroll/">AutoScroll</a></h3>
-
-<p>an incredibly small and simple JQuery plugin that allows overflowing elements with lists scrollable based on the vertical mouse position within that element.</p>
-
-<h3><a href="http://robincwillis.github.io/SlidePanel/">SlidePanel</a></h3>
-
-<p>a JQuery plugin that allows elements to expand and collapse creating a sliding panel effect.</p>
-</p>
-
-  
-
-						</div>
-						<div class="span3 offset1 meta">
-							
-
-	
-		<p class="date">11 April 2012</p>
-	
-
-	<ul class="tags unstyled">
-	  
 	  
 	  <li><a href="/blog/tag/jquery">jquery</a></li>
 	  
-	  <li><a href="/blog/tag/javascript">javascript</a></li>
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2014/01/15/full-window-images/index.html&text=Full%20Window%20Images%20With%20CSS%20and%20jQuery&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2014/01/15/full-window-images/index.html&text=Full%20Window%20Images%20With%20CSS%20and%20jQuery&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+						</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span8 post">
+						
+  <h2><a href="/blog/2014/01/03/robocons/index.html">Robocons</a></h2>
+  
+    <p><p><img src="http://s3.amazonaws.com/robincwillis-blog/img/robocon-banner.jpg" alt="Custom Mapper"></p>
+
+<p>Every designer has there own curated / authored and tweaked collection of go to icons for various UI elements, I decided to collect and release my own.</p>
+
+<p>Robocons is constantly evolving set of icons (80 and counting) that I develop in response to common User Interface needs that appear during development. Icon&#39;s range from basic navigational elements, media controls to quirky characters and include different weights in some cases. It is completely free, open source and comes in SVG TTF WOFF and EOT.</p>
+
+<p>Fork it on <a href="https://github.com/robincwillis/Robocons">Github</a></p>
+</p>
+
+  
+
+						</div>
+						<div class="span3 offset1 meta">
+							
+
+	
+		<p class="date">3 January 2014</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/icons">icons</a></li>
+	  
+	  <li><a href="/blog/tag/UI/UX">UI/UX</a></li>
+	  
+	  <li><a href="/blog/tag/svg">svg</a></li>
+	  
+	  <li><a href="/blog/tag/free">free</a></li>
 	  
 	
 	</ul>
 	<ul class="list-share">
 
 		<li class="share-item">
-<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2012/04/11/do-you-like-jquery-plugins/index.html&text=Do%20You%20Like%20jQuery%20Plugins?&via=robincwillis"></a>
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2014/01/03/robocons/index.html&text=Robocons&via=robincwillis"></a>
 
-<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2012/04/11/do-you-like-jquery-plugins/index.html&text=Do%20You%20Like%20jQuery%20Plugins?&via=robincwillis"></a>
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2014/01/03/robocons/index.html&text=Robocons&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+						</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span8 post">
+						
+  <h2><a href="/blog/2013/10/05/jekyll-themes/index.html">Jekyll Themes</a></h2>
+  
+    <p><p>In case you wanted to know this blog is powered by <img src="http://jekyllrb.com/" alt="Jekyll">, the nerdiest blogging platform (or generator rather). I have become a huge fan for its super simple approach both in content management and design. While playing around I developed two themes. Both are available on Github.</p>
+
+<h2>Caviar</h2>
+
+<p><img src="http://s3.amazonaws.com/robincwillis-blog/img/caviar.png" alt="Custom Mapper"></p>
+
+<p>Fork it on <a href="https://github.com/robincwillis/Caviar">Github</a></p>
+
+<p>and</p>
+
+<h2>Pyramid</h2>
+
+<p><img src="http://s3.amazonaws.com/robincwillis-blog/img/pyramid.png" alt="Custom Mapper"></p>
+
+<p>Fork it on <a href="https://github.com/robincwillis/Pyramid">Github</a></p>
+</p>
+
+  
+
+						</div>
+						<div class="span3 offset1 meta">
+							
+
+	
+		<p class="date">5 October 2013</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/jekyll">jekyll</a></li>
+	  
+	  <li><a href="/blog/tag/theme">theme</a></li>
+	  
+	  <li><a href="/blog/tag/css">css</a></li>
+	  
+	  <li><a href="/blog/tag/responsive">responsive</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/10/05/jekyll-themes/index.html&text=Jekyll%20Themes&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/10/05/jekyll-themes/index.html&text=Jekyll%20Themes&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+						</div>
+					</div>
+				
+					<div class="row-fluid">
+						<div class="span8 post">
+						
+  <h2><a href="/blog/2013/10/05/css-psuedo-element-hovers/index.html">Psuedo Element Hovers</a></h2>
+  
+    <p><p>The Result</p>
+
+<style type="text/css">
+    #cool-links a.item{
+        position: relative;
+    }
+
+    #cool-links a.item:before{
+       content: "";
+       opacity: 0;
+       background-color: #000;
+       display: block;
+       width: 100%;
+       height: 5px;
+       margin-bottom: 3px;
+    }
+
+    #cool-links a.item:hover:before,
+    #cool-links a.item.selected:hover:before{
+         opacity: 1;
+
+    }
+
+    #cool-links a.item.selected:before{
+        opacity: .25;
+    }
+</style>
+
+<div class="well">
+<ul id="cool-links" class="inline">
+    <li><a href="javascript:void(0)" class="item selected">Art</a></li>
+    <li><a href="javascript:void(0)" class="item">Architecture</a></li>
+    <li><a href="javascript:void(0)" class="item">Interactive</a></li>
+    <li><a href="javascript:void(0)" class="item">Graphic Design</a></li>
+</ul>
+</div>
+
+<p>The Markup</p>
+<div class="highlight"><pre><code class="html"><a name="line-1"></a><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;#cool-links&quot;</span> <span class="na">class=</span><span class="s">&quot;inline&quot;</span><span class="nt">&gt;</span>
+<a name="line-2"></a>    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;item selected&quot;</span><span class="nt">&gt;</span>Art<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<a name="line-3"></a>    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;item&quot;</span><span class="nt">&gt;</span>Architecture<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<a name="line-4"></a>    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;item&quot;</span><span class="nt">&gt;</span>Interactive<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<a name="line-5"></a>    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span> <span class="na">class=</span><span class="s">&quot;item&quot;</span><span class="nt">&gt;</span>Graphic Design<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<a name="line-6"></a><span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
+<p>The Styles</p>
+<div class="highlight"><pre><code class="css"><a name="line-1"></a><span class="nf">#cool-links</span> <span class="nt">a</span><span class="nc">.item</span><span class="p">{</span>
+<a name="line-2"></a>    <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+<a name="line-3"></a><span class="p">}</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="nf">#cool-links</span> <span class="nt">a</span><span class="nc">.item</span><span class="nd">:before</span><span class="p">{</span>
+<a name="line-6"></a>   <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<a name="line-7"></a>   <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<a name="line-8"></a>   <span class="k">background-color</span><span class="o">:</span> <span class="m">#000</span><span class="p">;</span>
+<a name="line-9"></a>   <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+<a name="line-10"></a>   <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<a name="line-11"></a>   <span class="k">height</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+<a name="line-12"></a>   <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+<a name="line-13"></a><span class="p">}</span>
+<a name="line-14"></a>
+<a name="line-15"></a><span class="nf">#cool-links</span> <span class="nt">a</span><span class="nc">.item</span><span class="nd">:hover:before</span><span class="o">,</span>
+<a name="line-16"></a><span class="nf">#cool-links</span> <span class="nt">a</span><span class="nc">.item.selected</span><span class="nd">:hover:before</span><span class="p">{</span>
+<a name="line-17"></a>     <span class="k">opacity</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+<a name="line-18"></a><span class="p">}</span>
+<a name="line-19"></a>
+<a name="line-20"></a><span class="nf">#cool-links</span> <span class="nt">a</span><span class="nc">.item.selected</span><span class="nd">:before</span><span class="p">{</span>
+<a name="line-21"></a>    <span class="k">opacity</span><span class="o">:</span> <span class="o">.</span><span class="m">25</span><span class="p">;</span>
+<a name="line-22"></a><span class="p">}</span>
+</code></pre></div></p>
+
+  
+
+						</div>
+						<div class="span3 offset1 meta">
+							
+
+	
+		<p class="date">5 October 2013</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/html">html</a></li>
+	  
+	  <li><a href="/blog/tag/css">css</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/10/05/css-psuedo-element-hovers/index.html&text=Psuedo%20Element%20Hovers&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2013/10/05/css-psuedo-element-hovers/index.html&text=Psuedo%20Element%20Hovers&via=robincwillis"></a>
 
 		</li>
 
@@ -361,9 +619,11 @@
 		    <a href="/blog/page4" class="previous">Previous</a>
 		  </h3>
 		  
-			<!--<span class="page_number ">Page: 5 of 5</span>-->
+			<!--<span class="page_number ">Page: 5 of 7</span>-->
 		  
-			<!--<span class="next ">Next</span> -->
+		  <h3 class="serif pull-right">
+		    <a href="/blog/page6" class="next">Next</a>
+		  </h3>
 		  
 		</div>
 	</div>

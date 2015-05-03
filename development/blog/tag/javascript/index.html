@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>RCW Posts Tagged &ldquo;javascript&rdquo;</title>
+        <title>Robin Willis Posts Tagged &ldquo;javascript&rdquo;</title>
         <!-- META -->
         
         <meta name="description" content="Robin Willis is an artist, designer and web developer" />
@@ -93,6 +93,367 @@
   <div class="span12">
     <h2 class="serif">Posts Tagged &ldquo;javascript&rdquo;</h2>
     <ul class="unstyled">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <li class="archive_list">
+        <div class="row-fluid">
+          <div class="span8 post">
+            
+  <h2><a href="/blog/2015/03/02/promises/index.html">Javascript Promises</a></h2>
+  
+    <p><p>Promises are in my, and probably many other developers, opinion the best way to manage asynchronous application flows while writing clear maintainable code and avoiding race conditions.</p>
+
+<p>Promises in fact are in the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Javascript API</a>, but it&#39;s still experimental and browser support is <a href="http://caniuse.com/#feat=promises">slim to none</a>. There are also great libraries out there, I like <a href="https://github.com/kriskowal/q">Q</a>, and <a href="https://api.jquery.com/category/deferred-object/">jQuery</a>. However both of these libraries do a lot more than I really want from Promises(pretty much just <code class="inline-code">when</code> and <code class="inline-code">then</code>).So I wanted set out to write my own Promise API with the goal of being super light, super simple and stripped down feature-wise, with the smallest footprint I could create. Here it is. Here it is.</p>
+
+<h4><a href="https://github.com/robincwillis/deferred">deferred</a></h4>
+
+<p>This is how you use it.</p>
+<div class="highlight"><pre><code class="javascript"><a name="line-1"></a>    <span class="kd">function</span> <span class="nx">asyncEvent</span><span class="p">(){</span>
+<a name="line-2"></a>        <span class="kd">var</span> <span class="nx">dfd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Deferred</span><span class="p">();</span>
+<a name="line-3"></a>        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<a name="line-4"></a>            <span class="nx">dfd</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">&quot;hip hop&quot;</span><span class="p">);</span>
+<a name="line-5"></a>        <span class="p">},</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">1500</span><span class="p">));</span>
+<a name="line-6"></a>        <span class="k">return</span> <span class="nx">dfd</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
+<a name="line-7"></a>    <span class="p">};</span>
+<a name="line-8"></a>
+<a name="line-9"></a>    <span class="kd">function</span> <span class="nx">asyncEvent2</span><span class="p">(){</span>
+<a name="line-10"></a>        <span class="kd">var</span> <span class="nx">dfd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Deferred</span><span class="p">();</span>
+<a name="line-11"></a>        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<a name="line-12"></a>            <span class="nx">dfd</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;hurray&#39;</span><span class="p">);</span>
+<a name="line-13"></a>        <span class="p">},</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">1500</span><span class="p">));</span>
+<a name="line-14"></a>        <span class="k">return</span> <span class="nx">dfd</span><span class="p">.</span><span class="nx">promise</span><span class="p">();</span>
+<a name="line-15"></a>    <span class="p">};</span>
+<a name="line-16"></a>
+<a name="line-17"></a>    <span class="nx">Deferred</span><span class="p">.</span><span class="nx">when</span><span class="p">(</span><span class="nx">asyncEvent</span><span class="p">(),</span> <span class="nx">asyncEvent2</span><span class="p">()).</span><span class="nx">then</span><span class="p">(</span>
+<a name="line-18"></a>        <span class="kd">function</span><span class="p">(</span><span class="nx">status1</span><span class="p">,</span> <span class="nx">status2</span><span class="p">){</span>
+<a name="line-19"></a>            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">status1</span> <span class="o">+</span><span class="s2">&quot; : &quot;</span><span class="o">+</span> <span class="nx">status2</span> <span class="o">+</span> <span class="s1">&#39;, resolved&#39;</span><span class="p">);</span>
+<a name="line-20"></a>        <span class="p">},</span>
+<a name="line-21"></a>        <span class="kd">function</span><span class="p">(</span><span class="nx">status1</span><span class="p">,</span> <span class="nx">status2</span><span class="p">,</span> <span class="nx">status3</span><span class="p">){</span>
+<a name="line-22"></a>            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">status1</span> <span class="o">+</span> <span class="nx">status2</span> <span class="o">+</span> <span class="s1">&#39;, failed&#39;</span><span class="p">);</span>
+<a name="line-23"></a>        <span class="p">}</span>
+<a name="line-24"></a>    <span class="p">);</span>
+</code></pre></div></p>
+
+  
+
+          </div>
+          <div class="span3 offset1 meta">
+            
+
+	
+		<p class="date">2 March 2015</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/javascript">javascript</a></li>
+	  
+	  <li><a href="/blog/tag/promise">promise</a></li>
+	  
+	  <li><a href="/blog/tag/async">async</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/03/02/promises/index.html&text=Javascript%20Promises&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/03/02/promises/index.html&text=Javascript%20Promises&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+          </div>
+        </div>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <li class="archive_list">
+        <div class="row-fluid">
+          <div class="span8 post">
+            
+  <h2><a href="/blog/2015/02/13/webgl-stage/index.html">Webgl Stage</a></h2>
+  
+    <p><p>When i was working at Sunglass our whole app was based around WebGL and the ability for people to load complex 3d models and view them on the browser. For debugging and testing I wrote <a href="http://robincwillis.github.io/WebGLStage/">WebGLStage</a>. It accepts any format three.js accepts, .json, .json.bin, .obj, .dae, .stl etc. Uses an ajax request to load the models, so if you are running this locally you will need to open it from a web server or your likely to have a security issue.</p>
+
+<h3><a href="http://robincwillis.github.io/WebGLStage/">WebGLStage</a></h3>
+</p>
+
+  
+
+          </div>
+          <div class="span3 offset1 meta">
+            
+
+	
+		<p class="date">13 February 2015</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/webgl">webgl</a></li>
+	  
+	  <li><a href="/blog/tag/javascript">javascript</a></li>
+	  
+	  <li><a href="/blog/tag/3d">3d</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/02/13/webgl-stage/index.html&text=Webgl%20Stage&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/02/13/webgl-stage/index.html&text=Webgl%20Stage&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+          </div>
+        </div>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      <li class="archive_list">
+        <div class="row-fluid">
+          <div class="span8 post">
+            
+  <h2><a href="/blog/2015/01/29/request-animation-frame/index.html">Request Animation Frame</a></h2>
+  
+    <p><p>If you want to learn about what <code class="inline-code">requestAnimFrame</code> is and why you should use it I recommend reading this <a href="http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/">article</a> by Paul Irish.</p>
+
+<p>If you are looking for a simple snippet to copy <code class="inline-code">requestAnimFrame</code> into your project then here you go.</p>
+<div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="kd">var</span> <span class="nx">onFrame</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+<a name="line-2"></a>    <span class="c1">//your code here</span>
+<a name="line-3"></a><span class="p">}</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimFrame</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+<a name="line-6"></a>    <span class="k">return</span>  <span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span>       <span class="o">||</span>
+<a name="line-7"></a>                    <span class="nb">window</span><span class="p">.</span><span class="nx">webkitRequestAnimationFrame</span> <span class="o">||</span>
+<a name="line-8"></a>                    <span class="nb">window</span><span class="p">.</span><span class="nx">mozRequestAnimationFrame</span>    <span class="o">||</span>
+<a name="line-9"></a>                    <span class="kd">function</span><span class="p">(</span> <span class="nx">callback</span> <span class="p">){</span>
+<a name="line-10"></a>                        <span class="nb">window</span><span class="p">.</span><span class="nx">setInterval</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">/</span> <span class="mi">60</span><span class="p">);</span>
+<a name="line-11"></a>                    <span class="p">};</span>
+<a name="line-12"></a><span class="p">})();</span>
+<a name="line-13"></a>
+<a name="line-14"></a><span class="p">(</span><span class="kd">function</span> <span class="nx">animloop</span><span class="p">(){</span>
+<a name="line-15"></a>    <span class="nx">requestAnimFrame</span><span class="p">(</span><span class="nx">animloop</span><span class="p">);</span>
+<a name="line-16"></a>    <span class="nx">onFrame</span><span class="p">();</span>
+<a name="line-17"></a><span class="p">})();</span>
+</code></pre></div></p>
+
+  
+
+          </div>
+          <div class="span3 offset1 meta">
+            
+
+	
+		<p class="date">29 January 2015</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/javascript">javascript</a></li>
+	  
+	  <li><a href="/blog/tag/requestAnimFrame">requestAnimFrame</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/01/29/request-animation-frame/index.html&text=Request%20Animation%20Frame&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/01/29/request-animation-frame/index.html&text=Request%20Animation%20Frame&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+          </div>
+        </div>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      <li class="archive_list">
+        <div class="row-fluid">
+          <div class="span8 post">
+            
+  <h2><a href="/blog/2015/01/19/mobile-touch-events/index.html">Mobile Touch Events</a></h2>
+  
+    <p>
+    <p>Mobile touch events don&#39;t work exactly how you would expect in Javascript, and in order to provide the best user experience it is worth knowing how they work and in certain cases overriding that behavior. Here is a codepen that logs the time and order of mobile and click events on an element and displays them back.</p>
+
+<p data-height="420" data-theme-id="13162" data-slug-hash="raQVKW" data-default-tab="result" data-user="robincwillis" class='codepen'>See the Pen <a href='http://codepen.io/robincwillis/pen/raQVKW/'>raQVKW</a> by Robin Willis (<a href='http://codepen.io/robincwillis'>@robincwillis</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>if you are viewing this on a laptop and click the box you will just see a mousedown, mouseup and click events triggered. If you are on a touch device you will see these in addition to click events. You will also notice that they are delayed by 300ms or so.</p>
+
+
+    </p>
+    <p><h4><a href="/blog/2015/01/19/mobile-touch-events/index.html">Read more...</a></h4></p>
+    
+
+          </div>
+          <div class="span3 offset1 meta">
+            
+
+	
+		<p class="date">19 January 2015</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/javascript">javascript</a></li>
+	  
+	  <li><a href="/blog/tag/events">events</a></li>
+	  
+	  <li><a href="/blog/tag/mobile">mobile</a></li>
+	  
+	  <li><a href="/blog/tag/touch">touch</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/01/19/mobile-touch-events/index.html&text=Mobile%20Touch%20Events&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/01/19/mobile-touch-events/index.html&text=Mobile%20Touch%20Events&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+          </div>
+        </div>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <li class="archive_list">
+        <div class="row-fluid">
+          <div class="span8 post">
+            
+  <h2><a href="/blog/2015/01/03/mockup/index.html">Mockup.js</a></h2>
+  
+    <p><p>Typically frontend developers get mockups or comps from a designer in some adobe format and set out building the interface for that application based on the specification. Adobe files are nice because you can check the document for font sizes, letter spacing, guides that provide hints about the grid system etc. But sometimes you only get jpegs and matching those details within the design is kinda like guess work.</p>
+
+<p>For these cases I created Mockup. Check it out!</p>
+
+<h4><a href="http://robincwillis.github.io/Mockup/">Project Page</a></h4>
+
+<h4><a href="http://robincwillis.github.io/Mockup/example/index.html">Demo</a></h4>
+
+<h4><a href="https://github.com/robincwillis/Mockup">Source on Github</a></h4>
+</p>
+
+  
+
+          </div>
+          <div class="span3 offset1 meta">
+            
+
+	
+		<p class="date">3 January 2015</p>
+	
+
+	<ul class="tags unstyled">
+	  
+	  
+	  <li><a href="/blog/tag/javascript">javascript</a></li>
+	  
+	  <li><a href="/blog/tag/jQuery">jQuery</a></li>
+	  
+	  <li><a href="/blog/tag/plugin">plugin</a></li>
+	  
+	  <li><a href="/blog/tag/mockup">mockup</a></li>
+	  
+	
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/01/03/mockup/index.html&text=Mockup.js&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url=http://robincwillis.com/blog/2015/01/03/mockup/index.html&text=Mockup.js&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+
+
+          </div>
+        </div>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
       
       
       
@@ -242,7 +603,7 @@
             
   <h2><a href="/blog/2014/04/20/javascript-year/index.html">Javascript Year</a></h2>
   
-    <p><p>I always cringe when I see copywright years in footers that are a year or two old. Why not use this Javascript one liner to always display the current date.</p>
+    <p><p>I always ~cringe~ chuckle when I see copyright years in footers that are a year or two old. Why not use this Javascript one liner to always display the current date.</p>
 <div class="highlight"><pre><code class="javascript"><a name="line-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">());</span>
 </code></pre></div>
 <p>Renders</p>

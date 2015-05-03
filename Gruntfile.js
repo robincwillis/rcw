@@ -63,7 +63,7 @@ module.exports = function(grunt) {
 				src : 'src',
 				dest: 'development',
 				serve : true,
-				server_port : 8000,
+				port : 8000,
 				auto : true
 				}
 			},
@@ -100,10 +100,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-jekyll');
 
+
 	grunt.registerTask('dev', ['build','watch']);
 	grunt.registerTask('build', ['uglify:vendor','uglify:dist', 'compass', 'jekyll:dev']);
 	grunt.registerTask('default',['dev']);
-	grunt.registerTask('deploy',[]);
+	grunt.registerTask('serve','jekyll:server');
 
 };
 
