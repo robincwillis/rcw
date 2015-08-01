@@ -1,0 +1,31 @@
+
+
+	{% if post.date %}
+		<p class="date">{{ post.date | date: "%-d %B %Y" }}</p>
+	{% else %}
+		<p class="date">{{ page.date | date: "%-d %B %Y" }}</p>
+	{% endif %}
+
+	<ul class="tags unstyled">
+	  {% if post.tags %}
+	  {% for tag in post.tags %}
+	  <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
+	  {% endfor %}
+	{% else %}
+	{% for tag in page.tags %}
+	  <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
+	  {% endfor %}
+	{% endif %}
+	</ul>
+	<ul class="list-share">
+
+		<li class="share-item">
+<a class="share twitter" target="_blank" href="https://twitter.com/intent/tweet?url={% if post.url %}{{ site.url }}{{ post.url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}&text={% if post.title %}{{ post.title | escape | truncate:80 | replace:' ','%20' }}{% else if page.title %}{{ page.title | escape | truncate:80 | replace:' ','%20' }}{% else %}{{ site.title | escape | truncate:80 | replace:' ','%20' }}{% endif %}&via=robincwillis"></a>
+
+<a class="share-hover twitter-hover" target="_blank" href="https://twitter.com/intent/tweet?url={% if post.url %}{{ site.url }}{{ post.url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}&text={% if post.title %}{{ post.title | escape | truncate:80 | replace:' ','%20' }}{% else if page.title %}{{ page.title | escape | truncate:80 | replace:' ','%20' }}{% else %}{{ site.title | escape | truncate:80 | replace:' ','%20' }}{% endif %}&via=robincwillis"></a>
+
+		</li>
+
+	</ul>
+
+

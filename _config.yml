@@ -1,0 +1,32 @@
+name: RCW
+markdown: redcarpet-pygments
+highlighter: pygments
+source: ./src
+destination: ./development
+#permalink: pretty
+url: "http://robincwillis.com"
+paginate: 5
+paginate_path: "blog/page:num"
+tag_dir: "/blog/tag"
+permalink: /blog/:year/:month/:day/:title/index.html
+description: "Robin Willis is an artist, designer and web developer"
+image: "http://s3.amazonaws.com/robincwillis/img/splash/03.jpg"
+keywords:
+ robin,
+ willis,
+ robin willis,
+ robincwillis,
+ rcw,
+ code,
+ art,
+ design,
+ architecture,
+ 3d,
+ development,
+ engineering,
+ software,
+ javascript,
+ html5,
+ css,
+ ruby,
+ rails,

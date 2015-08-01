@@ -1,0 +1,40 @@
+---
+layout: default
+title: Blog
+---
+<div class="container-fluid container-blog">
+	<div class="row-fluid">
+	{% include sidebar.html %}
+			<div class="span12">
+				{% for post in paginator.posts %}
+					<div class="row-fluid">
+						<div class="span8 post">
+						{% include excerpt.html %}
+						</div>
+						<div class="span3 offset1 meta">
+							{% include meta.html %}
+						</div>
+					</div>
+				{% endfor %}
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class=" span6 offset3 pagination">
+		  {% if paginator.previous_page %}
+		 	<h3 class="serif pull-left">
+		    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+		  </h3>
+		  {% else %}
+<!-- 		  <span class="previous">Previous</span> -->
+		  {% endif %}
+			<!--<span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>-->
+		  {% if paginator.next_page %}
+		  <h3 class="serif pull-right">
+		    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+		  </h3>
+		  {% else %}
+			<!--<span class="next ">Next</span> -->
+		  {% endif %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,131 @@
+     /* post */
+
+h2 a:link {color:#000;}
+h2 a:visited {color:#000;}
+h2 a:hover {color:#333;text-decoration:none}
+h2 a:active {color:#333;}
+
+.post{
+    margin-bottom:40px;
+}
+
+.post{
+  margin-bottom: 80px;
+}
+
+.meta{
+  margin-top: 15px;
+}
+
+.post img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.post p{
+  margin: 20px 0;
+}
+
+
+.date{
+  font-family: "crimson_textitalic", 'Times New Roman', Times, serif;
+  font-size:24px;
+}
+
+.tags li{
+      font-family: "montserratregular", 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  line-height: 24px;
+      font-size: 16px;
+}
+
+.tags a:link {color:#E3E3E3;}
+.tags a:visited {color:#E3E3E3;}
+.tags a:hover {color:#555;text-decoration:none}
+.tags a:active {color:#555;}
+
+
+.post-nav{
+    font-family: 'montserratregular', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-size:14px;
+}
+.post-nav>a{
+    color:#000;
+    text-transform:uppercase;
+}
+
+.post-nav>a:hover{
+
+    text-decoration:none;
+    opacity:0.8;
+}
+
+.list-share{
+
+    list-style: none;
+    padding:0;
+    margin:0;
+
+    li.share-item{
+      display: inline-block;
+      width: 30px;
+      height:30px;
+      position:relative;
+      border-bottom:none;
+    }
+
+    li.share-item:hover a.share{
+      opacity: 0;
+      border-bottom: none;
+    }
+
+    li.share-item:hover a.share-hover{
+     opacity: 1;
+     border-bottom:none;
+    }
+
+
+    a.share, a.share-hover{
+        border-bottom:none;
+        position: absolute;
+        top:0;
+        left:0;
+        display: block;
+        width:30px;
+        height:30px;
+        -webkit-transition: opacity 200ms ease-in-out;
+      -moz-transition: opacity 200ms ease-in-out;
+      -o-transition: opacity 200ms ease-in-out;
+      transition: opacity 200ms ease-in-out;
+    }
+
+    a.share-hover{
+      opacity: 0;
+    }
+
+
+    .twitter{
+      background:url(#{$img_url}t_share.svg) center top no-repeat;
+
+    }
+
+    .twitter-hover{
+      background:url(#{$img_url}t_share.svg) center bottom no-repeat;
+    }
+
+
+}
+
+// Comments
+
+#disqus_thread *{
+
+  font-family: "montserratbold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+  .textarea-wrapper{
+    border-radius:0 !important;
+      .textarea{
+          font-family: "crimson_textroman", 'Times New Roman', Times, serif !important;
+      }
+    }
+}
+
