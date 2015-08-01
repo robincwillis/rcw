@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+</head>
+
+<style type="text/css">
+
+body{
+ margin:20px;
+}
+
+.preloader{
+	position: absolute;
+	width:40px;
+	height:40px;
+	border-radius: 50%;
+	top:50%;
+	left:50%;
+	margin-top:-20px;
+	margin-left:-20px;
+	background-color: blue;
+}
+
+.item{
+	position: relative;
+	width: 500px;
+	background-color: tan;
+	margin:0 auto;
+/*	height:700px;*/
+	overflow: hidden;
+}
+
+.content{
+	/*width:200px;*/
+	padding:20px;
+	background: rgba(255,0,0,0.4);
+
+
+
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+</style>
+<body>
+
+	<div class="item">
+
+		<div class="content">
+
+<p>			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<p>			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+		</div>
+	</div>
+
+
+<a href="#" data-url="content.html" data-target=".item" class="loadContent">Load that ish</a>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+<script type="text/javascript">
+
+$(function() {
+
+
+
+	slideIn = function(data, $target){
+		console.log(data);
+		var $el = $(data);
+		//detach loader
+		$target.empty();
+		//load content
+		$target.append($el);
+		//animate in
+		$target.css({height : "auto"});
+	};
+
+	loadContent = function(url, target, callback){
+		console.log('lodacontentcalled')
+		//
+		$.ajax({
+		  url: url,
+		})
+		  .done(function( data ) {
+		  	//console.log(data);
+		   	callback(data, $(target));
+		  });
+	};
+
+
+	$('.loadContent').on('click', function(){
+		var url		=	$(this).data('url');
+		var target	=	$(this).data('target');
+
+		loadContent(url, target, slideIn);
+
+	});
+
+
+
+});
+
+</script>
+</body>
+</html>

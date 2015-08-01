@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Paper Example</title>
+</head>
+
+<style type="text/css">
+
+html, body{
+	margin:0;
+	background:grey;
+}
+
+canvas{
+	position: absolute;
+	top:0;
+	left:0;
+	width:1000px;
+	height:3000px;
+	background: #fff;
+}
+
+
+</style>
+
+<body>
+
+	<canvas id="canvas"></canvas>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+	<script src="paper-full.js"></script>
+	<script type="text/paperscript" canvas="canvas">
+
+	var size = new Size(1000, 3000);
+
+	view.viewSize = size;
+	var path = new Path.Circle(new Point(300,300), 100);
+	project.activeLayer.lastChild.fillColor = 'red';
+
+	</script>
+</body>
+</html>

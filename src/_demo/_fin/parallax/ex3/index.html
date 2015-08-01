@@ -1,0 +1,170 @@
+<!-- Example 3 			-->
+<!-- Fade Background -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+</head>
+
+<style type="text/css">
+
+html, body{
+		font-family: helvetica;
+	width: 100%;
+	height:100%;
+	margin:0;
+}
+
+.splash,
+.splash-img,
+.splash-img-blur{
+  height:700px;
+  width: 100%;
+  overflow: auto;
+}
+
+.splash{
+	position: relative;
+}
+
+
+.splash-img, .splash-img-blur{
+
+  position: absolute;
+  top:0;
+  left:0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;  background-size: cover;
+
+}
+
+.splash-img{
+	background-image:url(ex3a.jpg);
+}
+
+.splash-img-blur{
+	opacity: 0;
+	background-image:url(ex3b.jpg);
+}
+
+.splash h1{
+	z-index: 100;
+	position: relative;
+	color:#fff;
+	font-size: 72px;
+	margin: 0;
+	margin-top:-36px;
+	width: 100%;
+	text-align: center;
+	display: block;
+	height:72px;
+	line-height: 72px;
+	top:50%;
+}
+
+section{
+
+	width:960px;
+	margin:80px auto;
+}
+section h1{
+		font-size: 50px;
+}
+
+p{
+	font-size: 21px;
+	line-height: 35px;
+}
+
+</style>
+
+<body>
+
+<div class="splash">
+	<h1>Hello World</h1>
+	<div class="splash-img"></div>
+	<div class="splash-img-blur"></div>
+</div>
+
+<section>
+<h1>Heading</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+
+<section>
+<h1>Heading</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+
+<section>
+<h1>Heading</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+
+<script type="text/javascript">
+
+var offset;
+var scrollEnd = 200;
+
+function blurImage(amount){
+	$('.splash-img-blur').css({
+		opacity : amount
+	})
+}
+
+$(window).scroll( function(e) {
+
+	offset = $(window).scrollTop();
+	if(offset/scrollEnd < 1.5){
+		blurImage(offset/scrollEnd);
+	}
+
+});
+
+
+</script>
+
+</body>
+</html>

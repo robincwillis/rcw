@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+
+
+<style type="text/css">
+
+body{
+	margin:30px;
+}
+
+.footer{
+	height:40px;
+	width:100%;
+}
+
+a{
+	display: block{
+		width: 100px;
+		height:25px;
+		background: grey;
+	}
+}
+
+.grid{
+/*	-moz-column-count: 3;
+	-moz-column-gap: 30px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 30px;
+	-o-column-column-count: 3;
+	-o-column-gap: 30px;
+	-ms-column-column-count: 3;
+	-ms-column-gap: 30px;
+	width: 100%;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid-column;*/
+}
+
+.item{
+	display: inline-block;
+	width:30%;
+	margin-bottom:30px;
+	margin-right:20px;
+}
+
+.item img{
+	display: block;
+	width:100%;
+	opacity: 0.5;
+}
+
+.a{
+		background: red;
+}
+
+.b{
+	background: blue;
+}
+
+@media (max-width: 699px){
+	.item{
+		width:45%;
+	}
+}
+
+@media (max-width: 480px){
+	.item{
+		width:100%;
+		margin-right:0;
+
+	}
+}
+
+
+</style>
+
+</head>
+<body>
+
+
+<div class="grid">
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+	<div class="item a"><img src="http://placehold.it/300x300"></div>
+</div>
+<div class="footer">
+	<a href="#">Add More Items</a>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+
+<script type="text/javascript">
+
+	$(function() {
+
+		$('a').on('click', function(e){
+			e.preventDefault();
+			var html =  '<div class="item b"><img src="http://placehold.it/300x300"></div>'+
+									'<div class="item b"><img src="http://placehold.it/300x300"></div>'+
+									'<div class="item b"><img src="http://placehold.it/300x300"></div>'+
+									'<div class="item b"><img src="http://placehold.it/300x300"></div>'+
+									'<div class="item b"><img src="http://placehold.it/300x300"></div>'+
+									'<div class="item b"><img src="http://placehold.it/300x300"></div>';
+
+			$('.grid').append(html);
+
+		});
+	});
+
+</script>
+
+</body>
+</html>

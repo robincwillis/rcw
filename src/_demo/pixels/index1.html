@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		div{
+			float:left;
+			margin:20px;
+		}
+		canvas{
+			border:1px solid black;
+		}
+		img{
+			display:none;
+		}
+	</style>
+
+</head>
+<body>
+	<img id="image" src="chrome.png">
+
+	<p>
+		Zoom factor
+		<input id="zoom" type="range" min="1" max="32" value="5" size="2">
+	</p>
+
+	<div>
+		<canvas id="c-left"></canvas>
+		<p>Original Image</p>
+	</div>
+	<div>
+		<canvas id="c-right"></canvas>
+		<p>Pixels written into Array</p>
+	</div>
+
+	<div><a id="drop" href="#">Make it Drop Like an EarthQuake</a></div>
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+	<script type="text/javascript">
+	window.onload = function(){
+
+		var img = document.getElementById('image');
+		var c1   = document.getElementById('c-left');
+		var c2   = document.getElementById('c-right');
+		var off = document.createElement('canvas');
+
+		c1.width  = 500;
+		c1.height = 500;
+
+		c2.width  = 500;
+		c2.height = 500;
+		//var ww = 686;
+		//var hh = 484;
+		//off.width = 686;//img.width;
+		//off.height = 484;//img.height;
+
+		var ctx1 = c1.getContext('2d');
+		var ctx2 = c2.getContext('2d');
+		var offtx = off.getContext('2d');
+
+		var canvasOffset=$("#c-right").offset();
+	    var offsetX=canvasOffset.left;
+	    var offsetY=canvasOffset.top;
+	    var canvasWidth=c2.width;
+	    var canvasHeight=c2.height;
+	    var isDragging=false;
+
+		var z = document.getElementById('zoom');
+
+
+
+
+		function getImageBlock(context, imgData, width, height, xPos, yPos){
+
+			var newImgData = context.createImageData(width, height);
+
+
+			for(var x = 0; x < width; x++){
+				for(var y = 0; y < height; y++){
+
+					var p = getPixel(imgData, xPos+x, yPos+y);
+					console.log(p);
+					setPixel(newImgData, x, y, p[0],p[1],p[2],p[3]);
+
+				}
+			}
+			return newImgData;
+		}
+
+		function getPixel(imgData, x, y){
+			console.log(imgData);
+			index = ( x + y * img.width) * 4;
+			var pixel = [];
+
+			pixel[0] = imgData[index+0];
+			pixel[1] = imgData[index+1];
+			pixel[2] = imgData[index+2];
+			pixel[3] = imgData[index+3];
+
+			return pixel;
+		}
+
+
+		function setPixel(imgData, x, y, r, g, b, a){
+			index = ( x + y * imgData.width) * 4;
+			imgData.data[index+0] = r;
+			imgData.data[index+1] = g;
+			imgData.data[index+2] = b;
+			imgData.data[index+3] = a;
+		}
+
+
+		function makeDestroy(imgData, newImgData, zFactor, cropX, cropY){
+
+
+
+			for(var x =0; x < imgData.width; x++){
+				var rand1 = Math.floor(3*Math.random());
+				var rand2 = Math.floor(3*Math.random());
+				for(var y=0; y < imgData.height; y++){
+
+
+				var rand3 = Math.floor(3*Math.random());
+				var rand4 = Math.floor(3*Math.random());
+					var i = (y*imgData.width + x)*4;
+						var r = imgData.data[i];
+						var g = imgData.data[i+1];
+						var b = imgData.data[i+2];
+						var a = imgData.data[i+3];
+					//console.log(x);
+					if(rand2 > 0){
+						i = (y*imgData.width + x)*4;
+						r = imgData.data[i+rand1];
+						g = imgData.data[i+rand2];
+						b = imgData.data[i+rand3];
+						a = imgData.data[i+rand4];
+					}else if(rand2<2 && rand2 > 1){
+						 i = (y*imgData.width + x)*4;
+						 r = imgData.data[i];
+						// g = imgData.data[i+1];
+						 b = imgData.data[i+2];
+						// a = imgData.data[i+3];
+					}else{
+						 i = (y*imgData.width + x)*rand2;
+					}
+
+
+					xs = x * rand1;
+					ys = y * rand3;
+
+					for(var j=0; j < zFactor*rand1; j++){
+						for(var k=0; k < zFactor; k++){
+							if(x*zFactor + j < cropX && y*zFactor+k < cropY){
+
+								if(rand3 > 2){
+									setPixel(newImgData, (xs*zFactor)+j, (ys*zFactor*rand4)+k, r, g, b, a);
+								}else{
+									setPixel(newImgData, (x*zFactor*rand4)+j, (y*zFactor)+k, r, g, b, a);
+								}
+
+							}else{
+								break;
+								//return newImgData;
+							}
+						}
+					}
+				}
+			}
+			return newImgData;
+		}
+
+		function makeImage(imgData, newImgData, zFactor, crop){
+
+
+			for(var x =0; x < imgData.width; x++){
+				for(var y=0; y < imgData.height; y++){
+
+					//console.log(x);
+
+					var i = (y*imgData.width + x)*4;
+					var r = imgData.data[i  ];
+					var g = imgData.data[i+1];
+					var b = imgData.data[i+2];
+					var a = imgData.data[i+3];
+
+					var r = 0;
+					var g = 0;
+					var b = 0;
+
+					for(var j=0; j < zFactor; j++){
+						for(var k=0; k < zFactor; k++){
+							if(x*zFactor + j < crop && y*zFactor+k < crop){
+								setPixel(newImgData, (x*zFactor)+j, (y*zFactor)+k, r, g, b, a);
+							}else{
+								break;
+								//return newImgData;
+							}
+						}
+					}
+				}
+			}
+			return newImgData;
+		}
+
+		z.oninput = function(){
+
+			var newZoom = z.value*1;
+			if (isNaN(newZoom) || newZoom == zoom) return;
+			zoom = newZoom;
+
+			ctx1.clearRect(0,0,c1.width,c1.height);
+     	ctx1.drawImage(img,-offset*zoom,-offset*zoom,img.width*zoom,img.height*zoom);
+
+			finalImg = makeImage(imgData, newImgData, zoom, xBound, yBound);
+
+			//ctx2.clearRect(0,0,c2.width,c2.height);
+
+			//ctx2.putImageData(finalImg, xPos, yPos);
+			//var asdf = new Image();
+			//asdf.src = finalImg;
+
+		};
+
+
+		  var offset = 0;
+			var bounds = 500;
+
+			var xPos = 0;
+	    var yPos = 0;
+
+	    var imageXPos = xPos;
+      var imageYPos = yPos;
+
+		//create a canvas object for ig from the dom
+		//var img = new Image();
+
+		// var imgData, newImgData;
+
+
+			offtx.drawImage(img,0,0);
+
+
+			var xBound = img.width;
+			var yBound = img.height;
+			ctx1.drawImage(img,0,0);
+			//ctx1.drawImage(img,-offset*zoom,-offset*zoom,img.width*zoom,img.height*zoom);
+			//get the full image data
+			var fullImgData = offtx.getImageData(0,0,img.width,img.height).data;
+			var fff = offtx.getImageData(0,0,img.width,img.height);
+			// console.log(img.width);
+			// console.log(img.height);
+
+			var imgData = getImageBlock(ctx2, fullImgData, xBound, yBound, offset, offset);
+
+
+			ctx2.putImageData(fff, 0, 0);
+
+			//ctx2.putImageData(imgData, 0, 0);
+			//ctx2.drawImage(img,0,0);
+
+
+			// var newImgData = ctx2.createImageData(xBound, yBound);
+			// var zFactor = z;
+			// var finalImg = makeImage(imgData, newImgData, zFactor, xBound, yBound);
+			// z.oninput(imgData);
+
+
+
+		//img.crossOrigin = '';
+		//img.src = 'http://robincwillis-blog.s3-website-us-east-1.amazonaws.com/demo/pixels/ny.png';
+		//img.src = 'pier.png';
+
+	function dropIt(e){
+
+
+		finalImg = makeDestroy(imgData, newImgData, zoom, xBound, yBound);
+
+			//setPixel(finalImg, i, j, p[rand1],p[rand2],p[rand3],p[3]);
+
+		ctx2.clearRect(0,0,c2.width,c2.height);
+		ctx2.putImageData(finalImg, 0, 0);
+
+	}
+
+
+    function handleMouseDown(e){
+      canMouseX=parseInt(e.clientX-offsetX);
+      canMouseY=parseInt(e.clientY-offsetY);
+      imageXPos = canMouseX - xPos;
+      imageYPos = canMouseY - yPos;
+      // set the drag flag
+      isDragging=true;
+    }
+
+    function handleMouseUp(e){
+      canMouseX=parseInt(e.clientX-offsetX);
+      canMouseY=parseInt(e.clientY-offsetY);
+      xPos = canMouseX-imageXPos;
+      yPos = canMouseY-imageYPos;
+      // clear the drag flag
+      isDragging=false;
+    }
+
+    function handleMouseOut(e){
+      canMouseX=parseInt(e.clientX-offsetX);
+      canMouseY=parseInt(e.clientY-offsetY);
+      xPos = canMouseX-imageXPos;
+      yPos = canMouseY-imageYPos;
+      // user has left the canvas, so clear the drag flag
+      isDragging=false;
+    }
+
+    function handleMouseMove(e){
+      canMouseX=parseInt(e.clientX-offsetX);
+      canMouseY=parseInt(e.clientY-offsetY);
+      //console.log("hhh");
+      // if the drag flag is set, clear the canvas and draw the image
+      if(isDragging){
+          ctx2.clearRect(0,0,canvasWidth,canvasHeight);
+          ctx2.putImageData(finalImg,(imageXPos-canMouseX) *-1,(imageYPos-canMouseY) *-1);
+      }
+    }
+
+	$("#c-right").mousedown(function(e){handleMouseDown(e);});
+    $("#c-right").mousemove(function(e){handleMouseMove(e);});
+    $("#c-right").mouseup(function(e){handleMouseUp(e);});
+    $("#c-right").mouseout(function(e){handleMouseOut(e);});
+
+     $("#drop").click(function(e){dropIt(e);});
+	};
+
+	</script>
+</body>
+</html>

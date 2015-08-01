@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+</head>
+
+<style type="text/css">
+
+body{
+ margin:20px;
+}
+
+.preloader{
+	position: absolute;
+	width:40px;
+	height:40px;
+	border-radius: 50%;
+	top:50%;
+	left:50%;
+	margin-top:-20px;
+	margin-left:-20px;
+	background-color: blue;
+}
+
+.item{
+	position: relative;
+	width: 500px;
+	background-color: tan;
+	margin:0 auto;
+	overflow: hidden;
+	-webkit-transition: height 0.5s ease-in-out;
+	-moz-transition: height 0.5s ease-in-out;
+	-o-transition: height 0.5s ease-in-out;
+	-ms-transition: height 0.5s ease-in-out;
+	transition: height 0.5s ease-in-out;
+}
+
+.content{
+	padding:20px;
+	background: rgba(255,0,0,0.4);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.content2{
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+</style>
+<body>
+
+<div class="item">
+	<div class="content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+
+
+<a href="#" data-url="content.html" data-target=".item" class="loadContent">Load that ish</a>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+<script type="text/javascript">
+
+$(function() {
+
+var	slideOut = function($el, $target){
+	var deferred = new $.Deferred();
+	var preloader = '<div class="preloader"></div>';
+	$target.css({height : $target.height()});
+	$el.css({"-webkit-transform":"translateX(100%)"});
+  $el.on('transitionend webkitTransitionEnd', function(e){
+	    console.log(e.originalEvent.elapsedTime + 's');
+  		deferred.resolve($target);
+		});
+	return deferred.promise();
+};
+
+var	slideIn = function(el, $target){
+		var $el = $(el);
+		$target.empty();
+		$target.append($el);
+		$target.css({height : "auto"});
+		setTimeout(function(){
+		 	$el.removeClass('content2');
+		 }, 0);
+	};
+
+var	getData = function(url){
+		var deferred = new $.Deferred();
+	  $.ajax({
+	      url: url,
+	      success: function (response) {
+	      	console.log('ajax success');
+	        deferred.resolve(response);
+	      },
+	      error: function (xhr, ajaxOptions, thrownError) {
+	      	console.log('ajax error');
+	        deferred.reject(thrownError);
+	      }
+		});
+	  return deferred.promise();
+	}
+
+var	loadContent = function(url, target){
+	$el = $('.content');
+	$target = $(target);
+	var slidePromise = slideOut($el, $target);
+	var dataPromise = getData(url);
+
+	$.when(slidePromise, dataPromise).done(function(slidePromise, dataPromise) {
+   		slideIn(dataPromise, slidePromise );
+	});
+};
+
+
+$('.loadContent').on('click', function(){
+	var url		=	$(this).data('url');
+	var target	=	$(this).data('target');
+	loadContent(url, target);
+});
+
+});
+
+</script>
+</body>
+</html>

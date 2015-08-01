@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		div{
+			float:left;
+			margin:20px;
+		}
+		canvas{	
+			border:1px solid black;	
+		}
+		img{
+			display:none;
+		}
+	</style>
+
+</head>
+<body>
+	<img id="image" src="diplo.png">
+	
+	<div>
+		<canvas id="c-right"></canvas>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+	<script type="text/javascript">
+
+		var img = document.getElementById('image');
+		var c2   = document.getElementById('c-right');
+		var off = document.createElement('canvas');
+
+		c2.width  = 500;
+		c2.height = 500;
+
+		off.width = img.width;
+		off.height = img.height;
+
+		var ctx2 = c2.getContext('2d');
+		var offtx = off.getContext('2d');
+
+		var canvasOffset=$("#c-right").offset();
+	    var offsetX=canvasOffset.left;
+	    var offsetY=canvasOffset.top;
+	    var canvasWidth=c2.width;
+	    var canvasHeight=c2.height;
+	    var isDragging=false;
+
+	    var xPos = 0;
+	    var yPos = 0;
+
+	    var imageXPos = xPos;
+        var imageYPos = yPos;
+
+	    offtx.drawImage(img,0,0);
+	     
+
+	    var imgData = offtx.getImageData(0,0,img.width,img.height);
+
+	    ctx2.putImageData(imgData, xPos, yPos);
+
+
+	function handleMouseDown(e){
+      canMouseX=parseInt(e.clientX-offsetX);
+      canMouseY=parseInt(e.clientY-offsetY);
+      imageXPos = canMouseX - xPos;
+      imageYPos = canMouseY - yPos;
+      // set the drag flag
+      isDragging=true;
+    }
+
+    function handleMouseUp(e){
+      canMouseX=parseInt(e.clientX-offsetX);
+      canMouseY=parseInt(e.clientY-offsetY);
+      // clear the drag flag
+      xPos = canMouseX-imageXPos;
+      yPos = canMouseY-imageYPos;
+      console.log(xPos + ":" + yPos);
+      isDragging=false;
+    }
+
+    function handleMouseOut(e){
+      canMouseX=parseInt(e.clientX-offsetX);
+      canMouseY=parseInt(e.clientY-offsetY);
+      // user has left the canvas, so clear the drag flag
+      isDragging=false;
+    }
+
+    function handleMouseMove(e){
+      canMouseX=parseInt(e.clientX-offsetX);
+      canMouseY=parseInt(e.clientY-offsetY);
+      //console.log("hhh");
+      // if the drag flag is set, clear the canvas and draw the image
+      if(isDragging){
+          ctx2.clearRect(0,0,canvasWidth,canvasHeight);
+          
+   //       console.log()
+          //console.log((imageXPos - canMouseX) *-1);
+  //        console.log(imageYPos - canMouseY);
+          
+drawBoard();
+          ctx2.putImageData(imgData,(imageXPos-canMouseX) *-1,(imageYPos-canMouseY) *-1);
+      }
+    }
+
+	$("#c-right").mousedown(function(e){handleMouseDown(e);});
+    $("#c-right").mousemove(function(e){handleMouseMove(e);});
+    $("#c-right").mouseup(function(e){handleMouseUp(e);});
+    $("#c-right").mouseout(function(e){handleMouseOut(e);});
+
+
+var bw = 500;
+var bh = 500;
+var p = 0;
+var cw = bw + (p*2) + 1;
+var ch = bh + (p*2) + 1;
+
+    function drawBoard(){
+	for (var x = 0; x <= bw; x += 50) {
+	    ctx2.moveTo(0.5 + x + p, p);
+	    ctx2.lineTo(0.5 + x + p, bh + p);
+	}
+
+
+	for (var x = 0; x <= bh; x += 50) {
+	    ctx2.moveTo(p, 0.5 + x + p);
+	    ctx2.lineTo(bw + p, 0.5 + x + p);
+	}
+
+	ctx2.strokeStyle = "black";
+	ctx2.stroke();
+	}
+
+drawBoard();
+
+	</script>

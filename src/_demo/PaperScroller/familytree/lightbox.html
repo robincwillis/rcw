@@ -1,0 +1,318 @@
+<?
+  $member = vae($_REQUEST['id']);
+  $_REQUEST['loc'] = 'about';
+  $bio = strip_tags(((string)$member->full_bio) ? $member->full_bio : $member->short_bio);
+?>
+
+<!doctype html>
+<html class="no-js">
+  <head>
+  <title>Hayward - Family Tree | <? echo $member->name; ?></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="description" content="<?php echo $GLOBALS['description'] ? $GLOBALS['description'] : vae('/settings/meta_description'); ?>" />
+
+  <meta property="og:title" content="Hayward - Family Tree | <? echo $member->name; ?>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="<? echo vae_data_url().vae_image($member->main_image, 800,500); ?>" />
+  <meta property="og:description" content="<? echo htmlspecialchars((string)$bio, ENT_QUOTES)  ?>" />
+
+  <link href="//www.google-analytics.com" rel="dns-prefetch">
+  <link href="//ajax.googleapis.com" rel="dns-prefetch">
+  <link href="/assets/css/style.min.css" rel="stylesheet">
+
+  <script src="/assets/components/modernizr.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  <![endif]-->
+
+  <style type="text/css">
+
+    /* allows canvas to access this font */
+    div.load-font{font-family: "Trade-Gothic-Bold";}
+  </style>
+  <script src="/assets/js/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/js/pages/tree-nodes.js?v=1"></script>
+  <script src="/assets/js/pages/tree-nodes-tablet.js?v=1"></script>
+  </head>
+  <body>
+
+<? verb_include('/includes/header.php'); ?>
+
+
+<!-- LIGHTBOX -->
+<div class="family-tree-lightbox">
+
+<a href="/familytree/index.html" class="close-lightbox">
+    <div class="right-bar"></div>
+    <div class="left-bar"></div>
+</a>
+
+<div class="main-wrapper" role="main">
+      <div class="main inspiration-page family-tree-page">
+      	<div class="post-nav">
+            	<ul>
+            		<li>
+            			<a class="active" href="#post-about">Information</a>
+            		</li>
+                <? if ((string)$member->images->count): ?>
+            		<li>
+            			<a href="#post-photos">Photos</a>
+            		</li>
+                <? endif; ?>
+                <? if ((string)$member->videos->count): ?>
+            		<li>
+            			<a href="#post-video">Videos</a>
+            		</li>
+                <? endif; ?>
+                <? if ((string)$member->quotes->count): ?>
+            		<li>
+            			<a href="#post-quotes">Quotes</a>
+            		</li>
+                <? endif; ?>
+                <li>
+                  <a href="#post-relationships-list">Relationships</a>
+                </li>
+            	</ul>
+            	<div class="bar"></div>
+            	<span class="nav-title"><? echo $member->name; ?></span>
+
+            </div>
+        <article id="post-about" class="post">
+          <div class="post-inner">
+            <div class="post-images-source">
+             <h3 class="mobile-info">Information</h3>
+              <div class="post-images">
+
+                  <img src="<? echo vae_data_url().vae_image($member->main_image, 800,500); ?>">
+
+              </div>
+            </div>
+
+            <div class="post-copy">
+
+              <div class="post-title">
+                <h2><? echo $member->name; ?></h2>
+              </div>
+              <div class="post-images-destination"></div>
+              <div class="post-text">
+              	<!-- <p><?# echo $member->name; ?>, 1940</p> -->
+              	<p><? echo ((string)$member->full_bio) ? $member->full_bio : $member->short_bio; ?></p>
+      					<p><em><? echo $member->image_credit; ?></em></p>
+              </div>
+              <div class="share-module">
+                <!-- <button class="like">Like</button> -->
+                <a class="like" href="http://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=<? echo $_SERVER['SERVER_NAME'].$permalink; ?>&title=<? echo urlencode($title) ?>" target="_blank">Like</a>
+                <button class="share">Share</button>
+                <!-- AddThis Button BEGIN -->
+                <div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+                  <a addthis:title="<? echo $title ?>" addthis:url="<? echo $_SERVER['SERVER_NAME'].$permalink ?>" class="addthis_button_facebook"></a>
+                  <a addthis:title="<? echo $title ?>" addthis:url="<? echo $_SERVER['SERVER_NAME'].$permalink ?>" class="addthis_button_twitter"></a>
+                  <a addthis:title="<? echo $title ?>" addthis:url="<? echo $_SERVER['SERVER_NAME'].$permalink ?>" class="addthis_button_pinterest_share"></a>
+                  <a addthis:title="<? echo $title ?>" addthis:url="<? echo $_SERVER['SERVER_NAME'].$permalink ?>" class="addthis_button_google_plusone_share"></a>
+                  <a class="addthis_button_compact"></a>
+                </div>
+                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-52644d2652015056"></script>
+                <!-- AddThis Button END -->
+              </div>
+
+            </div>
+          </div>
+        </article>
+
+        <? if ((string)$member->images->count): ?>
+
+          <article id="post-photos" class="collapsed post-photos">
+
+            <div class="post-head post-photos-head">
+              <div class="bar"></div>
+              <span class="post-head-title">Photos</span>
+            </div>
+
+            <div class="post-photos-slideshow">
+              <div class="post-photos-content" >
+                  <? foreach($member->images as $image): ?>
+                  <?#  $img = verb_file($image->image);
+                    #  $imgDim = verb_imagesize($img);
+                  ?>
+                  <?# echo $imgDim[1];  ?>
+                    <div>
+                      <div class="centered">
+                        <div class="content">
+                          <img src="<? echo vae_data_url().vae_image($image->image, 800,550); ?>">
+                        </div>
+                      </div>
+
+                    </div>
+                  <? endforeach; ?>
+              </div>
+
+              <ul class="slideshow-dots">
+              </ul>
+
+              <div class="slideshow-controls">
+                <a href="#" class="prev left-arrow slideshow-arrow-left'"><span></span></a>
+                <a href="#" class="next right-arrow slideshow-arrow-right"><span></span></a>
+              </div>
+
+            </div>
+          </article>
+          <script src="/assets/js/vendor/cycle2/jquery.cycle2.min.js"></script>
+          <script type="text/javascript">
+
+            $('.post-photos-slideshow .post-photos-content').cycle({
+              slides: '> div',
+              next: '.slideshow-arrow-right',
+              prev: '.slideshow-arrow-left',
+              timeout: 0,
+              pager : '.slideshow-dots',
+              pagerTemplate : '<li class="dot"></li>',
+              pagerActiveClass : 'active',
+              swipe : true,
+              autoHeight :  "calc"
+            });
+
+
+          </script>
+
+        <? endif ;?>
+
+        <? if ((string)$member->videos->count): ?>
+        <article id="post-video" class="collapsed post-video">
+          <div class="post-head post-video-head">
+            <div class="bar"></div>
+            <span class="post-head-title">Video</span>
+          </div>
+
+
+          <div class="video-list-container">
+             <? foreach($member->videos as $video): ?>
+              <div class="video-container">
+            <? if ((string)$video->vimeo_id_ != ""):  ?>
+              <iframe src="//player.vimeo.com/video/<? echo $video->vimeo_id_; ?>" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <? elseif ((string)$video->you_tube_id_ != ""): ?>
+              <iframe class="yotube" width="500" height="281" src="//www.youtube.com/embed/<? echo $video->you_tube_id_; ?>" frameborder="0" allowfullscreen></iframe>
+
+            <? endif; ?>
+            </div>
+             <? endforeach; ?>
+             </div>
+        </article>
+      <? endif ?>
+
+        <? if ((string)$member->quotes->count): ?>
+          <article id="post-quotes" class="collapsed post-quotes">
+            <div class="post-head post-quotes-head">
+              <div class="bar"></div>
+              <span class="post-head-title">Quotes</span>
+            </div>
+            <? foreach ($member->quotes as $quote): ?>
+              <p><? echo vae_richtext($quote->quote); ?></p>
+            <? endforeach; ?>
+          </article>
+        <? endif; ?>
+
+        <? if ((string)$member->relationships->count): ?>
+          <div id="post-relationships-list" class="post-relationships">
+          	<div class="post-head post-relationships-head">
+          		<div class="bar"></div>
+          		<span class="post-head-title post-relationships-title">Relationships</span>
+          	</div>
+          	<div class="post-relationships-content">
+          		<ul>
+                <? foreach($member->relationships as $relation): ?>
+            			<li>
+                    <a href="<?php echo $relation->permalink; ?>" class="relationship-link" data-node-index="<? echo $relation->node_index; ?>" >
+                    <div class="thumbnail">
+            					<img src="<? echo vae_data_url().vae_image($relation->thumbnail, 300,999); ?>">
+            					<div class="info">
+            					<h4><? echo $relation->name; ?></h4>
+            					<p><? echo $relation->short_bio; ?></p>
+            					</div>
+            				</div>
+                    </a>
+            			</li>
+              <? endforeach ;?>
+          		</ul>
+          	</div>
+          </div>
+        <? endif; ?>
+      </div>
+    </div>
+</div>
+
+<? verb_include('/includes/footer.php'); ?>
+<? verb_include('/includes/scripts.php'); ?>
+
+<script type="text/javascript">
+
+$(function() {
+
+  function bindLightboxEvents(){
+    $('.post-nav a').on('click', function(event) {
+      event.preventDefault();
+
+      if(this.hash === '#post-relationships-list'){
+
+        $('html, body').animate({
+        scrollTop: $('#post-relationships-list').offset().top-20
+        }, 500, function(){
+          // when done, add hash to url
+          //window.location.hash = hash;
+        });
+
+      }else{
+        $('article').hide();
+        $('.post-nav a').removeClass('active');
+        $(this).addClass('active');
+        var id = $(this).attr('href');
+        $(id).show();
+      }
+
+      // if(this.hash === '#post-photos'){
+      //       if($('.post-photos-content').length > 0){
+      //       var height = 0;
+      //       $('.post-photos-content')
+      //       .find('img')
+      //       .each(function(i, img){
+
+      //         if($(img).attr('height') > height){
+      //           height = $(img).attr('height');
+      //         }
+
+      //       });
+
+      //       $('.post-photos-content').height(height);
+
+      //     }
+      // }
+
+    });
+
+    $('.post-head').on('click', function(){
+      if($(this).parent().hasClass('collapsed')){
+        $(this).parent().removeClass('collapsed');
+        $('#'+curId).height($('.family-tree-lightbox .main-wrapper')[0].scrollHeight+50);
+
+      }else{
+        $(this).parent().addClass('collapsed');
+        $('#'+curId).height($('.family-tree-lightbox .main-wrapper')[0].scrollHeight+50);
+      }
+    });
+
+
+
+  }
+
+bindLightboxEvents();
+
+});
+
+
+
+</script>
+
+</body>
+</html>
