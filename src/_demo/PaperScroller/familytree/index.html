@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html class="no-js">
+  <head>
+	<title>Hayward - Family Tree</title>
+    <? verb_include('/includes/head.php'); ?>
+
+	<style type="text/css">
+
+		/* allows canvas to access this font */
+		div.load-font{font-family: "Trade-Gothic-Bold";}
+	</style>
+  <script src="/assets/js/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/js/pages/tree-nodes.js?v=1"></script>
+  <script src="/assets/js/pages/tree-nodes-tablet.js?v=1"></script>
+  </head>
+  <body>
+
+<? verb_include('/includes/header.php'); ?>
+<div class="load-font">&nbsp;</div>
+
+<!-- FAMILY TREE CANVAS -->
+<div class="canvas-wrapper"><canvas id="canvas"></canvas></div>
+<!-- PUSH DOWN THE FOOTER -->
+<div class="push"></div>
+
+
+
+
+<? verb_include('/includes/footer.php'); ?>
+<? verb_include('/includes/scripts.php'); ?>
+
+<script src="/assets/js/vendor/paperjs/paper-full.min.js"></script>
+<script type="text/paperscript" src="/assets/js/pages/familytree.js?v=1" canvas="canvas"></script>
+
+<script type="text/javascript">
+</script>
+
+</body>
+</html>

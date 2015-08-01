@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Paper Scroller</title>
+</head>
+
+<style type="text/css">
+
+html, body{
+	margin:0;
+	background:grey;
+}
+
+canvas{
+	position: absolute;
+	top:0;
+	left:0;
+	width:600px;
+	height:600px;
+	background: #fff;
+}
+
+
+</style>
+
+<body>
+
+	<canvas id="canvas"></canvas>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+	<script src="paper-full.js"></script>
+	<script type="text/paperscript" canvas="canvas">
+	canvas.width = 600;
+	canvas.height = 600;
+	var topBorder = new Path.Line(new Point(0,0), new Point(600,0));
+  var botBorder = new Path.Line(new Point(0,1000), new Point(1000,1000));
+  topBorder.strokeColor = "black";
+  botBorder.strokeColor = "black";
+  var path = new Path.Circle(new Point(canvas.width/2, canvas.height/2), 50);
+	project.activeLayer.lastChild.fillColor = 'red';
+
+
+	var scrollPoint = new Point(0,0);
+
+	 var view, relative, min, max, offset,
+        velocity, frame, timestamp, ticker,
+        amplitude, target, timeConstant;
+
+
+	function scroll(y) {
+      offset = (y > max) ? max : (y < min) ? min : y;
+  }
+
+  function track() {
+      var now, elapsed, delta, v;
+      now = Date.now();
+      elapsed = now - timestamp;
+      timestamp = now;
+      delta = offset - frame;
+      frame = offset;
+      v = 1000 * delta / (1 + elapsed);
+      velocity = 0.8 * v + 0.2 * velocity;
+  }
+
+  function autoScroll() {
+        var elapsed, delta;
+        if (amplitude) {
+            elapsed = Date.now() - timestamp;
+            delta = -amplitude * Math.exp(-elapsed / timeConstant);
+
+                if(view.bounds.y >= 0 && delta > 0 || view.bounds.y <= max - view.size.height && delta < 0){
+
+            if (delta > 0.5 || delta < -0.5) {
+                 if(view.bounds.y >= 0 && view.bounds.y <= max - view.size.height){
+                scroll(target + delta);
+                scrollPoint.y = Math.floor(delta);
+                view.scrollBy(scrollPoint);
+                requestAnimationFrame(autoScroll);
+            }
+            } else {
+                scroll(target);
+            }
+
+          }
+
+        }
+    }
+
+	function onMouseDown(e){
+      velocity = amplitude = 0;
+      frame = offset;
+      timestamp = Date.now();
+      clearInterval(ticker);
+      ticker = setInterval(track, 100);
+	}
+
+
+	function onMouseDrag(e) {
+
+  	var y, delta;
+    y = e.point.y;
+    delta = e.delta.y;
+
+    if(view.bounds.y >= 0 && delta > 0
+      ||
+      view.bounds.y <= max - view.size.height && delta < 0){
+
+        if (delta > 2 || delta < -2) {
+          scroll(offset + delta);
+          scrollPoint.y += -delta;
+          view.scrollBy(scrollPoint);
+          reference = y;
+          console.log(view.bounds.y);
+        }
+
+
+    }else{
+      //delta = 0;
+      //y = 0;
+      //scrollPoint.y = -scrollPoint.y
+      //console.log();
+      //view.scrollBy(scrollPoint);
+      //requestAnimationFrame(autoScroll);
+    }
+
+
+	}
+
+ //
+  //scrolling thing size
+  //600x1000
+
+	function onMouseUp(e){
+
+    clearInterval(ticker);
+    if (velocity > 3 || velocity < -3) {
+        amplitude = 0.1 * velocity;
+        target = Math.round(offset + amplitude);
+        timestamp = Date.now();
+        requestAnimationFrame(autoScroll);
+    }
+	}
+
+
+	var realHeight = 2000;
+	max = parseInt( realHeight, 10) - innerHeight;
+  offset = min = 0;
+  min = 0;
+  max = 1000;
+  pressed = false;
+  timeConstant = 325;
+  relative = (innerHeight - 30) / max;
+
+
+
+	</script>
+</body>
+</html>

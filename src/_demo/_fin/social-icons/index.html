@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Social Icons</title>
+</head>
+	<style type="text/css">
+
+	body{
+		background-color: #000;
+		color:#fff;
+		margin:300px;
+		text-align: center;
+	}
+
+	.list-social{
+		list-style: none;
+		padding:0;
+
+	}
+
+	li.social-item{
+		display: inline-block;
+		width: 30px;
+		height:30px;
+		margin-right:8px;
+		position:relative;
+	}
+
+	li.social-item:hover a.social{
+		opacity: 0;
+	}
+
+	li.social-item:hover a.social-hover{
+		opacity: 1;
+	}
+
+	a.social, a.social-hover{
+		position: absolute;
+		top:0;
+		left:0;
+		display: block;
+		width:30px;
+		height:30px;
+		cursor:pointer;
+		-webkit-transition: opacity 200ms ease-in-out;
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+	}
+
+	a.social-hover{
+		opacity:0;
+	}
+
+	.instagram{
+		background:url('instagram.svg') center top no-repeat;
+	}
+	.facebook{
+		background:url('facebook.svg') center top no-repeat;
+	}
+	.twitter{
+		background:url('twitter.svg') center top no-repeat;
+	}
+	.pinterest{
+		background:url('pinterest.svg') center top no-repeat;
+	}
+	.instagram-hover{
+		background:url('instagram.svg') center bottom no-repeat;
+	}
+	.facebook-hover{
+		background:url('facebook.svg') center bottom no-repeat;
+	}
+	.twitter-hover{
+		background:url('twitter.svg') center bottom no-repeat;
+	}
+	.pinterest-hover{
+		background:url('pinterest.svg') center bottom no-repeat;
+	}
+
+
+	</style>
+
+<body>
+
+<ul class="list-social">
+	<li class="social-item">
+		<a class="social-hover facebook-hover" href=""></a>
+		<a class="social facebook" href="" target="_blank"></a>
+	</li>
+	<li class="social-item">
+		<a class="social-hover twitter-hover" href="" target="_blank"></a>
+		<a class="social twitter" href="" target="_blank"></a>
+	</li>
+	<li class="social-item">
+		<a class="social-hover pinterest-hover" href="" target="_blank"></a>
+		<a class="social pinterest" href="" target="_blank"></a>
+	</li>
+	<li class="social-item">
+		<a class="social-hover instagram-hover" href="" target="_blank"></a>
+		<a class="social instagram" href="" target="_blank"></a>
+	</li>
+</ul>
+
+</body>
+</html>

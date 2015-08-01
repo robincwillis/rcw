@@ -1,0 +1,85 @@
+<div id="edit-contact-modal" class="modal hide fade">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Edit Contact</h3>
+    </div>
+
+    <div class="controls">
+        <div class="modal-body">
+            <form id="edit-contact-form">
+            <div class="controls controls-row">
+                <div class="span12">
+                <label for="companyName">Company: </label>
+                <input class="input-block-level" id="companyName" type="text" value="{{companyName}}" />
+                </div>
+            </div>
+            <div class="controls controls-row">
+                <div class="span6">
+                <label  for="date">First Name: </label>
+                <input class="input-block-level" id="date" type="text" value="{{firstName}}" />
+                </div>
+                <div class="span6">
+                <label for="lastName">Last Name: </label>
+                <input class="input-block-level" id="lastName" type="text" value="{{lastName}}" />
+                </div>
+            </div>
+            <div class="controls controls-row">
+                <div class="span12">
+                <label for="address">Address: </label>
+                <input class="input-block-level" id="address" type="text" value="{{address}}" />
+                </div>
+            </div>
+            <div class="controls controls-row">
+                    <div class="span3">
+                    <label for="city">City: </label>
+
+                    <input class="input-block-level" id="city" type="text" value="{{city}}" />
+                    </div>
+                    <div class="span3">
+                    <label for="state">State: </label>
+
+                    <input class="input-block-level" id="state" type="text" value="{{state}}" />
+                    </div>
+                    <div class="span3">
+                    <label for="zip">Zipcode: </label>
+
+                    <input class="input-block-level" id="zip" type="text" value="{{zip}}" />
+                    </div>
+                    <div class="span3">
+                    <label for="country">Country: </label>
+
+                    <input class="input-block-level" id="country" type="text" value="{{country}}" />
+                    </div>
+
+
+            </div>
+            <div class="controls controls-row">
+
+                <div class="span6">
+                <label for="phone">Phone: </label><input class="input-block-level" id="phone" type="text" value="{{phone}}" />
+                </div>
+                <div class="span6">
+
+                <label for="email">Email: </label><input class="input-block-level" id="email" type="text" value="{{email}}"/>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+              <button data-dismiss="modal" class="btn" id="save-contact">Save</button>
+              <button data-dismiss="modal" class="btn btn-danger" id="">Cancel</button>
+
+        </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+

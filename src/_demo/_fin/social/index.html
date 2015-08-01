@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+
+ul{
+	list-style: none;
+}
+
+li.social{
+	display: inline-block;
+	margin-right:10px;
+	width:75px;
+	height:75px;
+	background-color: #000;
+	border-radius: 50%;
+}
+
+li.social a{
+	position:relative;
+	display: block;
+	width:100%;
+	height:100%;
+}
+
+.social-inner{
+	-webkit-transition: -webkit-transform 0.1s ease-in-out;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-15px;
+	margin-left:-15px;
+	width:30px;
+	height:30px;
+}
+
+li a:hover .social-inner{
+	-webkit-transform:scale(1.25);
+}
+
+.twitter{
+	background: url(t_social.svg) center center no-repeat;
+	background-size: contain;
+}
+
+.facebook{
+	background: url(fb_social.svg) center center no-repeat;
+	background-size: contain;
+}
+
+.github{
+	background: url(gh_social.svg) center center no-repeat;
+	background-size: contain;
+}
+
+.linkedin{
+	background: url(li_social.svg) center center no-repeat;
+	background-size: contain;
+}
+
+.instagram{
+	background: url(i_social.svg) center center no-repeat;
+	background-size: contain;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+	<ul>
+		<li class="social">
+			<a href="" class="">
+				<div class="social-inner twitter"></div>
+			</a>
+		</li>
+		<li class="social">
+			<a href="" class="">
+				<div class="social-inner facebook"></div>
+			</a>
+		</li>
+		<li class="social">
+			<a href="" class="">
+				<div class="social-inner linkedin"></div>
+			</a>
+		</li>
+		<li class="social">
+			<a href="" class="">
+				<div class="social-inner github"></div>
+			</a>
+		</li>
+		<li class="social">
+			<a href="" class="">
+				<div class="social-inner instagram"></div>
+			</a>
+		</li>
+	</ul>
+
+</body>
+</html>

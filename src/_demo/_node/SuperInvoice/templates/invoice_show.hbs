@@ -1,0 +1,80 @@
+
+
+<div id="edit-invoice-container">
+</div>
+<div id="invoice-info">
+<div class="row-fluid">
+
+<h2>Invoice</h2>
+<h3>Title: {{invoice.title}}</h3>
+<h4>Date: {{invoice.date}}</h4>
+<h4>Due Date: {{invoice.dueDate}}</h4>
+<h4>Status: {{invoice.status}}</h4>
+</div>
+<div class="row-fluid">
+	<div class="span2">
+		<h3>From:</h3>
+		</div>
+		<div class="span3">
+		<ul class="unstyled">
+			<li>{{employee.companyName}}</li>
+			<li>{{employee.firstName}} {{employee.lastName}}</li>
+			<li>{{employee.address}} {{employee.city}}</li>
+			<li>{{employee.state}} {{employee.zip}} {{employee.country}}</li>
+			<li>{{employee.phone}}</li>
+			<li>{{employee.email}}</li>
+		</ul>
+
+	</div>
+	<div class="span2">
+		<h3>To:</h3>
+		</div>
+		<div class="span3">
+			<ul class="unstyled">
+			<li>{{client.companyName}}</li>
+			<li>{{client.firstName}} {{client.lastName}}</li>
+			<li>{{client.address}} {{client.city}}</li>
+			<li>{{client.state}} {{client.zip}} {{client.country}}</li>
+			<li>{{client.phone}}</li>
+			<li>{{client.email}}</li>
+		</ul>
+	</div>
+</div>
+
+	<a href="#" id="edit-invoice" class="btn">Edit</a>
+	<a href="#" id="print-invoice" class="btn">Print</a>
+	<a href="#" id="close-invoice" class="btn">Close</a>
+
+</div>
+<div id="list-service-container">
+
+</div>
+<div id="new-service-container">
+
+</div>
+
+<a href="#" id="new-service" class="btn">Add Service</a>
+
+<div class="row-fluid">
+<div class="offset6">
+<h2>Summary</h2>
+<div class="span4 pull-right">
+<ul class="unstyled">
+	<li>SubTotal</li>
+	<li>Taxes</li>
+	<li>Total</li>
+</ul>
+</div>
+<div class="span4 pull-right">
+<ul class="unstyled">
+	<li>{{invoice.subtotal}}</li>
+	<li>{{invoice.taxes}}</li>
+	<li>{{invoice.total}}</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+
+

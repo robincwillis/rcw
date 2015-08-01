@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+</head>
+
+<style type="text/css">
+
+body{
+ margin:20px;
+}
+
+.item{
+	position: relative;
+	width: 50%;
+	background-color: tan;
+	margin:20px 0;
+	min-height: 90px;
+	overflow: hidden;
+}
+
+.content{
+	padding:20px;
+	background: rgba(255,0,0,0.4);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+}
+
+.beforeSlide{
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+</style>
+<body>
+
+	<div id="ex1" class="item">
+	</div>
+	<a id="one" href="#">Slide Ex1 using removeClass</a>
+
+	<div id="ex2" class="item">
+	</div>
+	<a id="two" href="#">Slide Ex2 using css</a>
+
+	<div id="ex3" class="item">
+	</div>
+	<a id="three" href="#">Slide Ex3 with setTimeout (works?)</a>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+<script type="text/javascript">
+
+$(function() {
+
+	var content = '<div class="content beforeSlide"><p>wah wah wah wah wah wah </p></div>'
+
+	var	slideInOne = function(el, $target){
+		var $el = $(el);
+		$target.empty();
+		$target.append($el);
+	 	$el.removeClass('beforeSlide');
+	};
+
+	var	slideInTwo = function(el, $target){
+		var $el = $(el);
+		$target.append($el);
+	 	$el.css({
+	 		"-webkit-transform":"translateX(0)",
+	 		"-moz-transform":"translateX(0)",
+	 		"transform":"translateX(0)"
+	 	});
+	};
+
+	var	slideInThree = function(el, $target){
+		var $el = $(el);
+		$target.append($el);
+		 setTimeout(function(){
+		 	$el.removeClass('beforeSlide');
+		 }, 0);
+	};
+
+	$('a#one').on('click', function(){
+		slideInOne(content, $("#ex1"));
+	});
+
+	$('a#two').on('click', function(){
+		slideInTwo(content, $("#ex2"));
+	});
+
+	$('a#three').on('click', function(){
+		slideInThree(content, $("#ex3"));
+	});
+
+
+});
+
+</script>
+</body>
+</html>

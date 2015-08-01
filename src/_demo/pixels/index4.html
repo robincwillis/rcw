@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<style type="text/css">
+
+
+
+		div.container{
+			display: inline-block;
+			vertical-align: top;
+		}
+		canvas{
+			border:1px solid black;
+		}
+		img{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+
+	<p>
+		Zoom factor
+		<input id="zoom" type="range" min="1" max="32" value="5" size="2">
+	</p>
+
+	<div class="container">
+		<canvas id="c-left"></canvas>
+		<p>Original Image</p>
+	</div>
+	<div class="container">
+		<canvas id="c-right"></canvas>
+		<p>Pixels written into Array</p>
+		<p>Drag to pan view</p>
+		<a id="drop" href="#">Make it Drop Like an EarthQuake</a>
+	</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="main.js"></script>
+
+</body>
+</html>
