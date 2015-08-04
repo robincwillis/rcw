@@ -1,0 +1,60 @@
+<div id="new-invoice-modal" class="modal hide fade">
+	<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>New Invoice</h3>
+  </div>
+  <div class="controls">
+  	<div class="modal-body">
+
+		<form id="add-invoice-form">
+		    <div class="controls controls-row">
+		    <div class="span2">
+		    <label for="pref">Id: </label>
+		    <input class="input-block-level" id="pref" type="text" />
+		    </div>
+		    <div class="span10">
+		    <label for="title">Title: </label>
+			<input class="input-block-level" id="title" type="text" />
+			</div>
+			</div>
+
+			<div class="controls-row">
+				<div class="span6">
+			<label for="date">Date: </label>
+			<input  class="datepicker input-block-level" id="date" type="text" />
+</div>
+<div class="span6">
+			<label for="dueDate">Due Date: </label>
+			<input class="datepicker input-block-level" id="dueDate" type="text" />
+			</div>
+			</div>
+
+			<div class="controls-row">
+				<div class="span6">
+		    <label for="employee">From: </label>
+
+		    <select class="input-block-level" id="employeeId">
+		    {{#each contacts}}
+			  <option value="{{cid}}">{{firstName}}</option>
+			  {{/each}}
+			</select>
+</div>
+<div class="span6">
+			<label for="client">To: </label>
+
+			<select class="input-block-level" id="clientId">
+			  {{#each contacts}}
+			  <option value="{{cid}}">{{firstName}} {{lastName}}</option>
+
+			  {{/each}}
+			</select>
+</div>
+			</div>
+			</div>
+			<div class="modal-footer">
+			    <button class="btn" data-dismiss="modal" id="add-invoice">Add</button>
+				<button class="btn btn-danger" data-dismiss="modal" id="">Cancel</button>
+			</div>
+		</form>
+	</div>
+</div>

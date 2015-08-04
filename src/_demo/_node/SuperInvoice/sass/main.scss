@@ -1,0 +1,30 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600);
+
+
+body{
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	background-color: #eee9e6;
+	color:#595552;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+
+
+.navbar-inverse .navbar-inner{
+	background-image:none;
+	background-color:#514c49;
+	color:#dcd3ce;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+background-color:transparent;
+}
+
+.modal, input, textarea{
+	border-radius:0;
+}
