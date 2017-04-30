@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Robin Willis is an artist, designer and software developer" />
-  <meta name="keywords" content="robin, willis, robin willis, robincwillis, rcw, code, art, design, development, engineering, software">
+	<meta name="keywords" content="robin, willis, robin willis, robincwillis, rcw, code, art, design, development, engineering, software">
 	<meta name="author" content="Robin Willis" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
 	<title>Robin Willis</title>
@@ -16,6 +16,16 @@
 		}
 
 		*{ box-sizing: border-box; }
+
+		.no-grid .grid{
+			display: flex;
+		}
+
+		.no-grid .grid > div {
+			width:25%
+			display:inline-block;
+			padding: 0 1.5em;
+		}
 
 		.grid {
 			display: grid;
@@ -32,15 +42,6 @@
 		.grid.vc > div { height: auto; }
 		.fh { height:100vh; /*margin: 0 auto;*/ }
 
-		.grid.1-up {
-			grid-template-columns: 2em 1fr 2em;
-			grid-template-rows: 100vh;
-			grid-template-columns: 25vw 50vw 15vw;
-			grid-template-rows: 25vw 50vh 25vw;
-		}
-
-		.grid.2-up { grid-template-columns: repeat(2, 1fr); }
-
 		.grid > div {
 			height: 100%;
 			width: 100%;
@@ -49,7 +50,6 @@
 		.grid > div > img {
 			max-width: 100%;
 			display: block;
-			opacity: 0;
 			transition: opacity .3s ease-in;
 			margin: 0 auto;
 		}
@@ -106,542 +106,547 @@
 <body>
 	<div class="grid vc fh">
 		<div class="r1 c1">
-			<img src="cover/c1.jpg" data-src="cover/c1.jpg" />
+				<img data-original="cover/c1.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/-1.jpg" data-src="image/-1.jpg" />
+				<img data-original="image/-1.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/-2.jpg" data-src="image/-2.jpg" />
+				<img data-original="image/-2.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/-5.jpg" data-src="image/-5.jpg" />
+				<img data-original="image/-5.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c3">
-			<img src="image/-10.jpg" data-src="image/-10.jpg" />
+				<img data-original="image/-10.jpg" />
 		</div>
 		<div class="r2 c3">
-			<img src="image/-6.jpg" data-src="image/-6.jpg" />
+				<img data-original="image/-6.jpg" />
 		</div>
 		<div class="r1-3 c1-3">
-			<img src="image/-4.jpg" data-src="image/-4.jpg" />
+				<img data-original="image/-4.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/-8.jpg" data-src="image/-8.jpg" />
+				<img data-original="image/-8.jpg" />
 		</div>
 		<div class="r2 c1">
-			<img src="image/-9.jpg" data-src="image/-9.jpg" />
+				<img data-original="image/-9.jpg" />
 		</div>
 		<div class="r1-3 c2-4">
-			<img src="image/-3.jpg" data-src="image/-3.jpg" />
+				<img data-original="image/-3.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/-11.jpg" data-src="image/-11.jpg" />
+				<img data-original="image/-11.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/-12.jpg" data-src="image/-12.jpg" />
+				<img data-original="image/-12.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/-13.jpg" data-src="image/-13.jpg" />
+				<img data-original="image/-13.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/-17.jpg" data-src="image/-17.jpg" />
+				<img data-original="image/-17.jpg" />
 		</div>
 		<div class="r2 c1">
-			<img src="image/-16.jpg" data-src="image/-16.jpg" />
+				<img data-original="image/-16.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/-14.jpg" data-src="image/-14.jpg" />
+				<img data-original="image/-14.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/-18.jpg" data-src="image/-18.jpg" />
+				<img data-original="image/-18.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/0.jpg" / data-src="image/0.jpg" />
+				<img data-original="image/0.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/1.jpg" / data-src="image/1.jpg" />
+				<img data-original="image/1.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/2.jpg" / data-src="image/2.jpg" />
+				<img data-original="image/2.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/3.jpg" / data-src="image/3.jpg" />
+				<img data-original="image/3.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1-3">
-			<img src="image/8.jpg" / data-src="image/8.jpg" />
+				<img data-original="image/8.jpg" />
 		</div>
 		<div class="r1 c3">
-			<img src="image/7.jpg" / data-src="image/7.jpg" />
+				<img data-original="image/7.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/6.jpg" / data-src="image/6.jpg" />
+				<img data-original="image/6.jpg" />
 		</div>
 		<div class="r1 c2-4">
-			<img src="image/4.jpg" / data-src="image/4.jpg" />
+				<img data-original="image/4.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/9.jpg" / data-src="image/9.jpg" />
+				<img data-original="image/9.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/10.jpg" data-src="image/10.jpg" />
+				<img data-original="image/10.jpg" />
 		</div>
 		<div class="r1 c3">
-			<img src="image/11.jpg" data-src="image/11.jpg" />
+				<img data-original="image/11.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/12.jpg" data-src="image/12.jpg" />
+				<img data-original="image/12.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/13.jpg" data-src="image/13.jpg" />
+				<img data-original="image/13.jpg" />
 		</div>
 		<div class="r2 c1">
-			<img src="image/14.jpg" data-src="image/14.jpg" />
+				<img data-original="image/14.jpg" />
 		</div>
 		<div class="r1-3 c2-4">
-			<img src="image/15.jpg" data-src="image/15.jpg" />
+				<img data-original="image/15.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-		<img src="image/17.jpg" data-src="image/17.jpg" />
+			<img data-original="image/17.jpg" />
+		</picture>
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/18.jpg" data-src="image/18.jpg" />
+				<img data-original="image/18.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/16.jpg" data-src="image/16.jpg" />
+				<img data-original="image/16.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/19.jpg" data-src="image/19.jpg" />
+				<img data-original="image/19.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/20.jpg" data-src="image/20.jpg" />
+				<img data-original="image/20.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/21.jpg" data-src="image/21.jpg" />
+				<img data-original="image/21.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/22.jpg" data-src="image/22.jpg" />
+				<img data-original="image/22.jpg" />
 		</div>
 	</div>
 
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/23.jpg" data-src="image/23.jpg" />
+				<img data-original="image/23.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/24.jpg" data-src="image/24.jpg" />
+				<img data-original="image/24.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/25.jpg" data-src="image/25.jpg" />
+				<img data-original="image/25.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c3">
-			<img src="image/26.jpg" data-src="image/26.jpg" />
+				<img data-original="image/26.jpg" />
 		</div>
 			<div class="r2 c3">
-			<img src="image/76.jpg" data-src="image/76.jpg" />
+				<img data-original="image/76.jpg" />
 		</div>
 		<div class="r1-3 c1-3">
-			<img src="image/28.jpg" data-src="image/28.jpg" />
+				<img data-original="image/28.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/27.jpg" data-src="image/27.jpg" />
+				<img data-original="image/27.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/29.jpg" data-src="image/29.jpg" />
+				<img data-original="image/29.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/30.jpg" data-src="image/30.jpg" />
+				<img data-original="image/30.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/100.jpg" data-src="image/100.jpg" />
+				<img data-original="image/100.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/85.jpg" data-src="image/85.jpg" />
+				<img data-original="image/85.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/31.jpg" data-src="image/31.jpg" />
+				<img data-original="image/31.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/90.jpg" data-src="image/90.jpg" />
+				<img data-original="image/90.jpg" />
 		</div>
 		<div class="r1 c2-4">
-			<img src="image/45.jpg" data-src="image/45.jpg" />
+				<img data-original="image/45.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/33.jpg" data-src="image/33.jpg" />
+				<img data-original="image/33.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/82.jpg" data-src="image/82.jpg" />
+				<img data-original="image/82.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/32.jpg" data-src="image/32.jpg" />
+				<img data-original="image/32.jpg" />
 		</div>
 				<div class="r1 c2">
-			<img src="image/34.jpg" data-src="image/34.jpg" />
+				<img data-original="image/34.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/35.jpg" data-src="image/35.jpg" />
+				<img data-original="image/35.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/48.jpg" data-src="image/48.jpg" />
+				<img data-original="image/48.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r2 c1">
-			<img src="image/44.jpg" data-src="image/44.jpg" />
+				<img data-original="image/44.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/37.jpg" data-src="image/37.jpg" />
+				<img data-original="image/37.jpg" />
 		</div>
 				<div class="r1 c2">
-			<img src="image/36.jpg" data-src="image/36.jpg" />
+				<img data-original="image/36.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r2 c1">
-			<img src="image/46.jpg" data-src="image/46.jpg" />
+				<img data-original="image/46.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/39.jpg" data-src="image/39.jpg" />
+				<img data-original="image/39.jpg" />
 		</div>
 				<div class="r1 c2">
-			<img src="image/47.jpg" data-src="image/47.jpg" />
+				<img data-original="image/47.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/38.jpg" data-src="image/38.jpg" />
+				<img data-original="image/38.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/41.jpg" data-src="image/41.jpg" />
+				<img data-original="image/41.jpg" />
 		</div>
 		<div class="r1 c3">
-			<img src="image/42.jpg" data-src="image/42.jpg" />
+				<img data-original="image/42.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/43.jpg" data-src="image/43.jpg" />
+				<img data-original="image/43.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/49.jpg" data-src="image/49.jpg" />
+				<img data-original="image/49.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/52.jpg" data-src="image/52.jpg" />
+				<img data-original="image/52.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/51.jpg" data-src="image/51.jpg" />
+				<img data-original="image/51.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/50.jpg" data-src="image/50.jpg" />
+				<img data-original="image/50.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/40.jpg" data-src="image/40.jpg" />
+				<img data-original="image/40.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/53.jpg" data-src="image/53.jpg" />
+				<img data-original="image/53.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/54.jpg" data-src="image/54.jpg" />
+				<img data-original="image/54.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/55.jpg" data-src="image/55.jpg" />
+				<img data-original="image/55.jpg" />
 		</div>
 		<div class="r1 c2-4">
-			<img src="image/56.jpg" data-src="image/56.jpg" />
+				<img data-original="image/56.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/57.jpg" data-src="image/57.jpg" />
+				<img data-original="image/57.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/58.jpg" data-src="image/58.jpg" />
+				<img data-original="image/58.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/59.jpg" data-src="image/59.jpg" />
+				<img data-original="image/59.jpg" />
 		</div>
 		<div class="r1 c3">
-			<img src="image/60.jpg" data-src="image/60.jpg" />
+				<img data-original="image/60.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/61.jpg" data-src="image/61.jpg" />
+				<img data-original="image/61.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/62.jpg" data-src="image/62.jpg" />
+				<img data-original="image/62.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/63.jpg" data-src="image/63.jpg" />
+				<img data-original="image/63.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/64.jpg" data-src="image/64.jpg" />
+				<img data-original="image/64.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/66.jpg" data-src="image/66.jpg" />
+				<img data-original="image/66.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/67.jpg" data-src="image/67.jpg" />
+				<img data-original="image/67.jpg" />
 		</div>
 				<div class="r1 c2">
-			<img src="image/69.jpg" data-src="image/69.jpg" />
+				<img data-original="image/69.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/68.jpg" data-src="image/68.jpg" />
+				<img data-original="image/68.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/72.jpg" data-src="image/72.jpg" />
+				<img data-original="image/72.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/65.jpg" data-src="image/65.jpg" />
+				<img data-original="image/65.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/71.jpg" data-src="image/71.jpg" />
+				<img data-original="image/71.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/70.jpg" data-src="image/70.jpg" />
+				<img data-original="image/70.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/72.jpg" data-src="image/72.jpg" />
+				<img data-original="image/72.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/73.jpg" data-src="image/73.jpg" />
+				<img data-original="image/73.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/75.jpg" data-src="image/75.jpg" />
+				<img data-original="image/75.jpg" />
 		</div>
 		<div class="r1 c3">
-			<img src="image/77.jpg" data-src="image/77.jpg" />
+				<img data-original="image/77.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/74.jpg" data-src="image/74.jpg" />
+				<img data-original="image/74.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/78.jpg" data-src="image/78.jpg" />
+				<img data-original="image/78.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/79.jpg" data-src="image/79.jpg" />
+				<img data-original="image/79.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/81.jpg" data-src="image/81.jpg" />
+				<img data-original="image/81.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/83.jpg" data-src="image/83.jpg" />
+				<img data-original="image/83.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/84.jpg" data-src="image/84.jpg" />
+				<img data-original="image/84.jpg" />
 		</div>
 		<div class="r2 c1">
-			<img src="image/80.jpg" data-src="image/80.jpg" />
+				<img data-original="image/80.jpg" />
 		</div>
 		<div class="r1-3 c2-4">
-			<img src="image/86.jpg" data-src="image/86.jpg" />
+				<img data-original="image/86.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/87.jpg" data-src="image/87.jpg" />
+				<img data-original="image/87.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c2">
-			<img src="image/88.jpg" data-src="image/88.jpg" />
+				<img data-original="image/88.jpg" />
 		</div>
 		<div class="r1 c1">
-			<img src="image/89.jpg" data-src="image/89.jpg" />
+				<img data-original="image/89.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/91.jpg" data-src="image/91.jpg" />
+				<img data-original="image/91.jpg" />
 		</div>
 		<div class="r1 c2-4">
-			<img src="image/92.jpg" data-src="image/92.jpg" />
+				<img data-original="image/92.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/93.jpg" data-src="image/93.jpg" />
+				<img data-original="image/93.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/94.jpg" data-src="image/94.jpg" />
+				<img data-original="image/94.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/95.jpg" data-src="image/95.jpg" />
+				<img data-original="image/95.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/97.jpg" data-src="image/97.jpg" />
+				<img data-original="image/97.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/98.jpg" data-src="image/98.jpg" />
+				<img data-original="image/98.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/96.jpg" data-src="image/96.jpg" />
+				<img data-original="image/96.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/99.jpg" data-src="image/99.jpg" />
+				<img data-original="image/99.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/101.jpg" data-src="image/101.jpg" />
+				<img data-original="image/101.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 			<div class="r1 c1">
-			<img src="image/103.jpg" data-src="image/103.jpg" />
+				<img data-original="image/103.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/102.jpg" data-src="image/102.jpg" />
+				<img data-original="image/102.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/104.jpg" data-src="image/104.jpg" />
+				<img data-original="image/104.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/106.jpg" data-src="image/106.jpg" />
+				<img data-original="image/106.jpg" />
 		</div>
 		<div class="r1 c2">
-			<img src="image/105.jpg" data-src="image/105.jpg" />
+				<img data-original="image/105.jpg" />
 		</div>
 	</div>
 	<div class="grid">
 		<div class="r1 c1">
-			<img src="image/107.jpg" data-src="image/107.jpg" />
+				<img data-original="image/107.jpg" />
 		</div>
 	</div>
 	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.unveil.js"></script>
+	<script src="js/jquery.lazyload.min.js"></script>
 	<script type="text/javascript">
 		$( document ).ready(function() {
-			$("img").unveil(200, function() {
-				$(this).load(function() {
-					this.style.opacity = 1;
-				});
+
+			if( document.body.style.grid === undefined ) {
+				$(document.body).addClass('no-grid');
+			}
+
+			$("img").lazyload({
+				threshold : 200,
+				effect : "fadeIn"
 			});
 		});
 	</script>
