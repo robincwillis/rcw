@@ -1,0 +1,162 @@
+{
+    "royal": [
+        {
+            "src": "/images/royal/drawings/cover.png",
+            "alt": "Royal Street - historical reference"
+        },
+        {
+            "src": "/images/royal/drawings/exterior-elevation.png",
+            "alt": "Royal Street - front and rear elevations with new addition"
+        },
+        {
+            "src": "/images/royal/drawings/kitchen-elevation.png",
+            "alt": "Royal Street - kitchen elevations"
+        },
+        {
+            "src": "/images/royal/drawings/sketch.png",
+            "alt": "Royal Street - kitchen sketch"
+        },
+        {
+            "src": "/images/royal/1.jpg",
+            "alt": "Royal Street - kitchen sink and window overlooking yard"
+        },
+        {
+            "src": "/images/royal/2.jpg",
+            "alt": "Royal Street - kitchen dining nook and french doors"
+        },
+        {
+            "src": "/images/royal/3.jpg",
+            "alt": "Royal Street - kitchen layout"
+        },
+        {
+            "src": "/images/royal/4.jpg",
+            "alt": "Royal Street - master bath"
+        },
+        {
+            "src": "/images/royal/5.jpg",
+            "alt": "Royal Street - master bath"
+        },
+        {
+            "src": "/images/royal/6.jpg",
+            "alt": "Royal Street - A description of image 2"
+        },
+        {
+            "src": "/images/royal/7.jpg",
+            "alt": "Royal Street - A description of image 2"
+        },
+        {
+            "src": "/images/royal/8.jpg",
+            "alt": "Royal Street - A description of image 2"
+        },
+        {
+            "src": "/images/royal/9.jpg",
+            "alt": "Royal Street - A description of image 2"
+        }
+    ],
+    "poland": [
+        {
+            "src": "/images/poland/drawings/elevation.png",
+            "alt": "A description of image 1"
+        },
+        {
+            "src": "/images/poland/1.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/poland/2.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/poland/3.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/poland/4.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/poland/5.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/poland/6.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/poland/7.jpg",
+            "alt": "A description of image 2"
+        }
+    ],
+    "orient1": [
+        {
+            "src": "/images/orient1/drawings/perspective.png",
+            "alt": "A description of featured image 1"
+        },
+        {
+            "src": "/images/orient1/drawings/elevation.png",
+            "alt": "A description of featured image 1"
+        },
+        {
+            "src": "/images/orient1/drawings/sketch.png",
+            "alt": "A description of image 1"
+        },
+        {
+            "src": "/images/orient1/1.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/orient1/2.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/orient1/3.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/orient1/4.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/orient1/5.jpg",
+            "alt": "A description of image 2"
+        },
+        {
+            "src": "/images/orient1/6.jpg",
+            "alt": "A description of image 2"
+        }
+    ],
+    "orient2": [
+        {
+            "src": "/images/orient2/drawings/sketch.png",
+            "alt": "A description of featured image 1"
+        },
+        {
+            "src": "/images/orient2/drawings/perspective.png",
+            "alt": "A description of featured image 1"
+        },
+        {
+            "src": "/images/orient2/drawings/elevation.png",
+            "alt": "A description of featured image 1"
+        },
+        {
+            "src": "/images/orient2/1.jpg",
+            "alt": "A description of featured image 1"
+        },
+        {
+            "src": "/images/orient2/2.jpg",
+            "alt": "A description of featured image 2"
+        },
+        {
+            "src": "/images/orient2/3.jpg",
+            "alt": "A description of featured image 2"
+        },
+        {
+            "src": "/images/orient2/4.jpg",
+            "alt": "A description of featured image 2"
+        },
+        {
+            "src": "/images/orient2/5.jpg",
+            "alt": "A description of featured image 2"
+        }
+    ]
+}
