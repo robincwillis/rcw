@@ -2,27 +2,27 @@
     "royal": [
         {
             "src": "/images/royal/drawings/cover.png",
-            "alt": " historical reference, Royal St, New Orleans"
+            "alt": "Historical reference, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/drawings/exterior-elevation.png",
-            "alt": " front and rear elevations with new addition, Royal St, New Orleans"
+            "alt": " Front and rear elevations with new addition, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/drawings/kitchen-elevation.png",
-            "alt": " kitchen elevations, Royal St, New Orleans"
+            "alt": " Kitchen elevations, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/drawings/sketch.png",
-            "alt": " kitchen sketch, Royal St, New Orleans"
+            "alt": " Kitchen sketch, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/1.jpg",
-            "alt": " kitchen sink and window overlooking yard, Royal St, New Orleans"
+            "alt": " Kitchen detail, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/2.jpg",
-            "alt": " kitchen dining nook and french doors, Royal St, New Orleans"
+            "alt": " Kitchen dining nook, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/3.jpg",
@@ -30,95 +30,91 @@
         },
         {
             "src": "/images/royal/4.jpg",
-            "alt": " master bath, Royal St, New Orleans"
+            "alt": " Master bath - shower, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/5.jpg",
-            "alt": " master bath, Royal St, New Orleans"
+            "alt": "Master bath, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/6.jpg",
-            "alt": " A description of image 2, Royal St, New Orleans"
+            "alt": "Dining Room, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/7.jpg",
-            "alt": " A description of image 2, Royal St, New Orleans"
+            "alt": "Guest bath - shower, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/8.jpg",
-            "alt": " A description of image 2, Royal St, New Orleans"
+            "alt": "Office, Royal St, New Orleans"
         },
         {
             "src": "/images/royal/9.jpg",
-            "alt": " A description of image 2, Royal St, New Orleans"
+            "alt": "Back porch, Royal St, New Orleans"
         }
     ],
     "poland": [
         {
             "src": "/images/poland/drawings/elevation.png",
-            "alt": "A description of image 1, Poland Ave, New Orleans"
+            "alt": "Front elevation - paint spec, Poland Ave, New Orleans"
         },
         {
             "src": "/images/poland/1.jpg",
-            "alt": "A description of image 2, Poland Ave, New Orleans"
+            "alt": "Dining room, Poland Ave, New Orleans"
         },
         {
             "src": "/images/poland/2.jpg",
-            "alt": "A description of image 2, Poland Ave, New Orleans"
+            "alt": "Dining room, Poland Ave, New Orleans"
         },
         {
             "src": "/images/poland/3.jpg",
-            "alt": "A description of image 2, Poland Ave, New Orleans"
+            "alt": "Living room, Poland Ave, New Orleans"
         },
         {
             "src": "/images/poland/4.jpg",
-            "alt": "A description of image 2, Poland Ave, New Orleans"
+            "alt": "Library, Poland Ave, New Orleans"
         },
         {
             "src": "/images/poland/5.jpg",
-            "alt": "A description of image 2, Poland Ave, New Orleans"
+            "alt": "Kitchen, Poland Ave, New Orleans"
         },
         {
             "src": "/images/poland/6.jpg",
-            "alt": "A description of image 2, Poland Ave, New Orleans"
+            "alt": "Bathroom detail, Poland Ave, New Orleans"
         },
         {
             "src": "/images/poland/7.jpg",
-            "alt": "A description of image 2, Poland Ave, New Orleans"
+            "alt": "Construction, Poland Ave, New Orleans"
         }
     ],
     "orient1": [
         {
             "src": "/images/orient1/drawings/perspective.png",
-            "alt": "A description of featured image 1, Orient Ave, New York"
+            "alt": "Kitchen rendering, Orient Ave, New York"
         },
         {
             "src": "/images/orient1/drawings/elevation.png",
-            "alt": "A description of featured image 1, Orient Ave, New York"
-        },
-        {
-            "src": "/images/orient1/drawings/sketch.png",
-            "alt": "A description of image 1, Orient Ave, New York"
+            "alt": "Kitchen elevations, Orient Ave, New York"
         },
         {
             "src": "/images/orient1/1.jpg",
-            "alt": "A description of image 2, Orient Ave, New York"
+            "alt": "Kitchen layout, Orient Ave, New York"
         },
         {
             "src": "/images/orient1/2.jpg",
-            "alt": "A description of image 2, Orient Ave, New York"
+            "alt": "Kitchen detail, Orient Ave, New York"
         },
         {
             "src": "/images/orient1/3.jpg",
-            "alt": "A description of image 2, Orient Ave, New York"
+            "alt": "Dining area, Orient Ave, New York"
         },
         {
             "src": "/images/orient1/4.jpg",
-            "alt": "A description of image 2, Orient Ave, New York"
+            "alt": "Kichen detail, Orient Ave, New York"
         },
         {
             "src": "/images/orient1/5.jpg",
-            "alt": "A description of image 2, Orient Ave, New York"
+            "alt": "Bathroom, Orient Ave, New York"
         },
         {
             "src": "/images/orient1/6.jpg",
@@ -128,35 +124,35 @@
     "orient2": [
         {
             "src": "/images/orient2/drawings/sketch.png",
-            "alt": "A description of featured image 1, Orient Ave, New York"
+            "alt": "Kitchen sketch, Orient Ave, New York"
         },
         {
             "src": "/images/orient2/drawings/perspective.png",
-            "alt": "A description of featured image 1, Orient Ave, New York"
+            "alt": "Kitchen rendering, Orient Ave, New York"
         },
         {
             "src": "/images/orient2/drawings/elevation.png",
-            "alt": "A description of featured image 1, Orient Ave, New York"
+            "alt": "Kitchen elevations, Orient Ave, New York"
         },
         {
             "src": "/images/orient2/1.jpg",
-            "alt": "A description of featured image 1, Orient Ave, New York"
+            "alt": "Kitchen layout, Orient Ave, New York"
         },
         {
             "src": "/images/orient2/2.jpg",
-            "alt": "A description of featured image 2, Orient Ave, New York"
+            "alt": "Dining area, Orient Ave, New York"
         },
         {
             "src": "/images/orient2/3.jpg",
-            "alt": "A description of featured image 2, Orient Ave, New York"
+            "alt": "Kitchen layout, Orient Ave, New York"
         },
         {
             "src": "/images/orient2/4.jpg",
-            "alt": "A description of featured image 2, Orient Ave, New York"
+            "alt": "Kitchen layout - furnished, Orient Ave, New York"
         },
         {
             "src": "/images/orient2/5.jpg",
-            "alt": "A description of featured image 2, Orient Ave, New York"
+            "alt": "Dining area - furnished, Orient Ave, New York"
         }
     ]
 }
